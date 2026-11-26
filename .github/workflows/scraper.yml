@@ -1,0 +1,36 @@
+name: Monitor Precios Black Friday
+
+on:
+  schedule:
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ejecutar Scraper de Precios
+        run: python scraper.py
+
+      - name: Guardar resultados en el repositorio
+        run: |
+          git config --local user.email "bot@github-actions.local"
+          git config --local user.name "Price Monitor Bot"
+          git add data/precios_dashboard.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Actualizacion automatica de precios" && git push)
