@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-26 16:21:16",
+  "actualizado": "2026-11-26 16:27:24",
   "total_skus": 94,
   "productos": [
     {
@@ -154,7 +154,11 @@
           "url": "https://rodelag.com/products/aire-acondicionado-split-inverter-18-000-btu-atr182cj-hisense-control-wi-fi",
           "titulo_tienda": "Aire acondicionado Split inverter 18,000 BTU, ATR182CJ Hisense, control Wi-fi Default Title"
         },
-        "Multimax": null,
+        "Multimax": {
+          "precio": 379.97,
+          "url": "https://www.multimax.net/products/aire-acondicionado-hisense-atr182cj-inverter-18-000btu-wi-fi",
+          "titulo_tienda": "Aire Acondicionado Hisense ATR182CJ | Inverter | 18,000 BTU | Wi-Fi | SEER 18 Default Title"
+        },
         "EVision": null
       }
     },
@@ -218,7 +222,11 @@
           "url": "https://rodelag.com/products/hisense-aire-acondicionado-split-inverter-24-000-btu-atr242cj",
           "titulo_tienda": "Aire acondicionado Split inverter 24,000 BTU, ATR242CJ Hisense, control Wi-fi Default Title"
         },
-        "Multimax": null,
+        "Multimax": {
+          "precio": 479.97,
+          "url": "https://www.multimax.net/products/aire-acondicionado-hisense-atr242cj-inverter-24-000btu-wi-fi",
+          "titulo_tienda": "Aire Acondicionado Hisense ATR242CJ | Inverter | 24,000 BTU | Wi-Fi | SEER 19 Default Title"
+        },
         "EVision": null
       }
     },
@@ -250,7 +258,11 @@
         "Panafoto": null,
         "Novey": null,
         "Rodelag": null,
-        "Multimax": null,
+        "Multimax": {
+          "precio": 1399.97,
+          "url": "https://www.multimax.net/products/kit-hisense-auv-36tr5re3-36-000btu-piso-techo-a-c",
+          "titulo_tienda": "Aire Acondicionado Piso-Techo Hisense AUV-36TR5RE3 | Inverter | 36,000 BTU | Wi-Fi | SEER 18 Default Title"
+        },
         "EVision": null
       }
     },
@@ -266,7 +278,11 @@
         "Panafoto": null,
         "Novey": null,
         "Rodelag": null,
-        "Multimax": null,
+        "Multimax": {
+          "precio": 2199.97,
+          "url": "https://www.multimax.net/products/kit-hisense-auv-60tr5rf3-60-000btu-piso-techo-a-c",
+          "titulo_tienda": "Aire Acondicionado Piso-Techo Hisense AUV-60TR5RF3 | Inverter | 52,000 BTU | Wi-Fi | SEER 17 Default Title"
+        },
         "EVision": null
       }
     },
@@ -538,7 +554,11 @@
           "url": "https://rodelag.com/products/televisor-40-led-smart-serie-q4-modelo-40q4sv-hisense",
           "titulo_tienda": "Televisor 40\" QLED Smart | serie Q4 modelo 40Q4SV | Hisense Default Title"
         },
-        "Multimax": null,
+        "Multimax": {
+          "precio": 149.97,
+          "url": "https://www.multimax.net/products/hisense-40q4sv-40-fhd-qled-tv-vidaa-hdmi-usb-dvb-t-60hz",
+          "titulo_tienda": "Televisor Hisense 40Q4SV | VIDAA | 40\" | Full HD | HDMI | USB | Wi-Fi | Bluetooth | DVB-T Default Title"
+        },
         "EVision": null
       }
     },
@@ -558,7 +578,11 @@
           "url": "https://rodelag.com/products/televisor-43-qled-smart-serie-q4-fhd-modelo-43q4sv-hisense",
           "titulo_tienda": "Televisor 43\" QLED Smart | serie Q4 FHD, modelo 43Q4SV | Hisense Default Title"
         },
-        "Multimax": null,
+        "Multimax": {
+          "precio": 179.97,
+          "url": "https://www.multimax.net/products/hisense-43q4sv-tv-43-fhd-qled-vidaa-hdmi-usb-dvb-t-60hz",
+          "titulo_tienda": "Televisor Hisense 43Q4SV | VIDAA | 43\" | Full HD | HDMI | USB | Wi-Fi | Bluetooth | DVB-T Default Title"
+        },
         "EVision": null
       }
     },
@@ -578,7 +602,11 @@
           "url": "https://rodelag.com/products/televisor-50-qled-smart-serie-q4-fhd-modelo-50q4sv-hisense-vidda",
           "titulo_tienda": "Televisor 50\" QLED Smart | serie Q4 FHD, modelo 50Q4SV | Hisense | VIDDA Default Title"
         },
-        "Multimax": null,
+        "Multimax": {
+          "precio": 239.97,
+          "url": "https://www.multimax.net/products/hisense-50q4sv-tv-50-fhd-qled-vidaa-hdmi-usb-dvb-t-60hz",
+          "titulo_tienda": "Televisor Hisense 50Q4SV | VIDAA | 50\" | Full HD | HDMI | USB | Wi-Fi | Bluetooth | DVB-T Default Title"
+        },
         "EVision": null
       }
     },
@@ -654,7 +682,11 @@
           "url": "https://rodelag.com/products/hisense-55q6qv-televisores-qled-smart-55-4k-vidaa",
           "titulo_tienda": "Televisor QLED Smart, 55”, 55Q6QV, Hisense, 4K UHD VIDAA con Dolby Vision Atmos Default Title"
         },
-        "Multimax": null,
+        "Multimax": {
+          "precio": 299.97,
+          "url": "https://www.multimax.net/products/hisense-55q6qv-smart-55-qled-tv-uhd-4k-3840x2160-vidaa-hdmi-usb-wifi-lan-bt-60hz",
+          "titulo_tienda": "Televisor Hisense QLED 55Q6QV | VIDAA | 55\" | 4K | HDMI | USB | Wi-Fi | Bluetooth Default Title"
+        },
         "EVision": null
       }
     },
@@ -770,7 +802,11 @@
           "url": "https://rodelag.com/products/televisor-qled-smart-85-85q6qv-hisense-4k-ai",
           "titulo_tienda": "Televisor QLED Smart 85\" 85Q6QV Hisense 4K AI Default Title"
         },
-        "Multimax": null,
+        "Multimax": {
+          "precio": 879.97,
+          "url": "https://www.multimax.net/products/hisense-85q6qv-smart-tv-85-qled-uhd-4k-3840aƒa-2160-vidaa-hdmi-usb-audio-lan-60hz-dvb-t2-isdb-t",
+          "titulo_tienda": "Televisor Hisense QLED 85Q6QV | VIDAA | 85\" | 4K | HDMI | USB | Wi-Fi | Bluetooth | DVB-T Default Title"
+        },
         "EVision": null
       }
     },
@@ -786,7 +822,11 @@
         "Panafoto": null,
         "Novey": null,
         "Rodelag": null,
-        "Multimax": null,
+        "Multimax": {
+          "precio": 249.97,
+          "url": "https://www.multimax.net/products/hisense-50a6nv-smart-50-uhd-tv-4k-3840x2160-vidaa-hdmi-usb-wifi-bt-lan-aux-opt-airplay2-isdb-t",
+          "titulo_tienda": "Televisor Hisense 50A6NV | VIDAA | 50\" | 4K | HDMI | USB | Wi-Fi | Bluetooth Default Title"
+        },
         "EVision": null
       }
     },
@@ -954,7 +994,11 @@
         "Panafoto": null,
         "Novey": null,
         "Rodelag": null,
-        "Multimax": null,
+        "Multimax": {
+          "precio": 129.97,
+          "url": "https://www.multimax.net/products/hisense-tta1107n-11kg-tta1107n-semi-automatica-lavadora",
+          "titulo_tienda": "Lavadora Hisense TTA1107N | 11Kg | Carga Superior Default Title"
+        },
         "EVision": null
       }
     },
@@ -1066,7 +1110,11 @@
         "Panafoto": null,
         "Novey": null,
         "Rodelag": null,
-        "Multimax": null,
+        "Multimax": {
+          "precio": 409.97,
+          "url": "https://www.multimax.net/products/hisense-wd3s1543bt-15kg-10kg-secado-wd3s1543bt-lavadora-secadora-2-en-1-electrica",
+          "titulo_tienda": "Lavadora Secadora Hisense WD3S1543BT | 2 en 1 | Eléctrica | Inverter | Lavado 15 kg - Secado 10 kg | Carga Frontal | Wi-Fi Default Title"
+        },
         "EVision": null
       }
     },
@@ -1194,7 +1242,11 @@
         "Panafoto": null,
         "Novey": null,
         "Rodelag": null,
-        "Multimax": null,
+        "Multimax": {
+          "precio": 799.97,
+          "url": "https://www.multimax.net/products/hisense-rf220si5a-22-1-cu-ft-ice-maker-rf220si5a-3door-refrigeradora",
+          "titulo_tienda": "Refrigeradora Hisense PureFlat RF220SI5A | 22.1 pies cúbicos | French Door | Inverter | Wi-Fi | Acero Inoxidable Default Title"
+        },
         "EVision": null
       }
     },
@@ -1234,7 +1286,11 @@
           "url": "https://rodelag.com/products/refrigeradora-side-by-side-22-3pc-632-litros-rs223sv5a-inverter-hisense",
           "titulo_tienda": "Refrigeradora Side by Side 22.3pc (632 litros) RS223SV5A inverter Hisense Default Title"
         },
-        "Multimax": null,
+        "Multimax": {
+          "precio": 799.97,
+          "url": "https://www.multimax.net/products/hisense-rs223sv5a-22-9-cu-ft-dispensador-agua-hielo-inverter-rs223sv5a-side-by-side-refrigeradora",
+          "titulo_tienda": "Refrigeradora Hisense RS223SV5A | 22.3 pies cúbicos | Side By Side | Inverter | Wi-Fi | Dispensador de Agua | Acero Inoxidable Default Title"
+        },
         "EVision": null
       }
     },
@@ -1286,7 +1342,11 @@
         "Panafoto": null,
         "Novey": null,
         "Rodelag": null,
-        "Multimax": null,
+        "Multimax": {
+          "precio": 1019.97,
+          "url": "https://www.multimax.net/products/hisense-rs190p5esr-15-6-cu-ft-nverter-disp-hielo-y-agua-silver-rs190p5esr-side-by-side-refrigeradora",
+          "titulo_tienda": "Refrigeradora Hisense RS190P5ESR | 18.6 pies cúbicos | Side By Side | Inverter | Dispensador de Agua | Acero Inoxidable Default Title"
+        },
         "EVision": null
       }
     },
@@ -1342,7 +1402,11 @@
         "Panafoto": null,
         "Novey": null,
         "Rodelag": null,
-        "Multimax": null,
+        "Multimax": {
+          "precio": 1399.97,
+          "url": "https://www.multimax.net/products/hisense-rs230nv5a-22-9-cu-ft-dispensador-agua-manual-inverter-rs230nv5a-side-by-side-refrigeradora",
+          "titulo_tienda": "Refrigeradora Hisense RS230NV5A | 22.9 pies cúbicos | Side By Side | Inverter Default Title"
+        },
         "EVision": null
       }
     },
@@ -1666,7 +1730,11 @@
           "url": "https://rodelag.com/products/hisense-refrigirator-top-mount-13-5-cuft-rt3n375naca-inverter-total-no-frost",
           "titulo_tienda": "Refrigeradora 13.5pc Top Mount, modelo RT3N375NACA, no frost, inverter Default Title"
         },
-        "Multimax": null,
+        "Multimax": {
+          "precio": 369.97,
+          "url": "https://www.multimax.net/products/hisense-rt3n375naca-14-ft3-ss-inverter-rt3n375naca-top-mount-refrigeradora",
+          "titulo_tienda": "Refrigeradora Hisense RT3N375NACA | 13.5 pies cúbicos | Top Mount | Inverter | Acero Inoxidable Default Title"
+        },
         "EVision": null
       }
     },
