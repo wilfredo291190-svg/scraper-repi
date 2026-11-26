@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitor de Precios Hisense - Comparativa Clientes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+      <div>
+        <h1 class="text-2xl font-bold text-slate-900">Monitor de Precios — Hisense Panamá</h1>
+        <p class="text-sm text-slate-500">Comparativa: Nuestro Precio Regular / MAP vs. Clientes Retail</p>
+      </div>
+      <div class="bg-white px-4 py-2 rounded-lg shadow-sm border border-slate-200 text-sm">
+        <span class="text-slate-500">Última actualización:</span>
+        <strong id="last-updated" class="text-slate-800">Cargando...</strong>
+      </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 mb-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <input type="text" id="search-input" placeholder="Buscar por Código (ej. 65S7N), BarCode o Producto..." 
+             class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+      <select id="category-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+        <option value="">Todas las Categorías</option>
+      </select>
+      <select id="match-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+        <option value="all">Todos los SKUs</option>
+        <option value="found">Solo con presencia en tiendas</option>
+        <option value="below_map">Con precio por debajo de MAP</option>
+      </select>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-x-auto">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead>
+          <tr class="bg-slate-100 border-b border-slate-200 text-slate-600 uppercase text-xs">
+            <th class="py-3 px-4">Código</th>
+            <th class="py-3 px-4">Producto</th>
+            <th class="py-3 px-4 text-right bg-slate-200/60">Regular</th>
+            <th class="py-3 px-4 text-right bg-teal-50 text-teal-900">MAP BF</th>
+            <th class="py-3 px-4 text-right">Panafoto</th>
+            <th class="py-3 px-4 text-right">Novey</th>
+            <th class="py-3 px-4 text-right">Rodelag</th>
+            <th class="py-3 px-4 text-right">Multimax</th>
+            <th class="py-3 px-4 text-right">EVision</th>
+          </tr>
+        </thead>
+        <tbody id="table-body" class="divide-y divide-slate-100"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let allProducts = [];
+    const stores = ["Panafoto", "Novey", "Rodelag", "Multimax", "EVision"];
+
+    function formatPrice(cellData, mapPrice) {
+      if (!cellData || !cellData.precio) {
+        return `<span class="text-slate-300">—</span>`;
+      }
+      const p = cellData.precio;
+      const isBelowMap = mapPrice && p < mapPrice;
+      const colorClass = isBelowMap ? "text-red-600 font-bold bg-red-50 px-2 py-0.5 rounded" : "text-slate-800 font-medium";
+      return `<a href="${cellData.url}" target="_blank" title="${cellData.titulo_tienda}" class="${colorClass} hover:underline">$${p.toFixed(2)}</a>`;
+    }
+
+    function renderTable() {
+      const query = document.getElementById("search-input").value.toLowerCase();
+      const cat = document.getElementById("category-filter").value;
+      const matchMode = document.getElementById("match-filter").value;
+      const tbody = document.getElementById("table-body");
+      tbody.innerHTML = "";
+
+      const filtered = allProducts.filter(p => {
+        const textMatch = p.codigo.toLowerCase().includes(query) || 
+                          p.descripcion.toLowerCase().includes(query) || 
+                          (p.barcode && p.barcode.includes(query));
+        const catMatch = !cat || p.categoria === cat;
+        const hasAnyStore = stores.some(s => p.tiendas[s] !== null);
+        const hasBelowMap = stores.some(s => p.tiendas[s] && p.map_usd && p.tiendas[s].precio < p.map_usd);
+
+        if (matchMode === "found" && !hasAnyStore) return false;
+        if (matchMode === "below_map" && !hasBelowMap) return false;
+        return textMatch && catMatch;
+      });
+
+      filtered.forEach(p => {
+        const tr = document.createElement("tr");
+        tr.className = "hover:bg-slate-50 transition-colors";
+        tr.innerHTML = `
+          <td class="py-3 px-4 font-mono font-semibold text-slate-900 whitespace-nowrap">${p.codigo}</td>
+          <td class="py-3 px-4 max-w-xs truncate" title="${p.descripcion}">
+            <div class="font-medium text-slate-800 truncate">${p.descripcion}</div>
+            <div class="text-xs text-slate-400">${p.categoria}</div>
+          </td>
+          <td class="py-3 px-4 text-right font-medium text-slate-600 bg-slate-50">$${p.precio_regular ? p.precio_regular.toFixed(2) : "—"}</td>
+          <td class="py-3 px-4 text-right font-bold text-teal-800 bg-teal-50/50">$${p.map_usd ? p.map_usd.toFixed(2) : "—"}</td>
+          ${stores.map(s => `<td class="py-3 px-4 text-right whitespace-nowrap">${formatPrice(p.tiendas[s], p.map_usd)}</td>`).join("")}
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function init() {
+      try {
+        const res = await fetch("data/precios_dashboard.json?t=" + Date.now());
+        const data = await res.json();
+        document.getElementById("last-updated").textContent = data.actualizado;
+        allProducts = data.productos || [];
+
+        const cats = [...new Set(allProducts.map(p => p.categoria).filter(Boolean))].sort();
+        const catSelect = document.getElementById("category-filter");
+        cats.forEach(c => {
+          const opt = document.createElement("option");
+          opt.value = c;
+          opt.textContent = c;
+          catSelect.appendChild(opt);
+        });
+
+        renderTable();
+      } catch (err) {
+        document.getElementById("last-updated").textContent = "Pendiente de primera corrida";
+      }
+    }
+
+    document.getElementById("search-input").addEventListener("input", renderTable);
+    document.getElementById("category-filter").addEventListener("change", renderTable);
+    document.getElementById("match-filter").addEventListener("change", renderTable);
+    init();
+  </script>
+</body>
+</html>
