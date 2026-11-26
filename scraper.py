@@ -67,80 +67,115 @@ def load_catalog():
 def scrape_panafoto(client: httpx.Client):
     items = []
     try:
-        r = client.get("https://www.panafoto.com/categorias/tv-y-video/tv.html", timeout=20)
+        r = client.get("https://www.panafoto.com/catalogsearch/result/?q=Hisense", timeout=25)
         html = r.text
-        app_id_match = re.search(r'"applicationId"\s*:\s*"([A-Z0-9]+)"', html)
-        api_key_match = re.search(r'"apiKey"\s*:\s*"([a-zA-Z0-9]+)"', html)
-        index_match = re.search(r'"indexName"\s*:\s*"([a-zA-Z0-9_]+products)"', html)
         
+        # Buscar llaves de Algolia en el HTML o en scripts referenciados
+        app_id_match = re.search(r'"applicationId"\s*:\s*"([A-Z0-9]{10})"', html)
+        api_key_match = re.search(r'"apiKey"\s*:\s*"([a-f0-9]{32})"', html)
+        index_match = re.search(r'"indexName"\s*:\s*"([a-zA-Z0-9_]+products)"', html)
+
         if not (app_id_match and api_key_match):
-            print("[Panafoto] No se pudieron extraer llaves de Algolia del HTML.")
+            # Buscar dentro de archivos JS cargados en la pagina
+            js_urls = re.findall(r'src="([^"]+\.js[^"]*)"', html)
+            for js_u in js_urls:
+                if "algolia" in js_u.lower() or "config" in js_u.lower() or "bundle" in js_u.lower():
+                    try:
+                        r_js = client.get(js_u if js_u.startswith("http") else f"https://www.panafoto.com{js_u}", timeout=15)
+                        if not app_id_match:
+                            app_id_match = re.search(r'"applicationId"\s*:\s*"([A-Z0-9]{10})"', r_js.text)
+                        if not api_key_match:
+                            api_key_match = re.search(r'"apiKey"\s*:\s*"([a-f0-9]{32})"', r_js.text)
+                        if app_id_match and api_key_match:
+                            break
+                    except Exception:
+                        pass
+
+        if app_id_match and api_key_match:
+            app_id = app_id_match.group(1)
+            api_key = api_key_match.group(1)
+            index_name = index_match.group(1) if index_match else "panafoto_mcprod_cloud_b2c_products"
+            algolia_url = f"https://{app_id}-dsn.algolia.net/1/indexes/{index_name}/query"
+            algolia_headers = {
+                "X-Algolia-Application-Id": app_id,
+                "X-Algolia-API-Key": api_key,
+                "Content-Type": "application/json",
+            }
+            res = client.post(algolia_url, headers=algolia_headers, json={"params": "query=Hisense&hitsPerPage=250"}, timeout=20)
+            for hit in res.json().get("hits", []):
+                price_obj = hit.get("price", {}).get("USD", {})
+                price = price_obj.get("default")
+                if isinstance(price, dict):
+                    price = price.get("default")
+                items.append({
+                    "tienda": "Panafoto",
+                    "sku": str(hit.get("sku", "")),
+                    "barcode": clean_barcode(hit.get("ean") or hit.get("barcode") or ""),
+                    "titulo": str(hit.get("name", "")),
+                    "precio": float(price) if price else None,
+                    "url": str(hit.get("url", "")),
+                })
+            print(f"[Panafoto] Extraidos {len(items)} productos via Algolia.")
             return items
 
-        app_id = app_id_match.group(1)
-        api_key = api_key_match.group(1)
-        index_name = index_match.group(1) if index_match else "panafoto_mcprod_cloud_b2c_products"
-
-        algolia_url = f"https://{app_id}-dsn.algolia.net/1/indexes/{index_name}/query"
-        algolia_headers = {
-            "X-Algolia-Application-Id": app_id,
-            "X-Algolia-API-Key": api_key,
-            "Content-Type": "application/json",
-        }
-        payload = {"params": "query=Hisense&hitsPerPage=250"}
-        res = client.post(algolia_url, headers=algolia_headers, json=payload, timeout=20)
-        data = res.json()
-
-        for hit in data.get("hits", []):
-            price_obj = hit.get("price", {}).get("USD", {})
-            price = price_obj.get("default")
-            if isinstance(price, dict):
-                price = price.get("default")
-            items.append({
-                "tienda": "Panafoto",
-                "sku": str(hit.get("sku", "")),
-                "barcode": clean_barcode(hit.get("ean") or hit.get("barcode") or ""),
-                "titulo": str(hit.get("name", "")),
-                "precio": float(price) if price else None,
-                "url": str(hit.get("url", "")),
-            })
-        print(f"[Panafoto] Extraidos {len(items)} productos via Algolia.")
+        # Fallback: leer tarjetas HTML si Algolia esta ofuscado
+        tree = HTMLParser(html)
+        for card in tree.css(".product-item-info, .product-item"):
+            title_node = card.css_first(".product-item-link, a.product-item-photo")
+            price_node = card.css_first("[data-price-amount]")
+            if title_node and price_node:
+                items.append({
+                    "tienda": "Panafoto",
+                    "sku": "",
+                    "barcode": "",
+                    "titulo": title_node.text(strip=True) or title_node.attributes.get("title", ""),
+                    "precio": float(price_node.attributes.get("data-price-amount", 0)),
+                    "url": title_node.attributes.get("href", ""),
+                })
+        print(f"[Panafoto] HTTP {r.status_code} | Extraidos {len(items)} via HTML (Algolia keys no visibles).")
     except Exception as e:
         print(f"[Panafoto] Error: {e}")
     return items
 
 def scrape_shopify_store(client: httpx.Client, store_name: str, base_url: str):
     items = []
-    endpoints = [
-        f"{base_url}/collections/hisense/products.json?limit=250",
-        f"{base_url}/products.json?limit=250",
-    ]
     seen_ids = set()
-    for ep in endpoints:
-        try:
-            r = client.get(ep, timeout=20)
-            if r.status_code != 200:
-                continue
-            products = r.json().get("products", [])
-            for p in products:
-                if "hisense" not in str(p.get("vendor", "")).lower() and "hisense" not in str(p.get("title", "")).lower():
+    # Paginar hasta 5 paginas (1,250 productos) para no perder articulos de Multimax/Rodelag
+    for page in range(1, 6):
+        endpoints = [
+            f"{base_url}/collections/hisense/products.json?limit=250&page={page}",
+            f"{base_url}/products.json?limit=250&page={page}",
+        ]
+        found_in_page = False
+        for ep in endpoints:
+            try:
+                r = client.get(ep, timeout=20)
+                if r.status_code != 200:
                     continue
-                for v in p.get("variants", []):
-                    vid = v.get("id")
-                    if vid in seen_ids:
+                products = r.json().get("products", [])
+                if products:
+                    found_in_page = True
+                for p in products:
+                    if "hisense" not in str(p.get("vendor", "")).lower() and "hisense" not in str(p.get("title", "")).lower():
                         continue
-                    seen_ids.add(vid)
-                    price = float(v["price"]) if v.get("price") else None
-                    items.append({
-                        "tienda": store_name,
-                        "sku": str(v.get("sku") or ""),
-                        "barcode": clean_barcode(v.get("barcode") or ""),
-                        "titulo": f"{p.get('title', '')} {v.get('title', '')}".strip(),
-                        "precio": price,
-                        "url": f"{base_url}/products/{p.get('handle', '')}",
-                    })
-        except Exception as e:
-            print(f"[{store_name}] Error en {ep}: {e}")
+                    for v in p.get("variants", []):
+                        vid = v.get("id")
+                        if vid in seen_ids:
+                            continue
+                        seen_ids.add(vid)
+                        price = float(v["price"]) if v.get("price") else None
+                        items.append({
+                            "tienda": store_name,
+                            "sku": str(v.get("sku") or ""),
+                            "barcode": clean_barcode(v.get("barcode") or ""),
+                            "titulo": f"{p.get('title', '')} {v.get('title', '')}".strip(),
+                            "precio": price,
+                            "url": f"{base_url}/products/{p.get('handle', '')}",
+                        })
+            except Exception:
+                pass
+        if not found_in_page:
+            break
     print(f"[{store_name}] Extraidos {len(items)} variantes via Shopify JSON.")
     return items
 
@@ -149,22 +184,24 @@ def scrape_evision(client: httpx.Client):
     if items:
         return items
     try:
-        r = client.get("https://www.evisionstore.com/wp-json/wc/store/products?search=Hisense&per_page=100", timeout=20)
-        if r.status_code == 200:
-            for p in r.json():
-                prices = p.get("prices", {})
-                minor = int(prices.get("currency_minor_unit", 2))
-                raw_p = prices.get("price")
-                price = float(raw_p) / (10 ** minor) if raw_p else None
-                items.append({
-                    "tienda": "EVision",
-                    "sku": str(p.get("sku", "")),
-                    "barcode": "",
-                    "titulo": str(p.get("name", "")),
-                    "precio": price,
-                    "url": str(p.get("permalink", "")),
-                })
-        print(f"[EVision] Extraidos {len(items)} productos.")
+        # Probar busqueda directa en EVision y diagnosticar estructura
+        r = client.get("https://www.evisionstore.com/?s=Hisense&post_type=product", timeout=20)
+        tree = HTMLParser(r.text)
+        for card in tree.css(".product, .product-item, .type-product"):
+            title_node = card.css_first("h2, .woocommerce-loop-product__title, .product-title a, a")
+            price_node = card.css_first(".price ins .amount, .price .amount, .price")
+            if title_node and price_node:
+                raw_price = re.sub(r"[^0-9.]", "", price_node.text(strip=True))
+                if raw_price:
+                    items.append({
+                        "tienda": "EVision",
+                        "sku": "",
+                        "barcode": "",
+                        "titulo": title_node.text(strip=True),
+                        "precio": float(raw_price),
+                        "url": title_node.attributes.get("href", "https://www.evisionstore.com"),
+                    })
+        print(f"[EVision] HTTP {r.status_code} | Extraidos {len(items)} productos. (Title page: {tree.css_first('title').text(strip=True) if tree.css_first('title') else 'N/A'})")
     except Exception as e:
         print(f"[EVision] Error: {e}")
     return items
@@ -172,47 +209,33 @@ def scrape_evision(client: httpx.Client):
 def scrape_novey(client: httpx.Client):
     items = []
     try:
-        vtex_url = "https://www.novey.com.pa/api/catalog_system/pub/products/search/hisense?_from=0&_to=99"
-        r = client.get(vtex_url, timeout=20)
-        if r.status_code == 200 and r.headers.get("content-type", "").startswith("application/json"):
-            for p in r.json():
-                for sku_item in p.get("items", []):
-                    sellers = sku_item.get("sellers", [])
-                    price = None
-                    if sellers:
-                        price = sellers[0].get("commertialOffer", {}).get("Price")
-                    ean = sku_item.get("ean", "")
-                    ref_id = ""
-                    for ref in sku_item.get("referenceId", []):
-                        ref_id += " " + str(ref.get("Value", ""))
-                    items.append({
-                        "tienda": "Novey",
-                        "sku": ref_id.strip(),
-                        "barcode": clean_barcode(ean),
-                        "titulo": f"{p.get('productName', '')} {sku_item.get('name', '')}".strip(),
-                        "precio": float(price) if price else None,
-                        "url": f"https://www.novey.com.pa/{p.get('linkText', '')}/p",
-                    })
-            print(f"[Novey] Extraidos {len(items)} productos via API catalogo.")
-            return items
-
         search_url = "https://www.novey.com.pa/catalogsearch/result/?q=Hisense"
-        r_html = client.get(search_url, timeout=20)
-        if r_html.status_code == 200:
-            tree = HTMLParser(r_html.text)
-            for card in tree.css(".product-item-info"):
-                title_node = card.css_first(".product-item-link")
-                price_node = card.css_first("[data-price-amount]")
-                if title_node and price_node:
+        r = client.get(search_url, timeout=25)
+        tree = HTMLParser(r.text)
+        # Buscar en bloques JSON-LD o scripts incrustados de Magento/VTEX
+        for script in tree.css("script"):
+            txt = script.text()
+            if "Hisense" in txt and ("price" in txt or "final_price" in txt):
+                # Extraer pares SKU/nombre/precio si vienen en JSON embebido
+                pass
+        for card in tree.css(".product-item-info, .product-item, [data-product-id]"):
+            title_node = card.css_first(".product-item-link, a[title]")
+            price_node = card.css_first("[data-price-amount], .price")
+            if title_node and price_node:
+                p_val = price_node.attributes.get("data-price-amount")
+                if not p_val:
+                    p_val = re.sub(r"[^0-9.]", "", price_node.text(strip=True))
+                if p_val:
                     items.append({
                         "tienda": "Novey",
                         "sku": "",
                         "barcode": "",
-                        "titulo": title_node.text(strip=True),
-                        "precio": float(price_node.attributes.get("data-price-amount", 0)),
+                        "titulo": title_node.text(strip=True) or title_node.attributes.get("title", ""),
+                        "precio": float(p_val),
                         "url": title_node.attributes.get("href", ""),
                     })
-        print(f"[Novey] Extraidos {len(items)} productos via HTML.")
+        page_title = tree.css_first("title").text(strip=True) if tree.css_first("title") else "N/A"
+        print(f"[Novey] HTTP {r.status_code} | Extraidos {len(items)} productos. (Title page: {page_title})")
     except Exception as e:
         print(f"[Novey] Error: {e}")
     return items
@@ -220,6 +243,7 @@ def scrape_novey(client: httpx.Client):
 def match_products(catalog, scraped_items):
     stores = ["Panafoto", "Novey", "Rodelag", "Multimax", "EVision"]
     results = []
+    total_matches = 0
 
     for sku_row in catalog:
         row_out = {
@@ -251,6 +275,7 @@ def match_products(catalog, scraped_items):
                         break
 
             if matched:
+                total_matches += 1
                 row_out["tiendas"][s] = {
                     "precio": matched["precio"],
                     "url": matched["url"],
@@ -258,6 +283,7 @@ def match_products(catalog, scraped_items):
                 }
 
         results.append(row_out)
+    print(f"Total de coincidencias (matches) cruzadas contra tu Excel: {total_matches}")
     return results
 
 def main():
