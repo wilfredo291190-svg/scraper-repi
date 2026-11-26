@@ -1,5 +1,1742 @@
 {
-  "actualizado": "Sin ejecutar aún",
-  "total_skus": 0,
-  "productos": []
+  "actualizado": "2026-11-26 16:20:08",
+  "total_skus": 94,
+  "productos": [
+    {
+      "categoria": "AGUA",
+      "codigo": "H04WDBB3S1",
+      "barcode": "6976866170512",
+      "descripcion": "HISENSE DISPENSADOR DE AGUA BOTTOM LOADING H04WDBB3S1",
+      "precio_regular": 249.99,
+      "map_usd": 169.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR122KA",
+      "barcode": "6926597767659",
+      "descripcion": "HISENSE AIRE ACONDICIONADO 12K BTU SEER 17 ATR122KA",
+      "precio_regular": 499.99,
+      "map_usd": 289.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR182KA",
+      "barcode": "6926597767680",
+      "descripcion": "HISENSE AIRE ACONDICIONADO 17K BTU SEER 16.5 ATR182KA",
+      "precio_regular": 679.99,
+      "map_usd": 389.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 389.99,
+          "url": "https://rodelag.com/products/aire-acondicionado-split-18000btu-atr182ka-hisense-inverter",
+          "titulo_tienda": "Aire acondicionado Split 18000BTU ATR182KA Hisense inverter Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR242KA",
+      "barcode": "6926597767710",
+      "descripcion": "HISENSE AIRE ACONDICIONADO 22K BTU SEER 17.5 ATR242KA",
+      "precio_regular": 859.99,
+      "map_usd": 489.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR362GU",
+      "barcode": "6926597767741",
+      "descripcion": "HISENSE AIRE ACONDICIONADO 36K BTU SEER 17.5 ATR362GU",
+      "precio_regular": 1599.99,
+      "map_usd": 949.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 949.99,
+          "url": "https://rodelag.com/products/hisense-aire-acondicionado-split-inverter-36-000-btu-atr362gu",
+          "titulo_tienda": "Aire acondicionado Split ATR362GU de 36000 BTU inverter Hisense Default Title"
+        },
+        "Multimax": {
+          "precio": 949.97,
+          "url": "https://www.multimax.net/products/kit-promo-hisense-atr362gu-36-000-btu-inverter-r32-a-c",
+          "titulo_tienda": "Aire Acondicionado Hisense ATR362GU | Inverter | 36,000 BTU | Wi-Fi | SEER 20 Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR122CJ",
+      "barcode": "6926597793672",
+      "descripcion": "HISENSE AIRE ACONDICIONADO MINI SPLIT 12000 BTUH 220V60HZ R32SEER 18INVERTER WIFI ATR122CJ",
+      "precio_regular": 499.99,
+      "map_usd": 279.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 279.99,
+          "url": "https://rodelag.com/products/aire-acondicionado-split-inverter-12-000-btu-atr122cj-hisense-control-wi-fi",
+          "titulo_tienda": "Aire acondicionado Split inverter 12,000 BTU, ATR122CJ Hisense, control Wi-fi Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR122HB",
+      "barcode": "6926597774244",
+      "descripcion": "HISENSE AIRE ACONDICIONADO MINI SPLIT 12000 BTUH 230V60HZ R32 SEER 21 INVERTER WIFI ATR122HB",
+      "precio_regular": 619.99,
+      "map_usd": 369.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 369.99,
+          "url": "https://rodelag.com/products/aire-acondicionado-split-inverter-12000btu-atr122hb-negro-hisense-seer-21-wi-fi",
+          "titulo_tienda": "Aire acondicionado Split Inverter 12000BTU, ATR122HB negro Hisense SEER 21, Wi-Fi. Default Title"
+        },
+        "Multimax": {
+          "precio": 369.97,
+          "url": "https://www.multimax.net/products/hisense-atr122hb-12-000btu-r32-wifi-negro-seer-21-a-c-split-inverter",
+          "titulo_tienda": "Aire Acondicionado Hisense ATR122HB | Inverter | 12,000 BTU | Wi-Fi | SEER 21 Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR182CJ",
+      "barcode": "6926597793702",
+      "descripcion": "HISENSE AIRE ACONDICIONADO MINI SPLIT 18000 BTUH 220V60HZ R32 SEER 18 INVERTERWIFI INDOOR UNIT ATR182CJ",
+      "precio_regular": 679.99,
+      "map_usd": 379.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 379.99,
+          "url": "https://rodelag.com/products/aire-acondicionado-split-inverter-18-000-btu-atr182cj-hisense-control-wi-fi",
+          "titulo_tienda": "Aire acondicionado Split inverter 18,000 BTU, ATR182CJ Hisense, control Wi-fi Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR182HB",
+      "barcode": "6926597774275",
+      "descripcion": "HISENSE AIRE ACONDICIONADO MINI SPLIT 18000 BTUH 230V60HZ R32 SEER 20 INVERTER WIFI ATR182HB",
+      "precio_regular": 919.99,
+      "map_usd": 499.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 499.99,
+          "url": "https://rodelag.com/products/aire-acondicionado-split-inverter-18000btu-atr182hb-negro-hisense-seer-20-wi-fi",
+          "titulo_tienda": "Aire acondicionado Split Inverter 18000BTU, ATR182HB negro Hisense SEER 20, Wi-Fi. Default Title"
+        },
+        "Multimax": {
+          "precio": 499.97,
+          "url": "https://www.multimax.net/products/aire-acondicionado-hisense-premium-series-atr182hb-18-000btu-inverter-seer-20-wifi",
+          "titulo_tienda": "Aire Acondicionado Hisense Premium ATR182HB | Inverter | 18,000 BTU | Wi-Fi | SEER 20 Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR242HB",
+      "barcode": "6926597774305",
+      "descripcion": "HISENSE AIRE ACONDICIONADO MINI SPLIT 24000 BTUH 230V60HZ R32 SEER 20 INVERTER WIFI ATR242HB",
+      "precio_regular": 1119.99,
+      "map_usd": 589.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": {
+          "precio": 1119.97,
+          "url": "https://www.multimax.net/products/hisense-atr242hb-24-000btu-r32-wifi-negro-seer-19-98-a-c-split-inverter",
+          "titulo_tienda": "Aire Acondicionado Hisense Premium ATR242HB | Inverter | 24,000 BTU | Wi-Fi | SEER 19.98 Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR242CJ",
+      "barcode": "6926597793696",
+      "descripcion": "HISENSE AIRE ACONDICIONADO MINI SPLIT 24000 BTUH 230V60HZ R32SEER 19INVERTERWIFI ATR242CJ",
+      "precio_regular": 859.99,
+      "map_usd": 479.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 479.99,
+          "url": "https://rodelag.com/products/hisense-aire-acondicionado-split-inverter-24-000-btu-atr242cj",
+          "titulo_tienda": "Aire acondicionado Split inverter 24,000 BTU, ATR242CJ Hisense, control Wi-fi Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR092KA",
+      "barcode": "6926597784830",
+      "descripcion": "HISENSE AIRE ACONDICIONADO MINI SPLIT 9K BTU INVERTER INDOOR UNIT ATR092KA",
+      "precio_regular": 399.99,
+      "map_usd": 249.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "36TR5RE3",
+      "barcode": "",
+      "descripcion": "HISENSE AIRE ACONDICIONADO PISO TECHO 36K BTU AUV-36TR5RE3 y AUW-36T5RK3 (EQUIPO COMPLETO) 36TR5RE3",
+      "precio_regular": 1599.99,
+      "map_usd": 1399.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "60TR5RF3",
+      "barcode": "",
+      "descripcion": "HISENSE AIRE ACONDICIONADO PISO TECHO 52K BTU AUV-60TR5RF3 y AUW-60T5RQ3 (EQUIPO COMPLETO) 60TR5RF3",
+      "precio_regular": 2199.99,
+      "map_usd": 1999.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "AP-12CW1RNXS20",
+      "barcode": "6926597711652",
+      "descripcion": "HISENSE AIRE ACONDICIONADO PORTATIL 12KBTU. ON/OFF WI-FI R-32 BLANCO. AP-12CW1RNXS20",
+      "precio_regular": 399.99,
+      "map_usd": 279.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 259.98,
+          "url": "https://rodelag.com/products/aire-acondicionado-portatil-12-000btu-modeloap-12cw1rnxs20-hisense",
+          "titulo_tienda": "Aire Acondicionado Portátil con Wifi 12000 BTU AP-12CW1RNXS20 Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "AP-14CW1RNXS20",
+      "barcode": "6926597746616",
+      "descripcion": "HISENSE AIRE ACONDICIONADO PORTATIL 14KBTU. ON/OFF WI-FI R-32 GRIS. AP-14CW1RNXS20",
+      "precio_regular": 459.99,
+      "map_usd": 319.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 309.98,
+          "url": "https://rodelag.com/products/aire-acondicionado-portatil-14000-btu-ap-14cw1rnxs20-hisense",
+          "titulo_tienda": "Aire acondicionado portátil 14000 BTU AP-14CW1RNXS20 Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR122HA",
+      "barcode": "6926597774121",
+      "descripcion": "HISENSE AIRE ACONDICIONADO SPLIT INVERTER PREMIUM 12K BTU SEER 21 WIFI ATR122HA",
+      "precio_regular": 599.99,
+      "map_usd": 349.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 349.99,
+          "url": "https://rodelag.com/products/aire-acondicionado-split-de-12000btu-atr122ha-de-hisense-wi-fi-seer-21",
+          "titulo_tienda": "Aire acondicionado Split de 12000BTU ATR122HA de Hisense Wi-Fi SEER 21 Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR182HA",
+      "barcode": "6926597774152",
+      "descripcion": "HISENSE AIRE ACONDICIONADO SPLIT INVERTER PREMIUM 18K BTU SEER 20 WIFI ATR182HA",
+      "precio_regular": 899.99,
+      "map_usd": 499.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 475.98,
+          "url": "https://rodelag.com/products/aire-acondicionado-split-de-18000btu-atr182ha-de-hisense-wi-fi-seer-20",
+          "titulo_tienda": "Aire acondicionado Split de 18000BTU ATR182HA de Hisense Wi-Fi SEER 20 Default Title"
+        },
+        "Multimax": {
+          "precio": 479.97,
+          "url": "https://www.multimax.net/products/hisense-atr182ha-18-000btu-r32-wifi-seer-20-blanco-a-c-split-inverter",
+          "titulo_tienda": "Aire Acondicionado Hisense ATR182HA | Inverter | 18,000 BTU | Wi-Fi | SEER 20 Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "ATR242HA",
+      "barcode": "6926597774183",
+      "descripcion": "HISENSE AIRE ACONDICIONADO SPLIT INVERTER PREMIUM 24K BTU SEER 20 WIFI ATR242HA",
+      "precio_regular": 1099.99,
+      "map_usd": 569.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 569.99,
+          "url": "https://rodelag.com/products/aire-acondicionado-split-24000-btu-atr242ha-hisense-inverter-seer-20-wi-fi",
+          "titulo_tienda": "Aire acondicionado Split 24000 BTU ATR242HA  Hisense Inverter SEER 20 Wi-Fi Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "AIRE ACONDICIONADO",
+      "codigo": "DH-50KP1SJXE30",
+      "barcode": "6926597734996",
+      "descripcion": "HISENSE DESHUMIDIFICADOR 50 PINTAS 2 VELOCIDADES DH-50KP1SJXE30",
+      "precio_regular": 299.99,
+      "map_usd": 179.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 169.98,
+          "url": "https://rodelag.com/products/deshumificador-50-pintas-2-velocidades-dh-50kp1sjxe30-hisense",
+          "titulo_tienda": "Deshumificador 50 pintas DH-50KP1SJXE30 Hisense 2 velocidades Default Title"
+        },
+        "Multimax": {
+          "precio": 179.97,
+          "url": "https://www.multimax.net/products/hisense-dh-50kp1sjxe30-varios-deshumidificador-50-pintas-electrodomesticos",
+          "titulo_tienda": "Deshumidificador Hisense DH-50KP1SJXE30 | 50 pintas/día Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "PARTY ROCKER ONE",
+      "barcode": "6942147482315",
+      "descripcion": "HISENSE AUDIO PARTY ROCKER ONE 300W WITH BATTERY BUILTIN HP100 PARTY ROCKER ONE",
+      "precio_regular": 339.99,
+      "map_usd": 199.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "PARTY THUNDER",
+      "barcode": "6942351424965",
+      "descripcion": "HISENSE AUDIO PARTY THUNDER 620W 2X 6.5IN SUBWOOFER 10 FLASH LIGHTS HP500 PARTY THUNDER",
+      "precio_regular": 489.99,
+      "map_usd": 349.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "HS2100",
+      "barcode": "6942147497937",
+      "descripcion": "HISENSE AUDIO SOUNDBAR 2.1CH WITH SUBWOOFER TOTAL240W HS2100",
+      "precio_regular": 189.99,
+      "map_usd": 109.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 89.98,
+          "url": "https://rodelag.com/products/barra-de-sonido-hs2100-2-1ch-240w-hisense",
+          "titulo_tienda": "Barra de sonido HS2100, 2.1CH, 240W Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "HS3100",
+      "barcode": "6942351409085",
+      "descripcion": "HISENSE AUDIO SOUNDBAR 3.1CH 480W MAX AUDIO POWER WITH A SUBWOOFER DOLBY AUDIO HS3100",
+      "precio_regular": 199.99,
+      "map_usd": 129.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 129.98,
+          "url": "https://rodelag.com/products/barra-de-sonido-hs3100-hisense-3-1ch-subwoofer-240w",
+          "titulo_tienda": "Barra de sonido HS3100 Hisense 3.1CH, SubWoofer 240W Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "HS1000",
+      "barcode": "6942351422640",
+      "descripcion": "HISENSE SOUNDBAR 2.0CH120WBT5.3DOLBY DIGITAL/DTS VIRTUALX HS1000",
+      "precio_regular": 139.99,
+      "map_usd": 79.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "58Q6QV",
+      "barcode": "6942351427133",
+      "descripcion": "HISENSE TELEVISION QLED 58IN SERIE Q6 60HZ VIDAA OS 2.0 CH 58Q6QV",
+      "precio_regular": 599.99,
+      "map_usd": 359.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 359.99,
+          "url": "https://rodelag.com/products/televisor-58-qled-smart-58q6qv-hisense-4k-sistema-operativo-vidaa",
+          "titulo_tienda": "Televisor 58\" QLED Smart, 58Q6QV Hisense 4K sistema operativo VIDAA Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "116UX",
+      "barcode": "888143024066",
+      "descripcion": "HISENSE TELEVISOR 116IN RGB MINILED GOOGLE TV 165HZ 116UX",
+      "precio_regular": 26999.99,
+      "map_usd": 24999.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "40Q4SV",
+      "barcode": "6942351426297",
+      "descripcion": "HISENSE TELEVISOR 2K QLED 40IN SERIE Q4 60HZ VIDAA OS 2.0 CH 40Q4SV",
+      "precio_regular": 269.99,
+      "map_usd": 159.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 149.98,
+          "url": "https://rodelag.com/products/televisor-40-led-smart-serie-q4-modelo-40q4sv-hisense",
+          "titulo_tienda": "Televisor 40\" QLED Smart | serie Q4 modelo 40Q4SV | Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "43Q4SV",
+      "barcode": "6942351427744",
+      "descripcion": "HISENSE TELEVISOR 2K QLED 43IN SERIE Q4 60HZ VIDAA OS 2.0 CH 43Q4SV",
+      "precio_regular": 299.99,
+      "map_usd": 189.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 179.98,
+          "url": "https://rodelag.com/products/televisor-43-qled-smart-serie-q4-fhd-modelo-43q4sv-hisense",
+          "titulo_tienda": "Televisor 43\" QLED Smart | serie Q4 FHD, modelo 43Q4SV | Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "50Q4SV",
+      "barcode": "6942351427751",
+      "descripcion": "HISENSE TELEVISOR 2K QLED 50IN SERIE Q4 60HZ VIDAA OS 2.0 CH 50Q4SV",
+      "precio_regular": 399.99,
+      "map_usd": 239.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 239.99,
+          "url": "https://rodelag.com/products/televisor-50-qled-smart-serie-q4-fhd-modelo-50q4sv-hisense-vidda",
+          "titulo_tienda": "Televisor 50\" QLED Smart | serie Q4 FHD, modelo 50Q4SV | Hisense | VIDDA Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "43QD5SV",
+      "barcode": "6942351438740",
+      "descripcion": "HISENSE TELEVISOR 4K QLED 43IN SERIE QD5 60HZ VIDAA OS 2.0 CH 43QD5SV",
+      "precio_regular": 319.99,
+      "map_usd": 199.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 199.99,
+          "url": "https://rodelag.com/products/televisor-43-qled-smart-serie-qd5-4k-modelo-43qd5sv-hisense",
+          "titulo_tienda": "Televisor 43\" QLED Smart | serie QD5 4K, modelo 43QD5SV | Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "50QD5SV",
+      "barcode": "6942351438306",
+      "descripcion": "HISENSE TELEVISOR 4K QLED 50IN SERIE QD5 60HZ VIDAA OS 2.0 CH 50QD5SV",
+      "precio_regular": 503.99,
+      "map_usd": 279.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "65QD5SV",
+      "barcode": "6942351438313",
+      "descripcion": "HISENSE TELEVISOR 4K QLED 65IN SERIE QD5 60HZ VIDAA OS 2.0 CH 65QD5SV",
+      "precio_regular": 679.99,
+      "map_usd": 399.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 389.98,
+          "url": "https://rodelag.com/products/televisor-65-qled-smart-serie-qd5-4k-ultra-hd-modelo-65qd5sv-hisense",
+          "titulo_tienda": "Televisor 65\" QLED Smart | serie QD5 4K Ultra HD, modelo 65QD5SV | Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "55Q6QV",
+      "barcode": "6942351421797",
+      "descripcion": "HISENSE TELEVISOR 55 IN QLED QUANTUM DOT VIDAA SYSTEM HDR10 DOLBY VISION&ATMOSBT FAR FIELD VOICE HISENE 55IN NETFLIXYOUTUBE PRIMEVIDEO DISNEY HBO MAX 55Q6QV",
+      "precio_regular": 459.99,
+      "map_usd": 309.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 299.98,
+          "url": "https://rodelag.com/products/hisense-55q6qv-televisores-qled-smart-55-4k-vidaa",
+          "titulo_tienda": "Televisor QLED Smart, 55”, 55Q6QV, Hisense, 4K UHD VIDAA con Dolby Vision Atmos Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "65Q6QV",
+      "barcode": "6942351421803",
+      "descripcion": "HISENSE TELEVISOR 65IN QLED QUANTUM DOT VIDAA SYSTEM HDR10 DOLBY VISION&ATMOSBT FAR FIELD VOICE NETFLIXYOUTUBE PRIMEVIDEO DISNEY HBO MAX 65Q6QV",
+      "precio_regular": 699.99,
+      "map_usd": 399.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 389.98,
+          "url": "https://rodelag.com/products/hisense-65q6qv-televisores-qled-smart-65-vidaa",
+          "titulo_tienda": "Televisor QLED Smart 65\" 65Q6QV Hisense VIDAA Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "85S7N",
+      "barcode": "888143021881",
+      "descripcion": "HISENSE TELEVISOR CLASS QLED 4K S7N DE 85IN CANVAS 85S7N",
+      "precio_regular": 3499.99,
+      "map_usd": 1399.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 1399.99,
+          "url": "https://rodelag.com/products/hisense-85s7n-televisores-qled-smart-85-canvas",
+          "titulo_tienda": "Televisor 85\" QLED Smart Canvas 85S7N Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "40A4NV",
+      "barcode": "6942351414317",
+      "descripcion": "HISENSE TELEVISOR FHD 2K TV VIDAA SYSTEM DTS VIRTUAL:X BT WIFI 40A4NV",
+      "precio_regular": 249.99,
+      "map_usd": 149.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "98Q6QG",
+      "barcode": "6942351424507",
+      "descripcion": "HISENSE TELEVISOR QLED 98 IN GOOGLE TV 98Q6QG",
+      "precio_regular": 2199.99,
+      "map_usd": 1299.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 1299.99,
+          "url": "https://rodelag.com/products/hisense-98q6qg-televisores-qled-smart-98-4k-google-tv",
+          "titulo_tienda": "Televisor QLED Smart, 98”, 98Q6QG, Hisense, 4K Google TV Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "75Q6QV",
+      "barcode": "6942351421810",
+      "descripcion": "HISENSE TELEVISOR QLED QUANTUM DOT VIDAA SYSTEM HDR10 DOLBY VISION&ATMOSBT 75Q6QV",
+      "precio_regular": 899.99,
+      "map_usd": 619.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 579.98,
+          "url": "https://rodelag.com/products/televisor-qled-smart-75-75q6qv-hisense-vidaa",
+          "titulo_tienda": "Televisor QLED Smart 75\" 75Q6QV Hisense VIDAA Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "85Q6QV",
+      "barcode": "6942351422107",
+      "descripcion": "HISENSE TELEVISOR QLED QUANTUM DOT VIDAA SYSTEM HDR10 DOLBY VISION&ATMOSBT 85Q6QV",
+      "precio_regular": 1299.99,
+      "map_usd": 879.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 879.99,
+          "url": "https://rodelag.com/products/televisor-qled-smart-85-85q6qv-hisense-4k-ai",
+          "titulo_tienda": "Televisor QLED Smart 85\" 85Q6QV Hisense 4K AI Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "50A6NV",
+      "barcode": "888143018515",
+      "descripcion": "HISENSE TELEVISOR UHD DE 50IN 50A6NV VIDAA HDMI USB WI-FI BLUETOOTH LAN 50A6NV",
+      "precio_regular": 389.99,
+      "map_usd": 269.99,
+      "disponibilidad": "Descontinuado",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "65A6NV",
+      "barcode": "888143019000",
+      "descripcion": "HISENSE TELEVISOR UHD DE 65IN 4K VIDAA HDMI USB WI-FI BLUETOOTH 65A6NV",
+      "precio_regular": 619.99,
+      "map_usd": 389.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "100U7QG",
+      "barcode": "6942351422084",
+      "descripcion": "HISENSE TELEVISOR ULED MINI LED 100IN SERIE U7 144HZ GOOGLE OS 2.1 CH 100U7QG",
+      "precio_regular": 3299.99,
+      "map_usd": 1999.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 3299.99,
+          "url": "https://rodelag.com/products/televisor-100-mini-led-smart-serie-u7-modelo-100u7qg-hisense-google-tv",
+          "titulo_tienda": "Televisor 100\" Mini LED Smart | serie u7, modelo 100U7QG | Hisense | Google TV Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "75U6ESV",
+      "barcode": "6942351427829",
+      "descripcion": "HISENSE TELEVISOR ULED MINI LED 75IN SERIE U6 60HZ VIDAA OS 2.0 CH 75U6ESV",
+      "precio_regular": 1199.99,
+      "map_usd": 699.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 699.99,
+          "url": "https://rodelag.com/products/hisense-75u6esv-televisores-mini-led-smart-75-vidaa-serie-u6",
+          "titulo_tienda": "Televisor 75\" ULED Mini LED Smart | serie U6 modelo 75U6ESV | Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "ELECTRONICA",
+      "codigo": "85U7QG",
+      "barcode": "6942351422077",
+      "descripcion": "HISENSE TELEVISOR ULED MINI LED 85IN SERIE U7 144HZ GOOGLE OS 2.1 CH 85U7QG",
+      "precio_regular": 1699.99,
+      "map_usd": 1199.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "WT3K1123UT",
+      "barcode": "6901101834027",
+      "descripcion": "HISENSE LAVADORA CARGA SUPERIOR 10.5KG WT3K1123UT",
+      "precio_regular": 199.99,
+      "map_usd": 179.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 179.98,
+          "url": "https://rodelag.com/products/lavadora-10-5kg-wt3k1123ut-hisense-carga-superior-color-titanium-grey-super-clean",
+          "titulo_tienda": "Lavadora 10.5kg WT3K1123UT Hisense, carga superior, color Titanium Grey, Super Clean Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "WT5I2023DB",
+      "barcode": "6901101833136",
+      "descripcion": "HISENSE LAVADORA CARGA SUPERIOR 20KG WT5I2023DB",
+      "precio_regular": 489.99,
+      "map_usd": 309.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 309.98,
+          "url": "https://rodelag.com/products/lavadora-automatica-20kg-wt5i2023db-hisense-color-negro",
+          "titulo_tienda": "Lavadora automática 20kg WT5I2023DB Hisense color negro Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "WT5I2223DB",
+      "barcode": "6901101833129",
+      "descripcion": "HISENSE LAVADORA CARGA SUPERIOR 22KG INVERTER WT5I2223DB",
+      "precio_regular": 559.99,
+      "map_usd": 339.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": {
+          "precio": 339.97,
+          "url": "https://www.multimax.net/products/hisense-wt5i2223db-22kg-negro-wt5i2223db-lavadora-carga-superior",
+          "titulo_tienda": "Lavadora Hisense WT5I2223DB | 22KG | Carga Superior Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "WT5I2323UBA",
+      "barcode": "6901101837257",
+      "descripcion": "HISENSE LAVADORA CARGA SUPERIOR 23KG CON AGITADOR WT5I2323UBA",
+      "precio_regular": 439.99,
+      "map_usd": 379.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 379.98,
+          "url": "https://rodelag.com/products/lavadora-23kg-wt5i2323uba-hisense-carga-superior-con-agitador",
+          "titulo_tienda": "Lavadora 23kg, WT5I2323UBA Hisense, carga superior con agitador Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "TTA1107N",
+      "barcode": "6901101829320",
+      "descripcion": "HISENSE LAVADORA DOBLE TINA SEMI AUTOMATICA 11 KG TTA1107N",
+      "precio_regular": 129.99,
+      "map_usd": 129.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "TTA1307N",
+      "barcode": "6901101829337",
+      "descripcion": "HISENSE LAVADORA DOBLE TINA SEMIAUTOMATICA 13 KG TTA1307N",
+      "precio_regular": 149.99,
+      "map_usd": 149.99,
+      "disponibilidad": "Descontinuado",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": {
+          "precio": 149.97,
+          "url": "https://www.multimax.net/products/hisense-tta1307n-13kg-tta1307n-semi-automatica-lavadora",
+          "titulo_tienda": "Lavadora Hisense TTA1307N | 13kg | Semi-Automática | Carga Superior Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "TTA1507N",
+      "barcode": "6901101829344",
+      "descripcion": "HISENSE LAVADORA DOBLE TINA SEMIAUTOMATICA 15 KG TTA1507N",
+      "precio_regular": 159.99,
+      "map_usd": 159.99,
+      "disponibilidad": "Descontinuado",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "WT5K1423DT",
+      "barcode": "6901101832566",
+      "descripcion": "HISENSE LAVADORA IBUBBLE DD INVERTER AQUA SAVE QUICK 14 KG WT5K1423DT",
+      "precio_regular": 359.99,
+      "map_usd": 209.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 209.98,
+          "url": "https://rodelag.com/products/lavadora-14kg-wt5k1423dt-ibubble-dd-inverter",
+          "titulo_tienda": "Lavadora 14kg WT5K1423DT Ibubble DD Inverter Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "WT5K1623DT",
+      "barcode": "6901101832573",
+      "descripcion": "HISENSE LAVADORA TOP LOAD 16 KG GRIS 8 CICLOS DE LAVADO WT5K1623DT",
+      "precio_regular": 419.99,
+      "map_usd": 239.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 239.98,
+          "url": "https://rodelag.com/products/lavadora-automatica16-kg-top-load-wt5k1623dt-hisense-gris-titanio",
+          "titulo_tienda": "Lavadora automática16 kg Top Load WT5K1623DT Hisense gris titanio Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "WT3T2323UW",
+      "barcode": "6901101828729",
+      "descripcion": "HISENSE LAVADORA TOP LOAD 23 KG BLANCA WT3T2323UW",
+      "precio_regular": 549.99,
+      "map_usd": 369.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 369.98,
+          "url": "https://rodelag.com/products/lavadora-23kg-wt3t2323uw-hisense-color-blanco-carga-superior",
+          "titulo_tienda": "Lavadora 23kg WT3T2323UW Hisense color blanco carga superior Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "LAVANDERIA",
+      "codigo": "WD3S1543BT",
+      "barcode": "6901101829542",
+      "descripcion": "HISENSE LAVASECA 15KG/10KG CON WIFI Y VAPOR WD3S1543BT",
+      "precio_regular": 539.99,
+      "map_usd": 409.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "HBC164N6SS",
+      "barcode": "810088366987",
+      "descripcion": "HISENSE CENTRO DE BEBIDAS 5.4FT 164-CANS HBC164N6SS",
+      "precio_regular": 429.99,
+      "map_usd": 329.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "FT100N1SWR",
+      "barcode": "6979048653179",
+      "descripcion": "HISENSE CHEST FREEZER 3.4 CUFT INVERTER",
+      "precio_regular": 179.99,
+      "map_usd": 139.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "FT145N1SWR",
+      "barcode": "6979048651748",
+      "descripcion": "HISENSE CHEST FREEZER 5.0 CUFT INVERTER",
+      "precio_regular": 219.99,
+      "map_usd": 169.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "FT200N1SWR",
+      "barcode": "6979048651755",
+      "descripcion": "HISENSE CHEST FREEZER 7.0 CUFT INVERTER",
+      "precio_regular": 259.99,
+      "map_usd": 199.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "FC34D6BWXE",
+      "barcode": "6921727065469",
+      "descripcion": "HISENSE CONGELADOR CHEST FREEZER 3.4 CU FT FC34D6BWXE",
+      "precio_regular": 189.99,
+      "map_usd": 129.99,
+      "disponibilidad": "Descontinuado",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "FC70D6BWXE",
+      "barcode": "6921727065278",
+      "descripcion": "HISENSE CONGELAR CHEST FREEZER 7.0 CU FT ELECT CNTRL FC70D6BWXE",
+      "precio_regular": 269.99,
+      "map_usd": 189.99,
+      "disponibilidad": "Descontinuado",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RQ3P431NMDA",
+      "barcode": "6921727093714",
+      "descripcion": "HISENSE REFRIGERADOR CROSS DOOR 14 FT INVERTER SS LOOK PURE FLAT DESIGN TRIPLE ZONE RQ3P431NMDA",
+      "precio_regular": 769.99,
+      "map_usd": 499.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RF220SI5A",
+      "barcode": "6921727075222",
+      "descripcion": "HISENSE REFRIGERADOR FRENCH DOOR 22 CU FT INVERTER WI-FI RF220SI5A",
+      "precio_regular": 1099.99,
+      "map_usd": 799.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT1N250NMD",
+      "barcode": "6921727091628",
+      "descripcion": "HISENSE REFRIGERADOR HISENSE TOP MOUNT 8.8 CU INVERTER FT 250LT RT1N250NMD",
+      "precio_regular": 399.99,
+      "map_usd": 299.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 299.98,
+          "url": "https://rodelag.com/products/refrigeradora-top-mount-9pc-rt1n250nmd-hisense",
+          "titulo_tienda": "Refrigeradora Top Mount 9pc RT1N250NMD Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RS223SV5A",
+      "barcode": "6921727083388",
+      "descripcion": "HISENSE REFRIGERADOR SBS 22.3 CU FT INVERTER AUTO ICE WATER DISP RS223SV5A",
+      "precio_regular": 1079.99,
+      "map_usd": 799.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 799.98,
+          "url": "https://rodelag.com/products/refrigeradora-side-by-side-22-3pc-632-litros-rs223sv5a-inverter-hisense",
+          "titulo_tienda": "Refrigeradora Side by Side 22.3pc (632 litros) RS223SV5A inverter Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RS3P428NEDA1",
+      "barcode": "6921727092373",
+      "descripcion": "HISENSE REFRIGERADOR SBS SIDEBYSIDE 16 CU FT INVERTER RS3P428NEDA1",
+      "precio_regular": 659.99,
+      "map_usd": 449.99,
+      "disponibilidad": "Descontinuado",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RS3P428NEDA2",
+      "barcode": "6921727099273",
+      "descripcion": "HISENSE REFRIGERADOR SIDE BY SIDE 15.6 FT SLIM FIT RS3P428NEDA2",
+      "precio_regular": 659.99,
+      "map_usd": 449.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 449.98,
+          "url": "https://rodelag.com/products/refrigeradora-slim-fit-15-6pc-rs3p428neda2-hisense-sistema-multi-airflow-acero-inoxidable-no-frost",
+          "titulo_tienda": "Refrigeradora Slim Fit, 15.6pc, RS3P428NEDA2; Hisense, Sistema Multi Airflow, acero inoxidable, No Frost Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RS190P5ESR",
+      "barcode": "6979048653018",
+      "descripcion": "HISENSE REFRIGERADOR SIDE BY SIDE 18.6 CUFT INVERTER AUTO ICE & WATER DISPENSER RS190P5ESR",
+      "precio_regular": 1019.99,
+      "map_usd": 759.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RS3P558NMCB",
+      "barcode": "6921727092571",
+      "descripcion": "HISENSE REFRIGERADOR SIDE BY SIDE 19.1 CUFT INVERTER MANUAL WATER DISPENSER RS3P558NMCB INOX",
+      "precio_regular": 749.99,
+      "map_usd": 499.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": {
+          "precio": 499.97,
+          "url": "https://www.multimax.net/products/hisense-rs3p558nmcb-19-1-cu-ft-gris-dispensador-rs3p558nmcb-side-by-side-refrigeradora",
+          "titulo_tienda": "Refrigeradora Hisense RS3P558NMCB | 19.1 pies cúbicos | Side By Side | Inverter | Wi-Fi | Dispensador de Agua Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RS3P558NM1B",
+      "barcode": "6921727094254",
+      "descripcion": "HISENSE REFRIGERADOR SIDE BY SIDE 19.1 FT INVERTER GLASS NEGRO RS3P558NM1B",
+      "precio_regular": 939.99,
+      "map_usd": 589.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": {
+          "precio": 589.97,
+          "url": "https://www.multimax.net/products/hisense-rs3p558nm1b-19-cu-ft-inverter-black-glass-disp-rs3p558nm1b-side-by-side-refrigeradora",
+          "titulo_tienda": "Refrigeradora Hisense RS3P558NM1B | 19 pies cúbicos | Side By Side | Inverter Default Title"
+        },
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RS230NV5A",
+      "barcode": "6979048652370",
+      "descripcion": "HISENSE REFRIGERADOR SIDE BY SIDE 23 FT INVERTER S DISPENSADOR RS230NV5A",
+      "precio_regular": 949.99,
+      "map_usd": 649.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT3N320NACA",
+      "barcode": "6979048652912",
+      "descripcion": "HISENSE REFRIGERADOR TOP MOUNT 11.48 CUFT INVERTER MANUAL WATER DISPENSER RT3N320NACA",
+      "precio_regular": 469.99,
+      "map_usd": 319.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 319.98,
+          "url": "https://rodelag.com/products/hisense-refrigeradora-top-mount-11-5-pc-rt3n320naca-fresh-zone-bandejas-ajustables",
+          "titulo_tienda": "Refrigeradora 11.5 pc. RT3N320NACA Hisense, Top mount, color acero inoxidable refinado. Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT1N320NMDA",
+      "barcode": "6921727086211",
+      "descripcion": "HISENSE REFRIGERADOR TOP MOUNT 11.5 CU FT INVERTER RT1N320NMDA",
+      "precio_regular": 499.99,
+      "map_usd": 299.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 499.99,
+          "url": "https://rodelag.com/products/hisense-refrigeradora-top-mount-11-5-pc-rt1n320nmda-fresh-zone-bandejas-ajustables",
+          "titulo_tienda": "Refrigeradora 11.5pc Top Mount RT1N320NMDA Fresh Zone. HISENSE Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT14N6CDX",
+      "barcode": "6921727048639",
+      "descripcion": "HISENSE REFRIGERADOR TOP MOUNT 14 CU FT INVERTER RT14N6CDX",
+      "precio_regular": 579.99,
+      "map_usd": 339.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT55D6AAE",
+      "barcode": "6921727076267",
+      "descripcion": "HISENSE REFRIGERADOR TOP MOUNT 5.5 CU FT DEFROST RT55D6AAE",
+      "precio_regular": 249.99,
+      "map_usd": 169.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 169.98,
+          "url": "https://rodelag.com/products/refrigeradora-5-5pc-top-mount-rt55d6aae-2-puertas-hisense",
+          "titulo_tienda": "Refrigeradora 5.5pc Top Mount RT55D6AAE 2 puertas Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "FV140NS5A",
+      "barcode": "6921727077790",
+      "descripcion": "HISENSE REFRIGERADOR Y FREEZER 2 EN 1 13.5 CUFT FV140NS5A",
+      "precio_regular": 659.99,
+      "map_usd": 499.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 499.98,
+          "url": "https://rodelag.com/products/hisense-congelador-refrigerador-vertical-convertible-13-6-cu-ft-fv140ns5a",
+          "titulo_tienda": "Congelador / Refrigerador Vertical Convertible 13.6 Cu. Ft. Modelo FV140NS5A Hisense Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RR43D6ACX1",
+      "barcode": "6921727068972",
+      "descripcion": "HISENSE REFRIGERADORA COMPACT 4.2 CU FT REVERSIBLE DOOR ADJ LEGS MECH CNTRL LOW NOISE RR43D6ACX1",
+      "precio_regular": 199.99,
+      "map_usd": 149.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 149.98,
+          "url": "https://rodelag.com/products/refrigeradora-mini-bar-4-2pc-rr43d6acx1-hisense",
+          "titulo_tienda": "Refrigeradora Mini Bar 4.2pc RR43D6ACX1 Hisense puerta reversible Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RQ171BV5A",
+      "barcode": "6921727085153",
+      "descripcion": "HISENSE REFRIGERADORA CROOS DOOR 17 CU FT INVERTER AUTO ICE MAKER TRIPLE ZONE NY FRESH CHOICE RQ171BV5A",
+      "precio_regular": 889.99,
+      "map_usd": 579.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 579.98,
+          "url": "https://rodelag.com/products/refrigeradora-4-puertas-17pc-rq171bv5a-cross-hisense-inverter-maquina-de-hielo-automatica-en-el-congelador-diseno-pure-flat-triple-zona-ny-fresh-choice",
+          "titulo_tienda": "Refrigeradora 17pc RQ171BV5A Hisense Inverter máquina de hielo automática en el congelador, diseño Pure Flat, triple zona, ny fresh choice Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "HRF266N6CSE",
+      "barcode": "819130027739",
+      "descripcion": "HISENSE REFRIGERADORA FRENCH DOOR 26.6 CU FT REAL SS INVERTER ICE MAKER HRF266N6CSE",
+      "precio_regular": 1599.99,
+      "map_usd": 929.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RS19N6ABI",
+      "barcode": "6921727068842",
+      "descripcion": "HISENSE REFRIGERADORA SIDE BY SIDE 18.3 CU FT MULTI AIR FLOW INVERTER LED LIGHT SUPER FREEZE (BLACK COLOR) RS19N6ABI",
+      "precio_regular": 749.99,
+      "map_usd": 489.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT11N6WKX1",
+      "barcode": "6921727065650",
+      "descripcion": "HISENSE REFRIGERADORA TMF 11.5 CU FT FRESH ZONE ADJ SHELVES RT11N6WKX1",
+      "precio_regular": 469.99,
+      "map_usd": 319.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT16N6CDX",
+      "barcode": "6921727045881",
+      "descripcion": "HISENSE REFRIGERADORA TOP MOUNT 16.3 CU FT INVERTER EASY APPROCH TRAY MULTI AIR FLOW DEODORIZING FILTERWATER DISP RT16N6CDX",
+      "precio_regular": 629.99,
+      "map_usd": 399.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT80D6WGX",
+      "barcode": "6921727046895",
+      "descripcion": "HISENSE REFRIGERADORA TOP MOUNT 7.3 CU FT REVERSIBLE DOOR SOFT LED LIGHT METAL BACK WATER DISP RT80D6WGX",
+      "precio_regular": 269.99,
+      "map_usd": 199.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 199.98,
+          "url": "https://rodelag.com/products/hisense-refrigeradora-top-mount-7-3-pc-rt80d6wgx-puerta-reversible-luz-led-metal-dispensador-de-agua",
+          "titulo_tienda": "Refrigeradora Top Mount 7.3pc Hisense RT80D6WGX con Dispensador de Agua Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "SC-282",
+      "barcode": "6921727045058",
+      "descripcion": "HISENSE REFRIGERADORA VITRINA SHOWCASE 10.0 CU FT SC-282",
+      "precio_regular": 509.99,
+      "map_usd": 379.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "SC-342",
+      "barcode": "6921727068781",
+      "descripcion": "HISENSE REFRIGERADORA VITRINA SHOWCASE 12.1 CU FT SC-342",
+      "precio_regular": 539.99,
+      "map_usd": 399.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "SC-242",
+      "barcode": "6921727068774",
+      "descripcion": "HISENSE REFRIGERADORA VITRINA SHOWCASE 8.5 CU FT SC-242",
+      "precio_regular": 489.99,
+      "map_usd": 359.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RQ226P5GBR",
+      "barcode": "6979048653063",
+      "descripcion": "HISENSE REFRIGIRATOR CROSS DOOR 226 FT INVERTER RQ226P5GBR",
+      "precio_regular": 1299.99,
+      "map_usd": 1099.99,
+      "disponibilidad": "Espera recibo",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RS3P558NS1B",
+      "barcode": "6979048652516",
+      "descripcion": "HISENSE REFRIGIRATOR SIDE BY SIDE 19.1 CUFT INVERTER BLACK GLASS DOOR MANUAL WATER DISPENSE RS3P558NS1B",
+      "precio_regular": 779.99,
+      "map_usd": 569.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 569.98,
+          "url": "https://rodelag.com/products/hisense-refrigeradora-side-by-side-18-3-cu-ft-rs3p558ns1b-multi-air-flow-inverter-led-light-super-freeze-black",
+          "titulo_tienda": "Refrigeradora 18.3pc, Side By Side, FT RS3P558NS1B Hisense, diseño Black Glass y puertas planas, iluminación LED, inverter Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT3N375NACA",
+      "barcode": "6979048652929",
+      "descripcion": "HISENSE REFRIGIRATOR TOP MOUNT 13.5 CUFT INVERTER TOTAL NO FROST",
+      "precio_regular": 569.99,
+      "map_usd": 369.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 369.98,
+          "url": "https://rodelag.com/products/hisense-refrigirator-top-mount-13-5-cuft-rt3n375naca-inverter-total-no-frost",
+          "titulo_tienda": "Refrigeradora 13.5pc Top Mount, modelo RT3N375NACA, no frost, inverter Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT3N461NACA",
+      "barcode": "6979048652936",
+      "descripcion": "HISENSE REFRIGIRATOR TOP MOUNT 16.47 CUFT INVERTER REFRIGERACION MANUAL WATER DISP RT16N6CDX",
+      "precio_regular": 619.99,
+      "map_usd": 399.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "RT1N250NMB",
+      "barcode": "6921727091680",
+      "descripcion": "HISENSE REFRIGIRATOR TOP MOUNT 8.8 CUFT INVERTER RT1N250NMB",
+      "precio_regular": 399.99,
+      "map_usd": 299.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": {
+          "precio": 299.98,
+          "url": "https://rodelag.com/products/refrigeradora-top-mount-9pc-rt1n250nmb-hisense-fresh-zone-bandejas-ajustables",
+          "titulo_tienda": "Refrigeradora Top Mount 9pc RT1N250NMB  Hisense fresh Zone, bandejas ajustables Default Title"
+        },
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "HWD046N6SS",
+      "barcode": "810088367014",
+      "descripcion": "HISENSE VINERA 4.9 CU FT 46-BOTTLES STAINLESS STEEL WINE COOLER DUAL ZONE WITH WIFI HWD046N6SS",
+      "precio_regular": 669.99,
+      "map_usd": 519.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    },
+    {
+      "categoria": "REFRIGERACION",
+      "codigo": "HWD076N3ASD",
+      "barcode": "810088367359",
+      "descripcion": "HISENSE VINERA 8.5 FT -76 BOTTLE BUILT-IN OR FREESTANDING WINE COOLER WITH DUAL ZONE AND WI-FI CONNECTIVITY HWD076N3ASD",
+      "precio_regular": 969.99,
+      "map_usd": 749.99,
+      "disponibilidad": "Despacho inmediato",
+      "tiendas": {
+        "Panafoto": null,
+        "Novey": null,
+        "Rodelag": null,
+        "Multimax": null,
+        "EVision": null
+      }
+    }
+  ]
 }
