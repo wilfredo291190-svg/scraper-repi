@@ -4,25 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>REPIDEALES | Monitor de Precios & Cumplimiento MAP</title>
-  <!-- Favicon Vectorial Oficial REPIDEALES (Icon) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 175'%3E%3Cpath fill='%23DC1E35' d='M65 10 C125 10 190 55 190 100 C190 140 115 168 75 168 C40 168 10 115 10 68 C10 28 35 10 65 10 Z'/%3E%3Cpath fill='%23FFFFFF' d='M48 138 V75 C48 48 66 34 94 34 H102 V56 H94 C78 56 71 64 71 78 V138 H48 Z'/%3E%3Ccircle cx='126' cy='46' r='13' fill='%23FFFFFF'/%3E%3Crect x='114' y='66' width='24' height='72' fill='%23FFFFFF'/%3E%3C/svg%3E">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
   <style>
     @media print {
       .no-print { display: none !important; }
-      body { background: #fff !important; font-size: 10px; }
-      .print-shadow-none { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+      body { background: #fff !important; font-size: 9px; }
+      .print-shadow-none { box-shadow: none !important; border: 1px solid #cbd5e1 !important; }
     }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans antialiased">
-  <div class="max-w-[1600px] mx-auto px-4 py-6">
+  <div class="max-w-[1680px] mx-auto px-4 py-6">
     
-    <!-- Encabezado Corporativo REPIDEALES -->
+    <!-- Header Corporativo REPIDEALES -->
     <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 mb-5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 print-shadow-none">
       <div class="flex items-center gap-4">
-        <!-- Logo Vectorial Oficial REPIDEALES -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 215" class="h-14 w-auto shrink-0" aria-label="REPIDEALES">
           <path fill="#DC1E35" d="M72 8 C138 8 205 55 205 102 C205 144 126 172 82 172 C44 172 12 118 12 68 C12 26 40 8 72 8 Z"/>
           <path fill="#FFFFFF" d="M54 140 V74 C54 46 73 32 102 32 H110 V55 H102 C85 55 78 63 78 78 V140 H54 Z"/>
@@ -31,9 +29,9 @@
           <text x="110" y="204" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="27" letter-spacing="1.5" fill="#0F172A">REPIDEALES</text>
         </svg>
         <div class="border-l border-slate-200 pl-4">
-          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-[#DC1E35] bg-red-50 px-2 py-0.5 rounded mb-1">Inteligencia Comercial & Retail</span>
-          <h1 class="text-xl md:text-2xl font-extrabold text-slate-900 tracking-tight">Monitor de Precios & Cumplimiento MAP</h1>
-          <p class="text-xs text-slate-500">Comparativa de Catálogo Oficial vs. 12 Cadenas Retail en Panamá</p>
+          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-[#DC1E35] bg-red-50 px-2 py-0.5 rounded mb-1">Auditoría Comercial & Cumplimiento MAP</span>
+          <h1 class="text-xl md:text-2xl font-extrabold text-slate-900 tracking-tight">Monitor de Precios — Retail Panamá</h1>
+          <p class="text-xs text-slate-500">Reglas de Severidad: <strong class="text-emerald-700">Cumple (&ge;MAP)</strong> · <strong class="text-amber-600">Tolerable (&le;10%)</strong> · <strong class="text-orange-600">Leve (10%–20%)</strong> · <strong class="text-[#DC1E35]">Grave (&ge;20%)</strong></p>
         </div>
       </div>
 
@@ -42,48 +40,79 @@
           <span class="text-slate-500 block">Última actualización</span>
           <strong id="last-updated" class="text-slate-900 font-semibold">Cargando...</strong>
         </div>
-        <!-- Botones de Exportacion -->
         <div class="flex items-center gap-2 no-print">
           <button onclick="exportCSV()" class="px-3 py-2 bg-slate-800 hover:bg-slate-900 text-white text-xs font-semibold rounded-lg transition shadow-sm">
-            Exportar CSV
+            CSV
           </button>
           <button onclick="exportExcel()" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg transition shadow-sm">
-            Exportar Excel
+            Excel (.xlsx)
           </button>
           <button onclick="window.print()" class="px-3 py-2 bg-[#DC1E35] hover:bg-red-700 text-white text-xs font-semibold rounded-lg transition shadow-sm">
-            Exportar PDF
+            PDF / Imprimir
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Tarjetas KPI Estilo Ejecutivo -->
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm print-shadow-none">
-        <div class="text-[11px] font-bold uppercase text-slate-400">SKUs Monitoreados</div>
-        <div id="kpi-skus" class="text-2xl font-black text-slate-900 mt-1">0</div>
+    <!-- Tarjetas KPI Semáforo Ejecutivo -->
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-5">
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm print-shadow-none">
+        <div class="text-[10px] font-bold uppercase text-slate-400">SKUs Filtrados</div>
+        <div id="kpi-skus" class="text-2xl font-black text-slate-900 mt-0.5">0</div>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm print-shadow-none">
-        <div class="text-[11px] font-bold uppercase text-slate-400">Registros Detectados</div>
-        <div id="kpi-records" class="text-2xl font-black text-slate-900 mt-1">0</div>
+      <div class="bg-white p-3.5 rounded-xl border-l-4 border-l-emerald-500 border border-slate-200 shadow-sm print-shadow-none">
+        <div class="text-[10px] font-bold uppercase text-emerald-700">Cumple MAP (&ge;)</div>
+        <div id="kpi-ok" class="text-2xl font-black text-emerald-600 mt-0.5">0</div>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm print-shadow-none">
-        <div class="text-[11px] font-bold uppercase text-emerald-600">Cumple MAP (&ge;)</div>
-        <div id="kpi-ok" class="text-2xl font-black text-emerald-600 mt-1">0</div>
+      <div class="bg-white p-3.5 rounded-xl border-l-4 border-l-amber-400 border border-slate-200 shadow-sm print-shadow-none">
+        <div class="text-[10px] font-bold uppercase text-amber-700">Tolerable (&le;10%)</div>
+        <div id="kpi-tol" class="text-2xl font-black text-amber-600 mt-0.5">0</div>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm print-shadow-none">
-        <div class="text-[11px] font-bold uppercase text-[#DC1E35]">Debajo de MAP (&lt;)</div>
-        <div id="kpi-below" class="text-2xl font-black text-[#DC1E35] mt-1">0</div>
+      <div class="bg-white p-3.5 rounded-xl border-l-4 border-l-orange-500 border border-slate-200 shadow-sm print-shadow-none">
+        <div class="text-[10px] font-bold uppercase text-orange-700">Leve (10%–20%)</div>
+        <div id="kpi-leve" class="text-2xl font-black text-orange-600 mt-0.5">0</div>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm col-span-2 md:col-span-1 print-shadow-none">
-        <div class="text-[11px] font-bold uppercase text-slate-400">% Cumplimiento</div>
-        <div id="kpi-rate" class="text-2xl font-black text-slate-900 mt-1">0%</div>
+      <div class="bg-white p-3.5 rounded-xl border-l-4 border-l-[#DC1E35] border border-slate-200 shadow-sm print-shadow-none">
+        <div class="text-[10px] font-bold uppercase text-[#DC1E35]">Grave (&ge;20%)</div>
+        <div id="kpi-grave" class="text-2xl font-black text-[#DC1E35] mt-0.5">0</div>
+      </div>
+      <div class="bg-slate-900 text-white p-3.5 rounded-xl shadow-sm print-shadow-none">
+        <div class="text-[10px] font-bold uppercase text-slate-400">% Cumplimiento</div>
+        <div id="kpi-rate" class="text-2xl font-black text-white mt-0.5">0%</div>
       </div>
     </div>
 
-    <!-- Barra de Filtros -->
-    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 mb-5 grid grid-cols-1 md:grid-cols-5 gap-3 no-print">
-      <input type="text" id="search-input" placeholder="Buscar Código, BarCode o Producto..."
+    <!-- Barra de Modos de Vista + Botones Rapidos de Severidad -->
+    <div class="bg-white p-3.5 rounded-xl shadow-sm border border-slate-200 mb-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 no-print">
+      <!-- Selector de Vista -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="text-[11px] font-bold uppercase text-slate-400 mr-1">Vista:</span>
+        <button id="view-matrix" onclick="setViewMode('matrix')" class="view-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white transition">
+          Matriz 12 Clientes
+        </button>
+        <button id="view-audit" onclick="setViewMode('audit')" class="view-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+          Detalle de Infracciones
+        </button>
+        <button id="view-ranking" onclick="setViewMode('ranking')" class="view-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+          Scorecard por Cliente
+        </button>
+      </div>
+
+      <!-- Botones Rapidos de Severidad -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="text-[11px] font-bold uppercase text-slate-400 mr-1">Estado:</span>
+        <button onclick="setSeverityFilter('all')" data-sev="all" class="sev-btn px-2.5 py-1 rounded-md text-xs font-bold bg-slate-800 text-white">Todos</button>
+        <button onclick="setSeverityFilter('found')" data-sev="found" class="sev-btn px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Con Presencia</button>
+        <button onclick="setSeverityFilter('grave')" data-sev="grave" class="sev-btn px-2.5 py-1 rounded-md text-xs font-bold bg-red-50 text-[#DC1E35] border border-red-200 hover:bg-red-100">Graves (&ge;20%)</button>
+        <button onclick="setSeverityFilter('leve')" data-sev="leve" class="sev-btn px-2.5 py-1 rounded-md text-xs font-bold bg-orange-50 text-orange-700 border border-orange-200 hover:bg-orange-100">Leves (10-20%)</button>
+        <button onclick="setSeverityFilter('tolerable')" data-sev="tolerable" class="sev-btn px-2.5 py-1 rounded-md text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100">Tolerables (&le;10%)</button>
+        <button onclick="setSeverityFilter('ok')" data-sev="ok" class="sev-btn px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100">Cumplen MAP</button>
+      </div>
+    </div>
+
+    <!-- Filtros de Busqueda -->
+    <div class="bg-white p-3.5 rounded-xl shadow-sm border border-slate-200 mb-5 grid grid-cols-1 md:grid-cols-4 gap-3 no-print">
+      <input type="text" id="search-input" placeholder="Buscar Código, BarCode o Nombre completo..."
              class="border border-slate-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#DC1E35]">
       <select id="brand-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#DC1E35]">
         <option value="">Todas las Marcas</option>
@@ -94,19 +123,42 @@
       <select id="store-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#DC1E35]">
         <option value="ALL">Todos los Clientes (12)</option>
       </select>
-      <select id="match-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#DC1E35]">
-        <option value="all">Todos los SKUs</option>
-        <option value="found">Con presencia en tiendas</option>
-        <option value="below_map">Con precio debajo de MAP</option>
-      </select>
     </div>
 
-    <!-- Tabla Comparativa -->
+    <!-- Contenedor Principal de Reportes -->
     <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-x-auto print-shadow-none">
       <table id="main-table" class="w-full text-left border-collapse text-xs">
         <thead id="table-head"></thead>
-        <tbody id="table-body" class="divide-y divide-slate-100"></tbody>
+        <tbody id="table-body" class="divide-y divide-slate-200"></tbody>
       </table>
+    </div>
+  </div>
+
+  <!-- Modal de Detalle Completo del Producto -->
+  <div id="detail-modal" class="fixed inset-0 bg-slate-900/60 hidden items-center justify-center z-50 p-4" onclick="closeModal(event)">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-start gap-4 border-b border-slate-200 pb-4">
+        <div>
+          <span id="modal-brand-cat" class="text-[11px] font-bold uppercase tracking-wider text-[#DC1E35] bg-red-50 px-2 py-0.5 rounded"></span>
+          <h2 id="modal-code" class="text-xl font-black text-slate-900 mt-1 font-mono"></h2>
+        </div>
+        <button onclick="document.getElementById('detail-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 text-xl font-bold">&times;</button>
+      </div>
+      <div class="py-4 space-y-3 text-xs">
+        <div>
+          <span class="font-bold text-slate-400 uppercase block text-[10px]">Descripción Completa del Catálogo</span>
+          <p id="modal-desc" class="text-sm font-semibold text-slate-900 mt-0.5 leading-relaxed"></p>
+        </div>
+        <div class="grid grid-cols-3 gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <div><span class="text-slate-400 block text-[10px]">BarCode</span><strong id="modal-barcode" class="font-mono text-slate-800"></strong></div>
+          <div><span class="text-slate-400 block text-[10px]">Precio Regular</span><strong id="modal-reg" class="text-slate-800"></strong></div>
+          <div><span class="text-slate-400 block text-[10px]">MAP Oficial</span><strong id="modal-map" class="text-[#DC1E35] text-sm"></strong></div>
+        </div>
+        <div>
+          <span class="font-bold text-slate-400 uppercase block text-[10px] mb-2">Comparativa Detallada por Tienda</span>
+          <div id="modal-stores" class="divide-y divide-slate-100 border border-slate-200 rounded-lg max-h-60 overflow-y-auto"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -117,112 +169,357 @@
       "Do It Center", "Titan", "Spiegel", "Selecto",
       "Creditos Mundiales", "Unica Panama", "Raenco"
     ];
+    let currentView = "matrix";
+    let currentSeverity = "all";
     let currentFiltered = [];
+
+    // Reglas exactas de severidad:
+    // >= 20%: Grave | > 10% y < 20%: Leve | > 0% y <= 10%: Tolerable | <= 0% (precio >= MAP): Cumple
+    function evaluateCompliance(storePrice, mapPrice) {
+      if (!storePrice || !mapPrice || mapPrice <= 0) {
+        return { status: "ok", label: "CUMPLE", diffUsd: 0, diffPct: 0 };
+      }
+      const diffUsd = storePrice - mapPrice;
+      if (diffUsd >= -0.009) {
+        return { status: "ok", label: "CUMPLE", diffUsd, diffPct: (diffUsd / mapPrice) * 100 };
+      }
+      const underPct = ((mapPrice - storePrice) / mapPrice) * 100;
+      if (underPct >= 20.0) {
+        return { status: "grave", label: "GRAVE", diffUsd, diffPct: -underPct };
+      }
+      if (underPct > 10.0) {
+        return { status: "leve", label: "LEVE", diffUsd, diffPct: -underPct };
+      }
+      return { status: "tolerable", label: "TOLERABLE", diffUsd, diffPct: -underPct };
+    }
+
+    function getSeverityBadge(status, text) {
+      const styles = {
+        grave: "bg-[#DC1E35] text-white font-bold",
+        leve: "bg-orange-500 text-white font-bold",
+        tolerable: "bg-amber-400 text-slate-950 font-bold",
+        ok: "bg-emerald-100 text-emerald-800 font-semibold",
+      };
+      return `<span class="px-2 py-0.5 rounded text-[10px] uppercase tracking-wide ${styles[status] || styles.ok}">${text}</span>`;
+    }
 
     function getActiveStores() {
       const selected = document.getElementById("store-filter").value;
       return selected === "ALL" ? storeOrder : [selected];
     }
 
-    function formatPrice(cellData, mapPrice) {
+    function setViewMode(mode) {
+      currentView = mode;
+      document.querySelectorAll(".view-btn").forEach(btn => {
+        btn.className = "view-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+      });
+      const activeBtn = document.getElementById("view-" + mode);
+      if (activeBtn) {
+        activeBtn.className = "view-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white transition";
+      }
+      renderTable();
+    }
+
+    function setSeverityFilter(sev) {
+      currentSeverity = sev;
+      document.querySelectorAll(".sev-btn").forEach(btn => {
+        btn.classList.remove("ring-2", "ring-slate-900");
+        if (btn.dataset.sev === sev) {
+          btn.classList.add("ring-2", "ring-slate-900");
+        }
+      });
+      renderTable();
+    }
+
+    function openProductModal(codigo) {
+      const p = allProducts.find(x => x.codigo === codigo);
+      if (!p) return;
+      document.getElementById("modal-brand-cat").textContent = `${p.marca} · ${p.categoria}`;
+      document.getElementById("modal-code").textContent = p.codigo;
+      document.getElementById("modal-desc").textContent = p.descripcion;
+      document.getElementById("modal-barcode").textContent = p.barcode || "N/A";
+      document.getElementById("modal-reg").textContent = p.precio_regular ? `$${p.precio_regular.toFixed(2)}` : "—";
+      document.getElementById("modal-map").textContent = p.map_usd ? `$${p.map_usd.toFixed(2)}` : "—";
+
+      const list = document.getElementById("modal-stores");
+      list.innerHTML = "";
+      storeOrder.forEach(s => {
+        const cell = p.tiendas[s];
+        const row = document.createElement("div");
+        row.className = "p-2.5 flex items-center justify-between gap-2 text-xs";
+        if (!cell) {
+          row.innerHTML = `<span class="font-semibold text-slate-500">${s}</span><span class="text-slate-300">No detectado</span>`;
+        } else {
+          const ev = evaluateCompliance(cell.precio, p.map_usd);
+          row.innerHTML = `
+            <div class="min-w-0">
+              <div class="font-bold text-slate-900">${s}</div>
+              <div class="text-[11px] text-slate-500 break-words">${cell.titulo_tienda}</div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              ${getSeverityBadge(ev.status, ev.status === "ok" ? "CUMPLE" : `${ev.label} (${ev.diffPct.toFixed(1)}%)`)}
+              <a href="${cell.url}" target="_blank" class="font-mono font-bold text-slate-900 underline">$${cell.precio.toFixed(2)}</a>
+            </div>
+          `;
+        }
+        list.appendChild(row);
+      });
+      const modal = document.getElementById("detail-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeModal(e) {
+      if (e.target.id === "detail-modal") {
+        e.target.classList.add("hidden");
+        e.target.classList.remove("flex");
+      }
+    }
+
+    function formatPriceCell(cellData, mapPrice) {
       if (!cellData || !cellData.precio) {
         return `<span class="text-slate-300">—</span>`;
       }
       const p = cellData.precio;
-      const isBelow = mapPrice && p < mapPrice;
-      const badge = isBelow
-        ? "text-[#DC1E35] font-bold bg-red-50 border border-red-200 px-1.5 py-0.5 rounded"
-        : "text-emerald-700 font-semibold bg-emerald-50/70 px-1.5 py-0.5 rounded";
-      return `<a href="${cellData.url}" target="_blank" title="${cellData.titulo_tienda}" class="${badge} hover:underline">$${p.toFixed(2)}</a>`;
-    }
-
-    function updateKPIs(products, activeStores) {
-      let records = 0, ok = 0, below = 0;
-      products.forEach(p => {
-        activeStores.forEach(s => {
-          const cell = p.tiendas[s];
-          if (cell && cell.precio) {
-            records++;
-            if (p.map_usd && cell.precio < p.map_usd) below++;
-            else ok++;
-          }
-        });
-      });
-      document.getElementById("kpi-skus").textContent = products.length;
-      document.getElementById("kpi-records").textContent = records;
-      document.getElementById("kpi-ok").textContent = ok;
-      document.getElementById("kpi-below").textContent = below;
-      document.getElementById("kpi-rate").textContent = records > 0 ? ((ok / records) * 100).toFixed(1) + "%" : "0%";
+      const ev = evaluateCompliance(p, mapPrice);
+      const cellStyles = {
+        grave: "bg-[#DC1E35] text-white font-bold px-2 py-0.5 rounded shadow-xs",
+        leve: "bg-orange-100 text-orange-800 border border-orange-300 font-bold px-2 py-0.5 rounded",
+        tolerable: "bg-amber-100 text-amber-900 border border-amber-300 font-bold px-2 py-0.5 rounded",
+        ok: "bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold px-2 py-0.5 rounded",
+      };
+      return `<a href="${cellData.url}" target="_blank" title="${cellData.titulo_tienda}" class="${cellStyles[ev.status]} hover:opacity-85 inline-block">$${p.toFixed(2)}</a>`;
     }
 
     function renderTable() {
       const query = document.getElementById("search-input").value.toLowerCase();
       const brand = document.getElementById("brand-filter").value;
       const cat = document.getElementById("category-filter").value;
-      const matchMode = document.getElementById("match-filter").value;
       const activeStores = getActiveStores();
 
-      // Renderizar cabecera dinamica
-      const thead = document.getElementById("table-head");
-      thead.innerHTML = `
-        <tr class="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
-          <th class="py-3 px-3 sticky left-0 bg-slate-900 z-10">Código</th>
-          <th class="py-3 px-3">Marca</th>
-          <th class="py-3 px-3">Producto</th>
-          <th class="py-3 px-3 text-right bg-slate-800">Regular</th>
-          <th class="py-3 px-3 text-right bg-[#DC1E35]">MAP BF</th>
-          ${activeStores.map(s => `<th class="py-3 px-3 text-right whitespace-nowrap">${s}</th>`).join("")}
-        </tr>
-      `;
-
+      // Filtrar productos base
       currentFiltered = allProducts.filter(p => {
         const textMatch = p.codigo.toLowerCase().includes(query) ||
                           p.descripcion.toLowerCase().includes(query) ||
                           (p.barcode && p.barcode.includes(query));
         const brandMatch = !brand || p.marca === brand;
         const catMatch = !cat || p.categoria === cat;
-        const hasAny = activeStores.some(s => p.tiendas[s] !== null);
-        const hasBelow = activeStores.some(s => p.tiendas[s] && p.map_usd && p.tiendas[s].precio < p.map_usd);
+        if (!textMatch || !brandMatch || !catMatch) return false;
 
-        if (matchMode === "found" && !hasAny) return false;
-        if (matchMode === "below_map" && !hasBelow) return false;
-        return textMatch && brandMatch && catMatch;
+        const storeEntries = activeStores.map(s => p.tiendas[s]).filter(Boolean);
+        if (currentSeverity === "all") return true;
+        if (currentSeverity === "found") return storeEntries.length > 0;
+
+        return storeEntries.some(c => evaluateCompliance(c.precio, p.map_usd).status === currentSeverity);
       });
 
-      updateKPIs(currentFiltered, activeStores);
+      // Calcular KPIs globales sobre los filtros actuales
+      let okCount = 0, tolCount = 0, leveCount = 0, graveCount = 0;
+      currentFiltered.forEach(p => {
+        activeStores.forEach(s => {
+          const cell = p.tiendas[s];
+          if (cell && cell.precio) {
+            const st = evaluateCompliance(cell.precio, p.map_usd).status;
+            if (st === "ok") okCount++;
+            else if (st === "tolerable") tolCount++;
+            else if (st === "leve") leveCount++;
+            else if (st === "grave") graveCount++;
+          }
+        });
+      });
+      const totalRecords = okCount + tolCount + leveCount + graveCount;
+      document.getElementById("kpi-skus").textContent = currentFiltered.length;
+      document.getElementById("kpi-ok").textContent = okCount;
+      document.getElementById("kpi-tol").textContent = tolCount;
+      document.getElementById("kpi-leve").textContent = leveCount;
+      document.getElementById("kpi-grave").textContent = graveCount;
+      document.getElementById("kpi-rate").textContent = totalRecords > 0 ? ((okCount / totalRecords) * 100).toFixed(1) + "%" : "0%";
 
+      const thead = document.getElementById("table-head");
       const tbody = document.getElementById("table-body");
       tbody.innerHTML = "";
 
-      currentFiltered.forEach(p => {
-        const tr = document.createElement("tr");
-        tr.className = "hover:bg-slate-50 transition-colors";
-        tr.innerHTML = `
-          <td class="py-2.5 px-3 font-mono font-bold text-slate-900 whitespace-nowrap sticky left-0 bg-white">${p.codigo}</td>
-          <td class="py-2.5 px-3 whitespace-nowrap"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700">${p.marca || "—"}</span></td>
-          <td class="py-2.5 px-3 max-w-[260px] truncate" title="${p.descripcion}">
-            <div class="font-medium text-slate-800 truncate">${p.descripcion}</div>
-            <div class="text-[10px] text-slate-400">${p.categoria}</div>
-          </td>
-          <td class="py-2.5 px-3 text-right font-medium text-slate-500 bg-slate-50/70">$${p.precio_regular ? p.precio_regular.toFixed(2) : "—"}</td>
-          <td class="py-2.5 px-3 text-right font-bold text-slate-900 bg-red-50/40">$${p.map_usd ? p.map_usd.toFixed(2) : "—"}</td>
-          ${activeStores.map(s => `<td class="py-2.5 px-3 text-right whitespace-nowrap">${formatPrice(p.tiendas[s], p.map_usd)}</td>`).join("")}
+      // MODO 1: MATRIZ COMPLETA (12 TIENDAS + DISCREPANCIA MAXIMA)
+      if (currentView === "matrix") {
+        thead.innerHTML = `
+          <tr class="bg-slate-900 text-white uppercase text-[10px] tracking-wider">
+            <th class="py-3 px-3 sticky left-0 bg-slate-900 z-10">Código</th>
+            <th class="py-3 px-3">Marca / Cat.</th>
+            <th class="py-3 px-3 min-w-[260px]">Descripción Completa</th>
+            <th class="py-3 px-3 text-right bg-slate-800">Regular</th>
+            <th class="py-3 px-3 text-right bg-[#DC1E35]">MAP BF</th>
+            <th class="py-3 px-3 text-right bg-slate-800">Dif. Mín. ($)</th>
+            <th class="py-3 px-3 text-right bg-slate-800">Dif. (%)</th>
+            <th class="py-3 px-3 text-center bg-slate-800">Estado</th>
+            ${activeStores.map(s => `<th class="py-3 px-3 text-right whitespace-nowrap">${s}</th>`).join("")}
+          </tr>
         `;
-        tbody.appendChild(tr);
-      });
+
+        currentFiltered.forEach(p => {
+          // Encontrar el precio mas bajo en las tiendas activas para calcular discrepancia
+          let minPrice = null;
+          activeStores.forEach(s => {
+            const c = p.tiendas[s];
+            if (c && c.precio && (minPrice === null || c.precio < minPrice)) {
+              minPrice = c.precio;
+            }
+          });
+
+          let diffUsdHtml = `<span class="text-slate-300">—</span>`;
+          let diffPctHtml = `<span class="text-slate-300">—</span>`;
+          let statusHtml = `<span class="text-slate-300 text-[10px]">Sin datos</span>`;
+
+          if (minPrice !== null && p.map_usd) {
+            const ev = evaluateCompliance(minPrice, p.map_usd);
+            const sign = ev.diffUsd > 0 ? "+" : "";
+            const colorTxt = ev.status === "ok" ? "text-emerald-700" : (ev.status === "grave" ? "text-[#DC1E35] font-black" : "text-orange-700 font-bold");
+            diffUsdHtml = `<span class="${colorTxt}">${sign}$${ev.diffUsd.toFixed(2)}</span>`;
+            diffPctHtml = `<span class="${colorTxt}">${sign}${ev.diffPct.toFixed(1)}%</span>`;
+            statusHtml = getSeverityBadge(ev.status, ev.status === "ok" ? "CUMPLE" : ev.label);
+          }
+
+          const tr = document.createElement("tr");
+          tr.className = "hover:bg-slate-50 transition-colors cursor-pointer";
+          tr.onclick = (e) => { if (e.target.tagName !== "A") openProductModal(p.codigo); };
+          tr.innerHTML = `
+            <td class="py-2.5 px-3 font-mono font-bold text-slate-900 whitespace-nowrap sticky left-0 bg-white">${p.codigo}</td>
+            <td class="py-2.5 px-3 whitespace-nowrap">
+              <div class="font-bold text-slate-800 text-[11px]">${p.marca}</div>
+              <div class="text-[10px] text-slate-400">${p.categoria}</div>
+            </td>
+            <td class="py-2.5 px-3 min-w-[260px] max-w-[340px] whitespace-normal leading-snug text-slate-800 font-medium">
+              ${p.descripcion}
+            </td>
+            <td class="py-2.5 px-3 text-right font-medium text-slate-500 bg-slate-50/70 whitespace-nowrap">$${p.precio_regular ? p.precio_regular.toFixed(2) : "—"}</td>
+            <td class="py-2.5 px-3 text-right font-bold text-slate-900 bg-red-50/40 whitespace-nowrap">$${p.map_usd ? p.map_usd.toFixed(2) : "—"}</td>
+            <td class="py-2.5 px-3 text-right whitespace-nowrap">${diffUsdHtml}</td>
+            <td class="py-2.5 px-3 text-right whitespace-nowrap">${diffPctHtml}</td>
+            <td class="py-2.5 px-3 text-center whitespace-nowrap">${statusHtml}</td>
+            ${activeStores.map(s => `<td class="py-2.5 px-3 text-right whitespace-nowrap">${formatPriceCell(p.tiendas[s], p.map_usd)}</td>`).join("")}
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      // MODO 2: DETALLE DE INFRACCIONES (LISTA PLANA POR TIENDA INFRACTORA)
+      else if (currentView === "audit") {
+        thead.innerHTML = `
+          <tr class="bg-slate-900 text-white uppercase text-[10px] tracking-wider">
+            <th class="py-3 px-3">Severidad</th>
+            <th class="py-3 px-3">Cliente</th>
+            <th class="py-3 px-3">Código</th>
+            <th class="py-3 px-3">Marca</th>
+            <th class="py-3 px-3">Descripción Completa</th>
+            <th class="py-3 px-3 text-right">MAP Oficial</th>
+            <th class="py-3 px-3 text-right">Precio Tienda</th>
+            <th class="py-3 px-3 text-right">Discrepancia ($)</th>
+            <th class="py-3 px-3 text-right">Discrepancia (%)</th>
+            <th class="py-3 px-3 text-center">Enlace</th>
+          </tr>
+        `;
+
+        const infractions = [];
+        currentFiltered.forEach(p => {
+          activeStores.forEach(s => {
+            const cell = p.tiendas[s];
+            if (cell && cell.precio && p.map_usd) {
+              const ev = evaluateCompliance(cell.precio, p.map_usd);
+              if (currentSeverity === "all" || currentSeverity === "found" || ev.status === currentSeverity) {
+                infractions.push({ p, store: s, cell, ev });
+              }
+            }
+          });
+        });
+
+        // Ordenar de infraccion mas grave (mayor % negativo) a cumplimiento
+        infractions.sort((a, b) => a.ev.diffPct - b.ev.diffPct);
+
+        infractions.forEach(({ p, store, cell, ev }) => {
+          const tr = document.createElement("tr");
+          tr.className = "hover:bg-slate-50";
+          const sign = ev.diffUsd > 0 ? "+" : "";
+          tr.innerHTML = `
+            <td class="py-2.5 px-3 whitespace-nowrap">${getSeverityBadge(ev.status, ev.label)}</td>
+            <td class="py-2.5 px-3 font-bold text-slate-900 whitespace-nowrap">${store}</td>
+            <td class="py-2.5 px-3 font-mono font-bold text-slate-800 whitespace-nowrap">${p.codigo}</td>
+            <td class="py-2.5 px-3 text-[11px] font-semibold text-slate-600">${p.marca}</td>
+            <td class="py-2.5 px-3 whitespace-normal leading-snug text-slate-800">${p.descripcion}</td>
+            <td class="py-2.5 px-3 text-right font-semibold text-slate-700">$${p.map_usd.toFixed(2)}</td>
+            <td class="py-2.5 px-3 text-right font-black text-slate-900">$${cell.precio.toFixed(2)}</td>
+            <td class="py-2.5 px-3 text-right font-bold ${ev.status === 'ok' ? 'text-emerald-700' : 'text-[#DC1E35]'}">${sign}$${ev.diffUsd.toFixed(2)}</td>
+            <td class="py-2.5 px-3 text-right font-bold ${ev.status === 'ok' ? 'text-emerald-700' : 'text-[#DC1E35]'}">${sign}${ev.diffPct.toFixed(1)}%</td>
+            <td class="py-2.5 px-3 text-center"><a href="${cell.url}" target="_blank" class="text-[#DC1E35] font-bold hover:underline">Ver Web</a></td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      // MODO 3: SCORECARD EJECUTIVO POR CLIENTE (RANKING)
+      else if (currentView === "ranking") {
+        thead.innerHTML = `
+          <tr class="bg-slate-900 text-white uppercase text-[10px] tracking-wider">
+            <th class="py-3 px-4"># Rank</th>
+            <th class="py-3 px-4">Cliente Retail</th>
+            <th class="py-3 px-4 text-right">SKUs Detectados</th>
+            <th class="py-3 px-4 text-right text-emerald-300">Cumple MAP</th>
+            <th class="py-3 px-4 text-right text-amber-300">Tolerable (&le;10%)</th>
+            <th class="py-3 px-4 text-right text-orange-300">Leve (10-20%)</th>
+            <th class="py-3 px-4 text-right text-red-300">Grave (&ge;20%)</th>
+            <th class="py-3 px-4 text-right">% Cumplimiento</th>
+          </tr>
+        `;
+
+        storeOrder.forEach((s, idx) => {
+          let total = 0, ok = 0, tol = 0, leve = 0, grave = 0;
+          currentFiltered.forEach(p => {
+            const cell = p.tiendas[s];
+            if (cell && cell.precio) {
+              total++;
+              const st = evaluateCompliance(cell.precio, p.map_usd).status;
+              if (st === "ok") ok++;
+              else if (st === "tolerable") tol++;
+              else if (st === "leve") leve++;
+              else if (st === "grave") grave++;
+            }
+          });
+          const pct = total > 0 ? ((ok / total) * 100).toFixed(1) + "%" : "—";
+          const tr = document.createElement("tr");
+          tr.className = "hover:bg-slate-50";
+          tr.innerHTML = `
+            <td class="py-3 px-4 font-bold text-slate-400">#${idx + 1}</td>
+            <td class="py-3 px-4 font-extrabold text-slate-900 text-sm">${s}</td>
+            <td class="py-3 px-4 text-right font-bold text-slate-800">${total}</td>
+            <td class="py-3 px-4 text-right font-bold text-emerald-700 bg-emerald-50/40">${ok}</td>
+            <td class="py-3 px-4 text-right font-bold text-amber-700 bg-amber-50/40">${tol}</td>
+            <td class="py-3 px-4 text-right font-bold text-orange-700 bg-orange-50/40">${leve}</td>
+            <td class="py-3 px-4 text-right font-bold text-[#DC1E35] bg-red-50/40">${grave}</td>
+            <td class="py-3 px-4 text-right font-black text-slate-900">${pct}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
     }
 
     function buildExportRows() {
       const activeStores = getActiveStores();
       return currentFiltered.map(p => {
+        let minPrice = null;
+        activeStores.forEach(s => {
+          const c = p.tiendas[s];
+          if (c && c.precio && (minPrice === null || c.precio < minPrice)) minPrice = c.precio;
+        });
+        const ev = (minPrice !== null && p.map_usd) ? evaluateCompliance(minPrice, p.map_usd) : null;
         const row = {
           Marca: p.marca,
           Categoria: p.categoria,
           Codigo: p.codigo,
           BarCode: p.barcode,
-          Producto: p.descripcion,
+          Descripcion_Completa: p.descripcion,
           Precio_Regular: p.precio_regular ?? "",
           MAP_USD: p.map_usd ?? "",
+          Discrepancia_Min_USD: ev ? Number(ev.diffUsd.toFixed(2)) : "",
+          Discrepancia_Pct: ev ? Number(ev.diffPct.toFixed(1)) : "",
+          Severidad: ev ? ev.label : "SIN DATOS",
         };
         activeStores.forEach(s => {
           row[s] = p.tiendas[s] ? p.tiendas[s].precio : "";
@@ -232,21 +529,19 @@
     }
 
     function exportExcel() {
-      const rows = buildExportRows();
-      const ws = XLSX.utils.json_to_sheet(rows);
+      const ws = XLSX.utils.json_to_sheet(buildExportRows());
       const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, "Comparativa_Precios");
-      XLSX.writeFile(wb, "Reporte_Precios_Repideales.xlsx");
+      XLSX.utils.book_append_sheet(wb, ws, "Auditoria_MAP_Repideales");
+      XLSX.writeFile(wb, "Reporte_MAP_Repideales.xlsx");
     }
 
     function exportCSV() {
-      const rows = buildExportRows();
-      const ws = XLSX.utils.json_to_sheet(rows);
+      const ws = XLSX.utils.json_to_sheet(buildExportRows());
       const csv = XLSX.utils.sheet_to_csv(ws);
       const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
-      link.download = "Reporte_Precios_Repideales.csv";
+      link.download = "Reporte_MAP_Repideales.csv";
       link.click();
     }
 
@@ -255,9 +550,7 @@
         const res = await fetch("data/precios_dashboard.json?t=" + Date.now());
         const data = await res.json();
         document.getElementById("last-updated").textContent = data.actualizado;
-        if (data.tiendas_orden && data.tiendas_orden.length) {
-          storeOrder = data.tiendas_orden;
-        }
+        if (data.tiendas_orden && data.tiendas_orden.length) storeOrder = data.tiendas_orden;
         allProducts = data.productos || [];
 
         const storeSelect = document.getElementById("store-filter");
@@ -292,7 +585,7 @@
       }
     }
 
-    ["search-input", "brand-filter", "category-filter", "store-filter", "match-filter"].forEach(id => {
+    ["search-input", "brand-filter", "category-filter", "store-filter"].forEach(id => {
       document.getElementById(id).addEventListener("input", renderTable);
       document.getElementById(id).addEventListener("change", renderTable);
     });
