@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27 16:32:30",
+  "actualizado": "2026-11-27 16:45:48",
   "tiendas_orden": [
     "Multimax",
     "Novey",
@@ -38,11 +38,7 @@
           "url": "https://spiegel.com.pa/producto/15-03-8537/",
           "titulo_tienda": "DISPENSADOR DE AGUA H04WDBB3S1 HISENSE"
         },
-        "Selecto": {
-          "precio": 169.95,
-          "url": "https://selectopa.com/products/dispensador-de-garrafon-de-agua-carga-inferior-3-temperaturas-negro-hisense-h04wdbb3s1",
-          "titulo_tienda": "Dispensador de Garrafón de Agua Carga Inferior 3 Temperaturas Negro Hisense H04WDBB3S1 Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -70,17 +66,13 @@
           "url": "https://spiegel.com.pa/producto/15-07-0113/",
           "titulo_tienda": "AIRE ACONDICIONADO INVERTER SPLIT 12000 BTU ATR122KA HISENSE"
         },
-        "Selecto": {
-          "precio": 289.95,
-          "url": "https://selectopa.com/products/aire-acondicionado-split-inverter-12-000-btu-hisense-atr122ka",
-          "titulo_tienda": "Aire Acondicionado Split Inverter 12,000 BTU Hisense ATR122KA Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
           "precio": 599.0,
           "url": "https://www.raenco.com/aire-acondicionado-hisense-atr122ka-11-000btu-split-inverter-seer-17.html",
-          "titulo_tienda": ".product-image-container-5089 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-5089 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-5089 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE ATR122HA 12,000BTU SEER 21 INVERTER"
         }
       }
     },
@@ -106,11 +98,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 389.95,
-          "url": "https://selectopa.com/products/aire-acondicionado-split-inverter-18-000-btu-hisense-atr182ka",
-          "titulo_tienda": "Aire Acondicionado Split Inverter 18,000 BTU Hisense ATR182KA Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -138,11 +126,7 @@
           "url": "https://spiegel.com.pa/producto/15-07-0124/",
           "titulo_tienda": "AIRE ACONDICIONADO INVERTER SPLIT 24000 BTU ATR242KA HISENSE"
         },
-        "Selecto": {
-          "precio": 489.95,
-          "url": "https://selectopa.com/products/aire-acondicionado-split-inverter-24-000-btu-hisense-atr242ka",
-          "titulo_tienda": "Aire Acondicionado Split Inverter 24,000 BTU SEER 18 Hisense ATR242KA Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -178,17 +162,13 @@
           "url": "https://spiegel.com.pa/producto/15-07-0126/",
           "titulo_tienda": "AIRE ACONDICIONADO INVERTER SPLIT 36000 BTU ATR362GU HISENSE"
         },
-        "Selecto": {
-          "precio": 949.95,
-          "url": "https://selectopa.com/products/aire-acondicionado-split-36-000-btu-inverter-seer-20-con-wi-fi-hisense-atr362gu",
-          "titulo_tienda": "Aire Acondicionado Split 36,000 BTU Inverter SEER 20 con Wi-Fi Hisense ATR362GU Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
           "precio": 949.95,
           "url": "https://www.raenco.com/aire-acondicionado-hisense-evap-atr362gu-split-inverter-36-000-btu-r32.html",
-          "titulo_tienda": ".product-image-container-9221 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-9221 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-9221 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE ATR362MA 36,000 BTU SEER 20 INVERTER"
         }
       }
     },
@@ -215,7 +195,11 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 279.99,
+          "url": "https://www.doitcenter.com.pa/productos/aire-acondicionado-split-12000-hisense-aires-acondicionados-atr122cj-518atr122cj",
+          "titulo_tienda": "Aire Acondicionado Split 12000 BTU Inverter R32 Panel Digital"
+        },
         "Titan": {
           "precio": 279.99,
           "url": "https://titan.com.pa/products/hisense-atr122cj-iduodu",
@@ -232,7 +216,7 @@
         "Raenco": {
           "precio": 279.95,
           "url": "https://www.raenco.com/aire-acondicionado-hisense-atr122cj-12-000btu-seer-18-inverter-wifi.html",
-          "titulo_tienda": ".product-image-container-99362 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-99362 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-99362 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE ATR122CJ 12,000BTU SEER 18 INVERTER WIFI"
         }
       }
     },
@@ -316,7 +300,7 @@
         "Raenco": {
           "precio": 379.95,
           "url": "https://www.raenco.com/aire-acondicionado-hisense-atr182cj-17-000btu-seer-18-inverter-wifi.html",
-          "titulo_tienda": ".product-image-container-108341 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-108341 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-108341 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE ATR182CJ 17,000BTU SEER 18 INVERTER WIFI"
         }
       }
     },
@@ -360,7 +344,7 @@
         "Raenco": {
           "precio": 619.95,
           "url": "https://www.raenco.com/aire-acondicionado-hisense-atr182hb-split-inverter-18-000-btu-r32.html",
-          "titulo_tienda": ".product-image-container-17711 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-17711 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-17711 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE EVAPORADOR ATR182HB 18,000 BTU SEER 20 INVERTER (NEGRO)"
         }
       }
     },
@@ -437,7 +421,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 479.95,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense.html",
+          "titulo_tienda": "AIRE ACONDICIONADO ATR242CJ 24,000BTU SEER 18 INVERTER WIFI"
+        }
       }
     },
     {
@@ -458,11 +446,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 249.95,
-          "url": "https://selectopa.com/products/llegando-19-de-dic-aire-acondicionado-split-9-000-btu-inverter-seer-17-hisense-atr092ka",
-          "titulo_tienda": "Aire Acondicionado Split 9,000 BTU Inverter SEER 17 Hisense ATR092KA Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -500,7 +484,7 @@
         "Raenco": {
           "precio": 1399.95,
           "url": "https://www.raenco.com/aire-acondicionado-hisense-auv-36tr5re3-36-000btu-seer-18-piso-techo.html",
-          "titulo_tienda": ".product-image-container-114145 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-114145 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-114145 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE AUV-36TR5RE3 36,000BTU SEER 18 PISO TECHO"
         }
       }
     },
@@ -536,7 +520,7 @@
         "Raenco": {
           "precio": 1999.95,
           "url": "https://www.raenco.com/aire-acondicionado-hisense-auv-60tr5rf3-52-000btu-seer-18-piso-techo.html",
-          "titulo_tienda": ".product-image-container-114146 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-114146 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-114146 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE AUV-60TR5RF3 60,000BTU SEER 18 PISO TECHO"
         }
       }
     },
@@ -562,11 +546,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 279.95,
-          "url": "https://selectopa.com/products/aire-acondicionado-portatil-12-000-btu-r-32-bajo-ruido-timer-24-horas-hisense-ap-12cw1rnxs20",
-          "titulo_tienda": "Aire Acondicionado Portátil 12,000 BTU R-32 Bajo Ruido Timer 24 Horas Hisense AP-12CW1RNXS20 Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 279.99,
@@ -576,7 +556,7 @@
         "Raenco": {
           "precio": 279.95,
           "url": "https://www.raenco.com/aire-acondicionado-hisense-portatil-ap-12cw1rnxs20-12-000-btu-wifi.html",
-          "titulo_tienda": ".product-image-container-9114 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-9114 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-9114 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE PORTATIL AP-12CW1RNXS20 12,000 BTU WIFI"
         }
       }
     },
@@ -602,11 +582,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 319.95,
-          "url": "https://selectopa.com/products/aire-acondicionado-portatil-14-000-btu-r-32-bajo-ruido-timer-24-horas-hisense-ap-14cw1rnxs20",
-          "titulo_tienda": "Aire Acondicionado Portátil 14,000 BTU R-32 Bajo Ruido Timer 24 Horas Hisense AP-14CW1RNXS20 Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 319.99,
@@ -632,28 +608,20 @@
           "titulo_tienda": "Aire Acondicionado Hisense ATR122HA | Inverter | 12,000 BTU | Wi-Fi | SEER 21 Default Title"
         },
         "Novey": null,
-        "Rodelag": {
-          "precio": 349.99,
-          "url": "https://rodelag.com/products/aire-acondicionado-split-de-12000btu-atr122ha-de-hisense-wi-fi-seer-21",
-          "titulo_tienda": "Aire acondicionado Split de 12000BTU ATR122HA de Hisense Wi-Fi SEER 21 Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": {
-          "precio": 349.99,
-          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=7d8dc71be&_ss=e",
-          "titulo_tienda": "Aire Acondicionado Hisense / Split / 12,000 BTU / Inverter"
-        },
+        "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 349.95,
-          "url": "https://selectopa.com/products/aire-acondicionado-split-12-000-btu-inverter-seer-21-con-wi-fi-hisense-atr122ha",
-          "titulo_tienda": "Aire Acondicionado Split 12,000 BTU Inverter SEER 21 con Wi-Fi Hisense ATR122HA Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 599.0,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-atr122ka-11-000btu-split-inverter-seer-17.html",
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE ATR122HA 12,000BTU SEER 21 INVERTER"
+        }
       }
     },
     {
@@ -672,27 +640,19 @@
           "titulo_tienda": "Aire Acondicionado Hisense ATR182HA | Inverter | 18,000 BTU | Wi-Fi | SEER 20 Default Title"
         },
         "Novey": null,
-        "Rodelag": {
-          "precio": 475.98,
-          "url": "https://rodelag.com/products/aire-acondicionado-split-de-18000btu-atr182ha-de-hisense-wi-fi-seer-20",
-          "titulo_tienda": "Aire acondicionado Split de 18000BTU ATR182HA de Hisense Wi-Fi SEER 20 Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 499.99,
-          "url": "https://selectopa.com/products/aire-acondicionado-split-18-000-btu-inverter-seer-20-con-wi-fi-hisense-atr182ha",
-          "titulo_tienda": "Aire Acondicionado Split 18,000 BTU Inverter SEER 20 con Wi-Fi Hisense ATR182HA Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
           "precio": 549.95,
           "url": "https://www.raenco.com/aire-acondicionado-hisense-atr182ha-18-000-btu-seer-20-split-inverter.html",
-          "titulo_tienda": ".product-image-container-57143 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-57143 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-57143 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "AIRE ACONDICIONADO HISENSE ATR182HA 18,000 BTU SEER 20 INVERTER"
         }
       }
     },
@@ -718,11 +678,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 569.95,
-          "url": "https://selectopa.com/products/aire-acondicionado-split-24-000-btu-inverter-seer-20-con-wi-fi-hisense-atr242ha",
-          "titulo_tienda": "Aire Acondicionado Split 24,000 BTU Inverter SEER 20 con Wi-Fi Hisense ATR242HA Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -744,21 +700,17 @@
           "titulo_tienda": "Deshumidificador Hisense DH-50KP1SJXE30 | 50 pintas/día Default Title"
         },
         "Novey": null,
-        "Rodelag": {
-          "precio": 169.98,
-          "url": "https://rodelag.com/products/deshumificador-50-pintas-2-velocidades-dh-50kp1sjxe30-hisense",
-          "titulo_tienda": "Deshumificador 50 pintas DH-50KP1SJXE30 Hisense 2 velocidades Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 179.99,
+          "url": "https://www.doitcenter.com.pa/productos/deshumidificador-50-pintas-bla-hisense-deshumidificadores-dh-50kp1sjxe30-518dh50kp1sjxe30",
+          "titulo_tienda": "Deshumidificador 50 Pintas Blanco Con Control De Humedad 2 Velocidades"
+        },
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 179.95,
-          "url": "https://selectopa.com/products/deshumificador-de-50-pintas-pantalla-led-hisense-dh-50kp1sjxe30",
-          "titulo_tienda": "Deshumificador de 50 Pintas Pantalla LED Hisense DH-50KP1SJXE30 Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -807,12 +759,12 @@
         "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
-        "Titan": {
-          "precio": 319.99,
-          "url": "https://titan.com.pa/products/hisense-party-thunder",
-          "titulo_tienda": "Bocina Hisense 6.5\" Pulgadas Party Thunder Estéreo Default Title"
+        "Do It Center": {
+          "precio": 349.99,
+          "url": "https://www.doitcenter.com.pa/productos/bocina-party-thunder-hisense-6-hisense-equipos-de-sonido-party-thunder-518thunder",
+          "titulo_tienda": "Bocina Party Thunder Hisense 620W"
         },
+        "Titan": null,
         "Spiegel": null,
         "Selecto": null,
         "Creditos Mundiales": null,
@@ -844,17 +796,9 @@
         },
         "EVision": null,
         "Do It Center": null,
-        "Titan": {
-          "precio": 109.99,
-          "url": "https://titan.com.pa/products/hisense-hs2100",
-          "titulo_tienda": "Barra de Sonido Hisense 2.1 Canales 240W Default Title"
-        },
+        "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 109.95,
-          "url": "https://selectopa.com/products/barra-de-sonido-2-1-canales-dolby-audio-6-modos-de-sonido-240w-bluetooth-hs2100-hisense",
-          "titulo_tienda": "Barra de Sonido 2.1 Canales Dolby Audio 6 Modos de Sonido 240W Bluetooth HS2100 Hisense Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -882,11 +826,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 129.95,
-          "url": "https://selectopa.com/products/barra-de-sonido-3-1-canales-con-subwoofer-inalambrico-480w-dts-virtual-x-dolby-digital-plus-bluetooth-hisense-hs3100",
-          "titulo_tienda": "Barra de Sonido 3.1 Canales con Subwoofer Inalámbrico 480W DTS Virtual: X Dolby Digital Plus Bluetooth Hisense HS3100 Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -920,7 +860,7 @@
         "Raenco": {
           "precio": 69.0,
           "url": "https://www.raenco.com/sound-bar-hisense-hs1000-2-0ch-120w-bluetooth-5-3-hdmi-arc-aux-usb.html",
-          "titulo_tienda": ".product-image-container-99418 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-99418 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-99418 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "SOUND BAR HISENSE HS1000 2.0CH/ 120W/ BLUETOOTH 5.3/ HDMI ARC/ AUX/ USB"
         }
       }
     },
@@ -943,7 +883,11 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 359.99,
+          "url": "https://www.doitcenter.com.pa/productos/mart-tv-hisense-qled-58-pulgad-hisense-televisores-58q6qv-51858q6qv",
+          "titulo_tienda": "Smart TV Hisense QLED 58 Pulgadas 4K UHD 60Hz"
+        },
         "Titan": {
           "precio": 339.99,
           "url": "https://titan.com.pa/products/hisense-58q6qv",
@@ -1007,7 +951,11 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 149.99,
+          "url": "https://www.doitcenter.com.pa/productos/smart-tv-qled-40-pulgadas-full-hisense-televisores-40q4sv-51840q4sv",
+          "titulo_tienda": "Smart Tv QLED 40 Pulgadas Full Hd Vidda Con Dolby Audio 40Q4SV"
+        },
         "Titan": {
           "precio": 149.99,
           "url": "https://titan.com.pa/products/hisense-40q4sv",
@@ -1024,7 +972,7 @@
         "Raenco": {
           "precio": 149.0,
           "url": "https://www.raenco.com/televisor-hisense-40-40q4sv-smart-tv-hi-qled-fhd-vidaa-tdt.html",
-          "titulo_tienda": ".product-image-container-103598 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-103598 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-103598 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "TELEVISOR HISENSE 40\" 40Q4SV SMART TV/ HI-QLED/ FHD/  VIDAA/ TDT"
         }
       }
     },
@@ -1051,7 +999,11 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 179.99,
+          "url": "https://www.doitcenter.com.pa/productos/smart-tv-qled-43-pulgadas-full-hisense-televisores-43q4sv-51843q4sv",
+          "titulo_tienda": "Smart Tv QLED 43 Pulgadas Full HD Vidda Con Dolby Audio 43Q4SV"
+        },
         "Titan": {
           "precio": 179.99,
           "url": "https://titan.com.pa/products/hisense-43q4sv",
@@ -1068,7 +1020,7 @@
         "Raenco": {
           "precio": 179.0,
           "url": "https://www.raenco.com/televisor-hisense-43-43q4sv-smart-tv-hi-qled-fhd-vidaa-tdt.html",
-          "titulo_tienda": ".product-image-container-103599 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-103599 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-103599 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "TELEVISOR HISENSE 43\" 43Q4SV SMART TV/ HI-QLED/ FHD/  VIDAA/ TDT"
         }
       }
     },
@@ -1095,7 +1047,11 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 239.99,
+          "url": "https://www.doitcenter.com.pa/productos/smart-tv-qled-50-pulgadas-full-hisense-televisores-50q4sv-51850q4sv",
+          "titulo_tienda": "Smart Tv QLED 50 Pulgadas Full Hd Vidda Con Dolby Audio 50Q4SV"
+        },
         "Titan": {
           "precio": 239.99,
           "url": "https://titan.com.pa/products/hisense-50q4sv",
@@ -1108,7 +1064,7 @@
         "Raenco": {
           "precio": 239.0,
           "url": "https://www.raenco.com/televisor-hisense-50-50q4sv-smart-tv-hi-qled-fhd-vidaa-tdt.html",
-          "titulo_tienda": ".product-image-container-103600 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-103600 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-103600 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "TELEVISOR HISENSE 50\" 50Q4SV SMART TV/ HI-QLED/ FHD/  VIDAA/ TDT"
         }
       }
     },
@@ -1132,11 +1088,7 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": {
-          "precio": 199.99,
-          "url": "https://titan.com.pa/products/hisense-43qd5sv",
-          "titulo_tienda": "Televisor Hisense 43\" Pulgadas QD5 4K Ultra HD Hi-QLED Smart TV VIDAA Default Title"
-        },
+        "Titan": null,
         "Spiegel": null,
         "Selecto": null,
         "Creditos Mundiales": null,
@@ -1166,11 +1118,7 @@
           "titulo_tienda": "Televisor Hisense 50\" Pulgadas 4K QLED Default Title"
         },
         "Spiegel": null,
-        "Selecto": {
-          "precio": 279.95,
-          "url": "https://selectopa.com/products/televisor-50-led-smart-tv-qled-4k-ultra-hd-hisense-50qd5sv-television",
-          "titulo_tienda": "Televisor 50\" LED Smart TV QLED 4K Ultra HD Hisense 50QD5SV Televisión. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -1195,7 +1143,11 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 389.99,
+          "url": "https://www.doitcenter.com.pa/productos/smart-tv-hisense-qled-65-pulga-hisense-televisores-65qd5sv-51865qd5sv",
+          "titulo_tienda": "Smart TV Hisense QLED 65 Pulgadas 4K"
+        },
         "Titan": {
           "precio": 389.99,
           "url": "https://titan.com.pa/products/hisense-65qd5sv",
@@ -1228,11 +1180,7 @@
           "titulo_tienda": "Televisor Hisense QLED 55Q6QV | VIDAA | 55\" | 4K | HDMI | USB | Wi-Fi | Bluetooth Default Title"
         },
         "Novey": null,
-        "Rodelag": {
-          "precio": 299.98,
-          "url": "https://rodelag.com/products/hisense-55q6qv-televisores-qled-smart-55-4k-vidaa",
-          "titulo_tienda": "Televisor QLED Smart, 55”, 55Q6QV, Hisense, 4K UHD VIDAA con Dolby Vision Atmos Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": {
           "precio": 299.95,
           "url": "https://www.panafoto.com/hisense-hi-qled-4k-43-dolby-vision-ai-smooth-motion-2-anos-de-garantia-156081.html",
@@ -1240,11 +1188,7 @@
         },
         "EVision": null,
         "Do It Center": null,
-        "Titan": {
-          "precio": 299.99,
-          "url": "https://titan.com.pa/products/televisor-hisense-55-qled-smart-tv-vidaa-u9-55q6qv-panama",
-          "titulo_tienda": "Televisor Hisense 55”/ QLED Smart TV / VIDAA U9 / 55Q6QV Default Title"
-        },
+        "Titan": null,
         "Spiegel": null,
         "Selecto": null,
         "Creditos Mundiales": null,
@@ -1256,7 +1200,7 @@
         "Raenco": {
           "precio": 369.0,
           "url": "https://www.raenco.com/televisor-hisense-55-55q6qv-qled-4k-vidaa-dolby-atmos-vision.html",
-          "titulo_tienda": ".product-image-container-49626 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-49626 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-49626 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "TELEVISOR HISENSE 55\" 55Q6QV QLED 4K/ VIDAA/ DOLBY ATMOS-VISION"
         }
       }
     },
@@ -1296,7 +1240,7 @@
         "Raenco": {
           "precio": 699.0,
           "url": "https://www.raenco.com/televisor-hisense-65-65q6qv-qled-4k-vidaa-dolby-atmos-vision.html",
-          "titulo_tienda": ".product-image-container-23372 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-23372 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-23372 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "TELEVISOR HISENSE 65\" 65Q6QV QLED 4K/ VIDAA/ DOLBY ATMOS-VISION"
         }
       }
     },
@@ -1344,21 +1288,13 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": {
-          "precio": 149.99,
-          "url": "https://titan.com.pa/products/televisor-hisense-40-fhd-smart-2k-vidaa-40a4nv-panama",
-          "titulo_tienda": "Televisor Hisense 40\" / FHD Smart 2K / VIDAA / 40A4NV Default Title"
-        },
+        "Titan": null,
         "Spiegel": {
           "precio": 149.99,
           "url": "https://spiegel.com.pa/producto/14-20-0011/",
           "titulo_tienda": "TELEVISOR LED 40&#8243; SMART 40A4NV HISENSE"
         },
-        "Selecto": {
-          "precio": 159.95,
-          "url": "https://selectopa.com/products/televisor-40-led-smart-tv-fhd-2k-vidaa-hisense-40a4nv-television",
-          "titulo_tienda": "Televisor 40\" LED Smart TV FHD 2K VIDAA Hisense 40A4NV Televisión. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -1376,11 +1312,7 @@
       "tiendas": {
         "Multimax": null,
         "Novey": null,
-        "Rodelag": {
-          "precio": 1299.99,
-          "url": "https://rodelag.com/products/hisense-98q6qg-televisores-qled-smart-98-4k-google-tv",
-          "titulo_tienda": "Televisor QLED Smart, 98”, 98Q6QG, Hisense, 4K Google TV Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
@@ -1396,7 +1328,7 @@
         "Raenco": {
           "precio": 1299.0,
           "url": "https://www.raenco.com/televisor-hisense-98-98q6qg-qled-4k-google-dolby-atmos-vision.html",
-          "titulo_tienda": ".product-image-container-114937 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-114937 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-114937 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "TELEVISOR HISENSE 98\" 98Q6QG QLED 4K/ GOOGLE/ DOLBY ATMOS-VISION"
         }
       }
     },
@@ -1428,27 +1360,19 @@
         },
         "EVision": null,
         "Do It Center": null,
-        "Titan": {
-          "precio": 579.99,
-          "url": "https://titan.com.pa/products/televisor-hisense-75-smart-tv-vidaa-75q6qv-panama",
-          "titulo_tienda": "Televisor Hisense 75” / Smart TV / VIDAA / 75Q6QV Default Title"
-        },
+        "Titan": null,
         "Spiegel": {
           "precio": 579.99,
           "url": "https://spiegel.com.pa/producto/14-20-0037/",
           "titulo_tienda": "TELEVISOR LED 75&#8243; QLED 75Q6QV HISENSE"
         },
-        "Selecto": {
-          "precio": 619.95,
-          "url": "https://selectopa.com/products/televisor-75-qled-smart-tv-uhd-4k-vidaa-quantum-dot-dolby-vision-hisense-75q6qv-television",
-          "titulo_tienda": "Televisor 75\" QLED Smart TV UHD 4K VIDAA Quantum Dot + Dolby Vision Hisense 75Q6QV Televisión. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
           "precio": 579.0,
           "url": "https://www.raenco.com/televisor-hisense-75-75q6qv-qled-4k-vidaa-dolby-atmos-vision.html",
-          "titulo_tienda": ".product-image-container-59188 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-59188 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-59188 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "TELEVISOR HISENSE 75\" 75Q6QV QLED 4K/ VIDAA/ DOLBY ATMOS-VISION"
         }
       }
     },
@@ -1476,17 +1400,9 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": {
-          "precio": 879.99,
-          "url": "https://titan.com.pa/products/televisor-hisense-85-qled-smart-tv-4k-uhd-85q6qv",
-          "titulo_tienda": "Televisor Hisense 85\" QLED Smart TV 4K UHD | 85Q6QV Default Title"
-        },
+        "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 879.95,
-          "url": "https://selectopa.com/products/televisor-85-qled-smart-tv-uhd-4k-ai-vidaa-quantum-dot-dolby-vision-hisense-85q6qv-television",
-          "titulo_tienda": "Televisor 85\" QLED Smart TV UHD 4K AI VIDAA Quantum Dot + Dolby Vision Hisense 85Q6QV Televisión. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 929.99,
@@ -1496,7 +1412,7 @@
         "Raenco": {
           "precio": 959.0,
           "url": "https://www.raenco.com/televisor-hisense-85-85q6qv-qled-4k-vidaa-dolby-atmos-vision.html",
-          "titulo_tienda": ".product-image-container-49620 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-49620 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-49620 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "TELEVISOR HISENSE 85\" 85Q6QV QLED 4K/ VIDAA/ DOLBY ATMOS-VISION"
         }
       }
     },
@@ -1520,21 +1436,13 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": {
-          "precio": 269.99,
-          "url": "https://titan.com.pa/products/televisor-hisense-50-uhd-smart-50a6nv-panama",
-          "titulo_tienda": "Televisor Hisense 50\" UHD Smart Default Title"
-        },
+        "Titan": null,
         "Spiegel": {
           "precio": 269.99,
           "url": "https://spiegel.com.pa/producto/14-20-0034/",
           "titulo_tienda": "TELEVISOR LED 50&#8243; SMART 50A6NV HISENSE"
         },
-        "Selecto": {
-          "precio": 269.95,
-          "url": "https://selectopa.com/products/televisor-50-led-smart-tv-uhd-4k-vidaa-hisense-50a6nv-television",
-          "titulo_tienda": "Televisor 50\" LED Smart TV UHD 4K VIDAA Hisense 50A6NV Televisión. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 269.99,
@@ -1562,11 +1470,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 379.95,
-          "url": "https://selectopa.com/products/televisor-65-led-smart-tv-uhd-4k-vidaa-hisense-65a6nv-television",
-          "titulo_tienda": "Televisor 65\" LED Smart TV UHD 4K VIDAA Hisense 65A6NV Televisión. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 379.99,
@@ -1683,14 +1587,14 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 179.99,
+          "url": "https://www.doitcenter.com.pa/productos/lavadora-automatica-hisense-ca-hisense-lavadoras-wt3k1123ut-518wt3k1123ut",
+          "titulo_tienda": "Lavadora Automática Hisense Carga Superior 10 Kg"
+        },
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 179.95,
-          "url": "https://selectopa.com/products/lavadora-automatica-de-carga-superior-10-5kg-hisense-wt3k1123ut",
-          "titulo_tienda": "Lavadora Automática Hisense WT3K1123UT de 10.5 kg, Carga Superior, 8 Programas de Lavado, Tecnología Bubble Clean y Aqua Save, Color Titanio Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -1708,21 +1612,13 @@
       "tiendas": {
         "Multimax": null,
         "Novey": null,
-        "Rodelag": {
-          "precio": 309.98,
-          "url": "https://rodelag.com/products/lavadora-automatica-20kg-wt5i2023db-hisense-color-negro",
-          "titulo_tienda": "Lavadora automática 20kg WT5I2023DB Hisense color negro Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 309.95,
-          "url": "https://selectopa.com/products/lavadora-automatica-carga-superior-20kg-negro-smart-fuzzy-hisense-wt5i2023db",
-          "titulo_tienda": "Lavadora Automática Hisense WT5I2023DB de 20 kg, Carga Superior, Motor Direct Drive Inverter, 12 Programas de Lavado, Tecnología iJet e iBubble, Color Negro Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -1750,11 +1646,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 339.95,
-          "url": "https://selectopa.com/products/lavadora-automatica-carga-superior-22kg-negro-inverter-hisense-wt5i2223db",
-          "titulo_tienda": "Lavadora Automática Carga Superior 22kg Negro Inverter Hisense WT5I2223DB Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -1779,18 +1671,18 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 379.99,
+          "url": "https://www.doitcenter.com.pa/productos/lavadora-automatica-de-carga-s-hisense-lavadoras-wt5i2323uba-518wt5i2323uba",
+          "titulo_tienda": "Lavadora Automática De Carga Superior 23 kg Con Motor Inverter Y Panel LED"
+        },
         "Titan": {
           "precio": 379.99,
           "url": "https://titan.com.pa/products/hisense-wt5i2323uba",
           "titulo_tienda": "Lavadora Hisense 23 kg Carga Superior Default Title"
         },
         "Spiegel": null,
-        "Selecto": {
-          "precio": 379.95,
-          "url": "https://selectopa.com/products/lavadora-automatica-carga-superior-23kg-inverter-panel-led-negro-hisense-wt5i2323uba",
-          "titulo_tienda": "Lavadora Automática Carga Superior 23kg Inverter Panel LED Negro Hisense WT5I2323UBA Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -1818,11 +1710,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 109.95,
-          "url": "https://selectopa.com/products/lavadora-semi-automatica-11kg-hisense-tta1107n",
-          "titulo_tienda": "Lavadora Semi-Automática 11kg Hisense TTA1107N Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -1850,11 +1738,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 129.95,
-          "url": "https://selectopa.com/products/lavadora-semi-automatica-13kg-hisense-tta1307n",
-          "titulo_tienda": "Lavadora Semi-Automática 13kg Hisense TTA1307N Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -1878,11 +1762,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 139.95,
-          "url": "https://selectopa.com/products/lavadora-semi-automatica-15kg-hisense-tta1507n",
-          "titulo_tienda": "Lavadora Semi-Automática 15kg Hisense TTA1507N Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -1900,11 +1780,7 @@
       "tiendas": {
         "Multimax": null,
         "Novey": null,
-        "Rodelag": {
-          "precio": 209.98,
-          "url": "https://rodelag.com/products/lavadora-14kg-wt5k1423dt-ibubble-dd-inverter",
-          "titulo_tienda": "Lavadora 14kg WT5K1423DT Ibubble DD Inverter Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
@@ -1914,17 +1790,13 @@
           "url": "https://spiegel.com.pa/producto/15-04-4200/",
           "titulo_tienda": "LAVADORA AUTOMATICA 14KG WT5K1423DT HISENSE"
         },
-        "Selecto": {
-          "precio": 209.95,
-          "url": "https://selectopa.com/products/lavadora-automatica-carga-superior-14kg-8-ciclos-hisense-wt5k1423dt",
-          "titulo_tienda": "Lavadora Automática Carga Superior 14kg 8 Ciclos Hisense WT5K1423DT Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
           "precio": 209.95,
           "url": "https://www.raenco.com/lavadora-hisense-14kg-wt5k1423dt-inverter-ibubble-gris.html",
-          "titulo_tienda": ".product-image-container-101424 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-101424 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-101424 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "LAVADORA HISENSE 14KG WT5K1423DT INVERTER IBUBBLE GRIS"
         }
       }
     },
@@ -1947,14 +1819,14 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 239.99,
+          "url": "https://www.doitcenter.com.pa/productos/lavadora-de-carga-superior-16k-hisense-lavadoras-wt5k1623dt-518wt5k1623dt",
+          "titulo_tienda": "Lavadora de Carga Superior 16 kg Con Tecnología iBubble 8 Ciclos de Lavado"
+        },
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 239.95,
-          "url": "https://selectopa.com/products/lavadora-automatica-carga-superior-16kg-8-ciclos-hisense-wt5k1623dt",
-          "titulo_tienda": "Lavadora Automática Carga Superior 16kg 8 Ciclos Hisense WT5K1623DT Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 259.99,
@@ -1964,7 +1836,7 @@
         "Raenco": {
           "precio": 239.95,
           "url": "https://www.raenco.com/lavadora-hisense-16kg-wt5k1623dt-inverter-ibubble-gris.html",
-          "titulo_tienda": ".product-image-container-101425 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-101425 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-101425 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "LAVADORA HISENSE 16KG WT5K1623DT INVERTER IBUBBLE GRIS"
         }
       }
     },
@@ -1980,11 +1852,7 @@
       "tiendas": {
         "Multimax": null,
         "Novey": null,
-        "Rodelag": {
-          "precio": 369.98,
-          "url": "https://rodelag.com/products/lavadora-23kg-wt3t2323uw-hisense-color-blanco-carga-superior",
-          "titulo_tienda": "Lavadora 23kg WT3T2323UW Hisense color blanco carga superior Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
@@ -1994,11 +1862,7 @@
           "url": "https://spiegel.com.pa/producto/15-04-4213/",
           "titulo_tienda": "LAVADORA AUTOMATICA 23KG WT3T2323UW HISENSE"
         },
-        "Selecto": {
-          "precio": 369.95,
-          "url": "https://selectopa.com/products/lavadora-automatica-de-carga-superior-23kg-con-pantalla-led-tecnologia-smart-fluzzy-hisense-wt3t2323uw",
-          "titulo_tienda": "Lavadora Automática de Carga Superior 23kg con Pantalla LED Tecnología Smart Fluzzy Hisense WT3T2323UW Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 369.99,
@@ -2027,7 +1891,11 @@
         "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 409.99,
+          "url": "https://www.doitcenter.com.pa/productos/lavasecadora-15-10-kg-inverter-hisense-secadoras-wd3s1543bt-518wd3s1543bt",
+          "titulo_tienda": "Lavasecadora 15-10 Kg Inverter WiFi Vapor Carga Frontal Gris"
+        },
         "Titan": {
           "precio": 409.99,
           "url": "https://titan.com.pa/products/hisense-wd3s1543bt",
@@ -2128,7 +1996,7 @@
         "Raenco": {
           "precio": 219.0,
           "url": "https://www.raenco.com/congelador-hisense-5pc-ft145n1swr-blanco.html",
-          "titulo_tienda": ".product-image-container-104107 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-104107 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-104107 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "CONGELADOR HISENSE 5PC FT145N1SWR BLANCO"
         }
       }
     },
@@ -2178,11 +2046,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 129.95,
-          "url": "https://selectopa.com/products/congelador-horizontal-3-4p3-my-fresh-choice-blanco-hisense-fc34d6bwxe-freezer",
-          "titulo_tienda": "Congelador Horizontal 3.4p3 My Fresh Choice Blanco Hisense FC34D6BWXE Freezer. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -2210,11 +2074,7 @@
           "titulo_tienda": "Congelador Hisense 7P3 Default Title"
         },
         "Spiegel": null,
-        "Selecto": {
-          "precio": 189.95,
-          "url": "https://selectopa.com/products/congelador-horizontal-7-0p3-my-fresh-choice-blanco-hisense-fc70d6bwxe-freezer",
-          "titulo_tienda": "Congelador Horizontal 7.0p3 My Fresh Choice Blanco Hisense FC70D6BWXE Freezer. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -2271,20 +2131,20 @@
         "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 799.99,
+          "url": "https://www.doitcenter.com.pa/productos/refrigerador-french-door-221-hisense-refrigeradoras-rf220si5a-518rf220si5a",
+          "titulo_tienda": "Refrigerador French Door 22.1 Pies Cúbicos En Acero Inoxidable Con Diseño Premium"
+        },
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 799.95,
-          "url": "https://selectopa.com/products/llegando-19-de-dic-refrigeradora-french-door-22-1p3-no-frost-inverter-ice-maker-hisense-rf220si5a",
-          "titulo_tienda": "Refrigeradora French Door 22.1p3 No Frost Inverter Ice Maker Hisense RF220SI5A Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
           "precio": 814.95,
           "url": "https://www.raenco.com/refrigeradora-hisense-22pc-rf220si5a-front-door-acero.html",
-          "titulo_tienda": ".product-image-container-8104 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8104 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8104 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADORA HISENSE 22PC RF220SI5A FRONT DOOR ACERO"
         }
       }
     },
@@ -2314,17 +2174,13 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 299.95,
-          "url": "https://selectopa.com/products/refrigeradora-top-mount-8-8-pies-con-dispensador-de-agua-inverter-hisense-rt1n250nmd",
-          "titulo_tienda": "Refrigeradora Top Mount 8.8 pies con Dispensador de Agua Inverter Hisense RT1N250NMD Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
           "precio": 399.0,
           "url": "https://www.raenco.com/refrigeradora-hisense-rt1n250nmd-8-8pc-con-dispensador-inverter-acero.html",
-          "titulo_tienda": ".product-image-container-95920 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-95920 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-95920 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADORA HISENSE RT1N250NMD 8.8PC CON DISPENSADOR INVERTER ACERO"
         }
       }
     },
@@ -2351,14 +2207,14 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 799.99,
+          "url": "https://www.doitcenter.com.pa/productos/refrigerador-side-by-side-223-hisense-refrigeradoras-rs223sv5a-518rs223sv5a",
+          "titulo_tienda": "Refrigerador Side-By-Side 22.3 Pies Cúbicos De Acero Inoxidable Con Dispensador De Agua"
+        },
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 799.95,
-          "url": "https://selectopa.com/products/llegando-19-de-dic-refrigeradora-side-by-side-22-9p3-con-dispensador-de-agua-y-hielo-inverter-hisense-rs223sv5a",
-          "titulo_tienda": "Refrigeradora Side by Side 22.9p3 con Dispensador de Agua y Hielo Inverter Hisense RS223SV5A Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -2386,17 +2242,13 @@
           "url": "https://spiegel.com.pa/producto/15-03-1213/",
           "titulo_tienda": "REFRIGERADORA SIDE BY SIDE DE 15.6 PC RS3P428NEDA1 HISENSE"
         },
-        "Selecto": {
-          "precio": 469.95,
-          "url": "https://selectopa.com/products/refrigeradora-side-by-side-15-6p3-inverter-hisense-rs3p428neda1",
-          "titulo_tienda": "Refrigeradora Side By Side 15.6p3 Inverter Hisense RS3P428NEDA1 Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
           "precio": 659.0,
           "url": "https://www.raenco.com/refrigerador-hisense-rs3p428neda1-15-6pc-sxs-sin-dispensador-silver.html",
-          "titulo_tienda": ".product-image-container-8115 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8115 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8115 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADOR HISENSE RS3P428NEDA1 15.6PC SXS"
         }
       }
     },
@@ -2423,14 +2275,14 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 449.99,
+          "url": "https://www.doitcenter.com.pa/productos/refrigeradora-side-by-side-16-hisense-refrigeradoras-rs3p428neda2-518rs3p428neda2",
+          "titulo_tienda": "Refrigeradora Side By Side 16 Pies Cúbicos Con Tecnología Inverter No Frost"
+        },
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 449.95,
-          "url": "https://selectopa.com/products/refrigeradora-side-by-side-15-6p3-inverter-hisense-rs3p428neda2",
-          "titulo_tienda": "Refrigeradora Side By Side 15.6p3 Inverter Hisense RS3P428NEDA2 Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -2476,7 +2328,7 @@
         "Raenco": {
           "precio": 774.95,
           "url": "https://www.raenco.com/refrigeradora-hisense-18-7pc-rs190p5esr-sxs-con-dispensador-silver.html",
-          "titulo_tienda": ".product-image-container-104105 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-104105 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-104105 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADORA HISENSE 18.7PC RS190P5ESR SXS CON DISPENSADOR SILVER"
         }
       }
     },
@@ -2516,7 +2368,7 @@
         "Raenco": {
           "precio": 559.95,
           "url": "https://www.raenco.com/refrigeradora-hisense-19-1pc-rs3p558nmcb-sxs-con-dispensador-inverter-acero.html",
-          "titulo_tienda": ".product-image-container-95924 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-95924 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-95924 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADORA HISENSE 19.1PC RS3P558NMCB SXS CON DISPENSADOR INVERTER ACERO"
         }
       }
     },
@@ -2607,7 +2459,11 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 319.99,
+          "url": "https://www.doitcenter.com.pa/productos/refrigerador-hisense-top-mount-hisense-refrigeradoras-rt3n320naca-518rt3n320naca",
+          "titulo_tienda": "Refrigerador Hisense Top Mount 11 Pies Cúbicos Inoxidable"
+        },
         "Titan": {
           "precio": 319.99,
           "url": "https://titan.com.pa/products/hisense-rt3n320naca",
@@ -2646,11 +2502,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 299.95,
-          "url": "https://selectopa.com/products/refrigeradora-top-mount-11-5p3-con-dispensador-de-agua-inverter-hisense-rt1n320nmda",
-          "titulo_tienda": "Refrigeradora Top Mount 11.5p3 con Dispensador de Agua Inverter Hisense RT1N320NMDA Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -2674,11 +2526,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 339.95,
-          "url": "https://selectopa.com/products/refrigeradora-top-mount-con-dispensador-de-agua-13-2p3-inverter-hisense-rt14n6cdx",
-          "titulo_tienda": "Refrigeradora Top Mount con Dispensador de Agua 13.2p3 Inverter Hisense RT14N6CDX Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -2710,11 +2558,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 169.95,
-          "url": "https://selectopa.com/products/refrigeradora-top-mount-5-5p3-hisense-rt55d6aae",
-          "titulo_tienda": "Refrigeradora Top Mount 5.5P3 Hisense RT55D6AAE Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -2760,11 +2604,7 @@
       "tiendas": {
         "Multimax": null,
         "Novey": null,
-        "Rodelag": {
-          "precio": 149.98,
-          "url": "https://rodelag.com/products/refrigeradora-mini-bar-4-2pc-rr43d6acx1-hisense",
-          "titulo_tienda": "Refrigeradora Mini Bar 4.2pc RR43D6ACX1 Hisense puerta reversible Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
@@ -2774,11 +2614,7 @@
           "url": "https://spiegel.com.pa/producto/15-03-1206/",
           "titulo_tienda": "REFRIGERADORA MINI BAR DE 4.2PC RR43D6ACX1 HISENSE"
         },
-        "Selecto": {
-          "precio": 149.95,
-          "url": "https://selectopa.com/products/refrigeradora-mini-bar-4-2p3-puerta-reversible-hisense-rr43d6acx1",
-          "titulo_tienda": "Refrigeradora Mini Bar 4.2p3 Puerta Reversible Hisense RR43D6ACX1 Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -2803,14 +2639,14 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 579.99,
+          "url": "https://www.doitcenter.com.pa/productos/refrigerador-french-door-171-hisense-refrigeradoras-rq171bv5a-518rq171bv5a",
+          "titulo_tienda": "Refrigerador French Door 17.1 Pies Cúbicos Premium Con Fábrica De Hielo Automática"
+        },
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 579.95,
-          "url": "https://selectopa.com/products/llegando-19-de-dic-refrigeradora-cross-door-17p3-inverter-pure-flat-hisense-rq171bv5a",
-          "titulo_tienda": "Refrigeradora Cross Door 17p3 Inverter Pure Flat Hisense RQ171BV5A Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 599.99,
@@ -2820,7 +2656,7 @@
         "Raenco": {
           "precio": 659.95,
           "url": "https://www.raenco.com/refrigeradora-hisense-17-1pc-rq171bv5a-cd-ice-maker-silver.html",
-          "titulo_tienda": ".product-image-container-8095 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8095 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8095 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADORA HISENSE 17.1PC RQ171BV5A CD ICE MAKER SILVER"
         }
       }
     },
@@ -2842,17 +2678,13 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 929.95,
-          "url": "https://selectopa.com/products/refrigeradora-french-door-26p3-en-acero-inoxidable-inverter-hisense-hrf266n6cse",
-          "titulo_tienda": "Refrigeradora French Door 26p3 en Acero Inoxidable Inverter Hisense HRF266N6CSE Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
           "precio": 929.95,
           "url": "https://www.raenco.com/refrigeradora-hisense-26-6pc-hrf266n6cse-front-door-acero.html",
-          "titulo_tienda": ".product-image-container-7904 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-7904 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-7904 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADORA HISENSE 26.6PC HRF266N6CSE FRONT DOOR ACERO"
         }
       }
     },
@@ -2874,11 +2706,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 489.95,
-          "url": "https://selectopa.com/products/refrigeradora-side-by-side-18p3-colorr-negro-inverter-multi-air-flow-hisense-rs19n6abi",
-          "titulo_tienda": "Refrigeradora Side by Side 18p3 Color Negro Inverter Multi Air Flow Hisense RS19N6ABI Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 489.99,
@@ -2934,11 +2762,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 399.95,
-          "url": "https://selectopa.com/products/refrigeradora-top-mount-con-dispensador-de-agua-16-3p3-inverter-hisense-rt16n6cdx",
-          "titulo_tienda": "Refrigeradora Top Mount con Dispensador de Agua 16.3p3 Inverter Hisense RT16N6CDX Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -2963,18 +2787,18 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 199.99,
+          "url": "https://www.doitcenter.com.pa/productos/refrigerador-con-dispensador-7-hisense-refrigeradoras-rt80d6wgx-292rt80d6wgx",
+          "titulo_tienda": "Refrigerador Top Mount De 7.3 Pies Cúbicos Con Dispensador De Agua Plateado"
+        },
         "Titan": null,
         "Spiegel": {
           "precio": 199.99,
           "url": "https://spiegel.com.pa/producto/15-03-1214/",
           "titulo_tienda": "REFRIGERADORA DE 7.3 PC RT80D6WGX HISENSE"
         },
-        "Selecto": {
-          "precio": 199.95,
-          "url": "https://selectopa.com/products/refrigeradora-top-mount-7-3-pies-con-dispensador-de-agua-defrost-hisense-rt80d6wgx",
-          "titulo_tienda": "Refrigeradora Top Mount 7.3 pies con Dispensador de Agua Defrost Hisense RT80D6WGX Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": {
           "precio": 199.99,
@@ -3030,11 +2854,7 @@
         "Do It Center": null,
         "Titan": null,
         "Spiegel": null,
-        "Selecto": {
-          "precio": 399.95,
-          "url": "https://selectopa.com/products/vitrina-refrigeradora-12-1p3-hisense-sc-342",
-          "titulo_tienda": "Vitrina Refrigeradora 12p3 Hisense SC-342 Nevera. Default Title"
-        },
+        "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
@@ -3096,7 +2916,7 @@
         "Raenco": {
           "precio": 1124.95,
           "url": "https://www.raenco.com/refrigeradora-hisense-22-9pc-rq226p5gbr-sxs-inverter-silver.html",
-          "titulo_tienda": ".product-image-container-108750 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-108750 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-108750 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADORA HISENSE 22.9PC RQ226P5GBR FDOOR INVERTER BLACK"
         }
       }
     },
@@ -3187,7 +3007,11 @@
         "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 399.99,
+          "url": "https://www.doitcenter.com.pa/productos/refrigerador-hisense-top-mount-hisense-refrigeradoras-rt3n461naca-518rt3n461naca",
+          "titulo_tienda": "Refrigerador Hisense Top Mount 16 Pies Cúbicos Inoxidable Con Dispensador De Agua Y Multi Air Flow"
+        },
         "Titan": {
           "precio": 399.99,
           "url": "https://titan.com.pa/products/hisense-rt3n461naca",
@@ -3223,7 +3047,11 @@
         },
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 299.99,
+          "url": "https://www.doitcenter.com.pa/productos/refrigerador-hisense-top-mount-hisense-refrigeradoras-rt1n250nmb-518rt1n250nmb",
+          "titulo_tienda": "Refrigerador Top Mount Hisense 9 Pies Frost Free Inverter Gris"
+        },
         "Titan": {
           "precio": 299.99,
           "url": "https://titan.com.pa/products/hisense-rt1n250nmb",
@@ -3240,7 +3068,7 @@
         "Raenco": {
           "precio": 304.95,
           "url": "https://www.raenco.com/refrigeradora-hisense-8-8pc-rt1n250nmb-inverter-250lts-con-dispensador-black.html",
-          "titulo_tienda": ".product-image-container-120879 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-120879 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-120879 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADORA HISENSE 8.8PC RT1N250NMB INVERTER 250LTS CON DISPENSADOR BLACK"
         }
       }
     },
@@ -3342,17 +3170,9 @@
       "map_usd": 229.99,
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
-        "Multimax": {
-          "precio": 229.97,
-          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=07acee319&_ss=e",
-          "titulo_tienda": "Estufa a Gas Whirlpool WP3550S | 36\" | 5 Quemadores | Empotrable | Acero Inoxidable"
-        },
+        "Multimax": null,
         "Novey": null,
-        "Rodelag": {
-          "precio": 229.98,
-          "url": "https://rodelag.com/products/estufa-empotrable-a-gas-36-whirlpool",
-          "titulo_tienda": "Estufa Empotrable a Gas, 36”, WP3550S, Whirlpool, Acero inoxidable Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": {
           "precio": 229.99,
           "url": "https://www.panafoto.com/estufa-empotrada-a-gas-36-5-quemadores-acero-inoxidable-86cmx7cmx51cm-152419-9239.html",
@@ -3376,7 +3196,7 @@
         "Raenco": {
           "precio": 269.0,
           "url": "https://www.raenco.com/estufa-empotrable-a-gas-36-whirlpool-wp3550s.html",
-          "titulo_tienda": ".product-image-container-7850 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-7850 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-7850 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "ESTUFA EMPOTRABLE A GAS 36\" WHIRLPOOL WP3550S"
         }
       }
     },
@@ -3421,7 +3241,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 429.95,
+          "url": "https://www.raenco.com/estufa-a-gas-whirlpool-30-lwfr5050s-air-frayer-6q-e-electrico.html",
+          "titulo_tienda": "ESTUFA A GAS WHIRLPOOL 30\" LWFR5050S AIR FRAYER 6Q E/ELECTRICO"
+        }
       }
     },
     {
@@ -3460,7 +3284,7 @@
         "Raenco": {
           "precio": 369.0,
           "url": "https://www.raenco.com/estufa-a-gas-whirlpool-30-lwfr3400b-6q-pta-negra.html",
-          "titulo_tienda": ".product-image-container-58623 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-58623 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-58623 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "ESTUFA A GAS WHIRLPOOL 30\" LWFR3400B 6Q PTA. NEGRA"
         }
       }
     },
@@ -3504,14 +3328,14 @@
           "titulo_tienda": "Centro de Lavado Whirlpool 7MWGT4027HW | Gas | Lavadora 20Kg | Secadora 10Kg Default Title"
         },
         "Novey": null,
-        "Rodelag": {
-          "precio": 989.98,
-          "url": "https://rodelag.com/products/centro-de-lavado-a-gas-he-20-kg-whirlpool",
-          "titulo_tienda": "Centro de lavado a gas 20kg Whirlpool 7MWGT4027HW color blanco, canasta de acero porcelanizado Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
-        "Do It Center": null,
+        "Do It Center": {
+          "precio": 1099.99,
+          "url": "https://www.doitcenter.com.pa/productos/centro-de-lavado-a-gas-con-cap-whirlpool-centro-de-lavado-7mwgt4027hw-5027mwgt4027hw",
+          "titulo_tienda": "Centro De Lavado A Gas 20 Kg Blanco Con Sensor Dry Y Agitador Double Action"
+        },
         "Titan": null,
         "Spiegel": null,
         "Selecto": null,
@@ -3520,7 +3344,7 @@
         "Raenco": {
           "precio": 1129.0,
           "url": "https://www.raenco.com/centro-de-lavado-whirlpool-a-gas-7mwgt4027hw-20kls.html",
-          "titulo_tienda": ".product-image-container-5861 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-5861 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-5861 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "CENTRO DE LAVADO WHIRLPOOL A GAS 7MWGT4027HW 20KLS"
         }
       }
     },
@@ -3580,11 +3404,7 @@
           "titulo_tienda": "Lavadora Whirlpool 8MWTW1813MJM | 18kg | Carga Superior Default Title"
         },
         "Novey": null,
-        "Rodelag": {
-          "precio": 359.98,
-          "url": "https://rodelag.com/products/whirlpool-lavadora-carga-superior-18kg-8mwtw1813mjm-blanco-agitador-single-action-6-movimientos-tambor-de-acero-inoxidable-lavado-xpert-system-smart-load-12-ciclos-de-lavado-luz-led",
-          "titulo_tienda": "Lavadora 18kg 8MWTW1813MJM Whirlpool carga superior Default Title"
-        },
+        "Rodelag": null,
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
@@ -3600,7 +3420,7 @@
         "Raenco": {
           "precio": 399.0,
           "url": "https://www.raenco.com/lavadora-whirlpool-8mwtw1813mjm-18kg-blanca.html",
-          "titulo_tienda": ".product-image-container-8410 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8410 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8410 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "LAVADORA WHIRLPOOL  8MWTW1813MJM 18KG BLANCA"
         }
       }
     },
@@ -3636,7 +3456,7 @@
         "Raenco": {
           "precio": 89.95,
           "url": "https://www.raenco.com/microonda-whirlpool-1-1-cu-ft-gris-wm1211d.html",
-          "titulo_tienda": ".product-image-container-3284 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-3284 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-3284 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "MICROONDA WHIRLPOOL 1.1 CU FT GRIS  WM1211D"
         }
       }
     },
@@ -3672,7 +3492,7 @@
         "Raenco": {
           "precio": 289.95,
           "url": "https://www.raenco.com/refrigeradora-whirlpool-9pc-wt32409d-xpert-inverter-silver-c-disp.html",
-          "titulo_tienda": ".product-image-container-8083 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8083 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8083 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+          "titulo_tienda": "REFRIGERADORA WHIRLPOOL 9PC WT32409D XPERT INVERTER SILVER C/DISP"
         }
       }
     }
