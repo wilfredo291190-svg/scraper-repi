@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27 09:32:11",
+  "actualizado": "2026-11-27 10:49:57",
   "tiendas_orden": [
     "Multimax",
     "Novey",
@@ -194,7 +194,11 @@
       "map_usd": 279.99,
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
-        "Multimax": null,
+        "Multimax": {
+          "precio": 279.97,
+          "url": "https://www.multimax.net/products/hisense-atr122cj-12-000btu-inverter-seer-18-wifi-a-c",
+          "titulo_tienda": "Aire Acondicionado Hisense ATR122CJ | Inverter | 12,000 BTU | Wi-Fi | SEER 18 Default Title"
+        },
         "Novey": null,
         "Rodelag": {
           "precio": 279.99,
@@ -204,7 +208,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 279.99,
+          "url": "https://titan.com.pa/products/hisense-atr122cj-iduodu?_pos=1&_psq=ATR122CJ&_psid=f4e911b81&_ss=e",
+          "titulo_tienda": "Aire Acondicionado Hisense 12000 BTU"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 279.95,
@@ -308,7 +316,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 499.99,
+          "url": "https://titan.com.pa/products/hisense-atr182hb-iduodu?_pos=1&_psq=ATR182HB&_psid=592ac2a3b&_ss=e",
+          "titulo_tienda": "Aire Acondicionado Hisense Mini Split 18000 BTU Inverter Negro"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 499.95,
@@ -562,7 +574,11 @@
       "map_usd": 349.99,
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
-        "Multimax": null,
+        "Multimax": {
+          "precio": 349.97,
+          "url": "https://www.multimax.net/products/hisense-atr122ha-12-000btu-r32-wifi-blanco-seer-21-a-c-split-inverter",
+          "titulo_tienda": "Aire Acondicionado Hisense ATR122HA | Inverter | 12,000 BTU | Wi-Fi | SEER 21 Default Title"
+        },
         "Novey": null,
         "Rodelag": {
           "precio": 349.99,
@@ -572,7 +588,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 349.99,
+          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=f1dc59e9c&_ss=e",
+          "titulo_tienda": "Aire Acondicionado Hisense / Split / 12,000 BTU / Inverter"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 349.95,
@@ -987,7 +1007,11 @@
         "Titan": null,
         "Spiegel": null,
         "Selecto": null,
-        "Creditos Mundiales": null,
+        "Creditos Mundiales": {
+          "precio": 269.0,
+          "url": "https://creditosmundiales.com/producto/televisor-hisense/",
+          "titulo_tienda": "Televisor Hisense 50&#8243;"
+        },
         "Unica Panama": null,
         "Raenco": null
       }
@@ -1075,7 +1099,11 @@
           "url": "https://selectopa.com/products/televisor-65-led-smart-tv-qled-serie-qd5-4k-ultra-hd-hisense-65qd5sv",
           "titulo_tienda": "Televisor 65\" LED Smart TV QLED Serie QD5SV 4K Ultra HD Hisense 65QD5SV Televisión. Default Title"
         },
-        "Creditos Mundiales": null,
+        "Creditos Mundiales": {
+          "precio": 399.99,
+          "url": "https://creditosmundiales.com/producto/televisor-hisense-2/",
+          "titulo_tienda": "Televisor Hisense 65&#8243;"
+        },
         "Unica Panama": null,
         "Raenco": null
       }
@@ -1258,7 +1286,11 @@
       "map_usd": 619.99,
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
-        "Multimax": null,
+        "Multimax": {
+          "precio": 579.97,
+          "url": "https://www.multimax.net/products/hisense-75q6qv-smart-tv-75-qled-uhd-4k-3840x2160-vidaa-hdmi-usb-wifi-lan-bt-60hz-dvb-t2-isdb-t",
+          "titulo_tienda": "Televisor Hisense 75Q6QV | VIDAA | 75\" | 4K | HDMI | USB | Wi-Fi | Bluetooth | DVB-T Default Title"
+        },
         "Novey": null,
         "Rodelag": {
           "precio": 579.98,
@@ -1470,7 +1502,11 @@
       "map_usd": 1199.99,
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
-        "Multimax": null,
+        "Multimax": {
+          "precio": 1199.97,
+          "url": "https://www.multimax.net/products/hisense-85u7qg-smart-85-uled-mini-led-tv-uhd-4k-3840-2160-google-hdmi-usb-audio-dvb-t2-120hz-144-hz-vrr",
+          "titulo_tienda": "Televisor Hisense ULED MiniLED 85U7QG | Google TV | 85\" | 4K | HDMI | USB | Wi-Fi | Bluetooth Default Title"
+        },
         "Novey": null,
         "Rodelag": null,
         "Panafoto": null,
@@ -2190,7 +2226,11 @@
       "map_usd": 449.99,
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
-        "Multimax": null,
+        "Multimax": {
+          "precio": 449.97,
+          "url": "https://www.multimax.net/products/hisense-rs3p428neda2-15-6-ft3-silver-inverter-rs3p428neda2-side-by-side-refrigeradora",
+          "titulo_tienda": "Refrigeradora Hisense RS3P428NEDA2 | 15.6 pies cúbicos | Side By Side | Inverter | Wi-Fi | Acero Inoxidable Default Title"
+        },
         "Novey": null,
         "Rodelag": {
           "precio": 449.98,
@@ -3054,7 +3094,11 @@
       "map_usd": 229.99,
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
-        "Multimax": null,
+        "Multimax": {
+          "precio": 279.97,
+          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=29b67a173&_ss=e",
+          "titulo_tienda": "Estufa a Gas Whirlpool WP3550S | 36\" | 5 Quemadores | Empotrable | Acero Inoxidable"
+        },
         "Novey": null,
         "Rodelag": {
           "precio": 229.98,
