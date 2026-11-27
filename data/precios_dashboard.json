@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27 14:46:43",
+  "actualizado": "2026-11-27 16:32:30",
   "tiendas_orden": [
     "Multimax",
     "Novey",
@@ -642,7 +642,7 @@
         "Do It Center": null,
         "Titan": {
           "precio": 349.99,
-          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=90e760336&_ss=e",
+          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=7d8dc71be&_ss=e",
           "titulo_tienda": "Aire Acondicionado Hisense / Split / 12,000 BTU / Inverter"
         },
         "Spiegel": null,
@@ -844,7 +844,11 @@
         },
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 109.99,
+          "url": "https://titan.com.pa/products/hisense-hs2100",
+          "titulo_tienda": "Barra de Sonido Hisense 2.1 Canales 240W Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 109.95,
@@ -1017,7 +1021,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 149.0,
+          "url": "https://www.raenco.com/televisor-hisense-40-40q4sv-smart-tv-hi-qled-fhd-vidaa-tdt.html",
+          "titulo_tienda": ".product-image-container-103598 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-103598 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-103598 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -3336,7 +3344,7 @@
       "tiendas": {
         "Multimax": {
           "precio": 229.97,
-          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=ab492c1b6&_ss=e",
+          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=07acee319&_ss=e",
           "titulo_tienda": "Estufa a Gas Whirlpool WP3550S | 36\" | 5 Quemadores | Empotrable | Acero Inoxidable"
         },
         "Novey": null,
