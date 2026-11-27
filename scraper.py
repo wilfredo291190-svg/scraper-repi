@@ -105,7 +105,7 @@ def load_all_catalogs():
                 "disponibilidad": str(row.get("Disponibilidad", "")).strip(),
             })
 
-    brands = sorted({c["marca"] for c in catalog if c["marca"]} | {"HISENSE", "WHIRLPOOL", "KITCHENAID"})
+    brands = sorted({c["marca"] for c in catalog if c["marca"]})
     print(f"Catalogo consolidado: {len(catalog)} SKUs unicos | Marcas: {brands}")
     return catalog, brands
 
@@ -129,11 +129,10 @@ def get_ac_and_priority_queries(catalog):
     return list(dict.fromkeys(queries))
 
 def parse_html_cards(html: str, store_name: str, base_url: str, fallback_url: str, seen_keys: set):
-    """Extractor universal de tarjetas HTML, JSON-LD y scripts embebidos."""
     found = []
     tree = HTMLParser(html)
 
-    # 1. JSON-LD ItemList / Product
+    # 1. JSON-LD
     for script in tree.css('script[type="application/ld+json"]'):
         try:
             ld = json.loads(script.text())
@@ -164,19 +163,19 @@ def parse_html_cards(html: str, store_name: str, base_url: str, fallback_url: st
         except Exception:
             pass
 
-    # 2. Tarjetas de producto HTML (Magento, Hyva, Botble/Laravel, VTEX SSR, Custom)
+    # 2. Tarjetas HTML (incluye Botble .ps-product, Magento, WooCommerce)
     card_selectors = (
         "li.product-item, div.product-item-info, .products-grid .product-item, "
-        ".product-item, .product-card, .product-wrapper, .product, .type-product, "
+        ".ps-product, .product-item, .product-card, .product-wrapper, .product, .type-product, "
         "[data-product-id], [data-product-sku]"
     )
     for card in tree.css(card_selectors):
         link_node = card.css_first(
-            "a.product-item-link, .product-item-name a, .product-title a, "
+            "a.ps-product__title, a.product-item-link, .product-item-name a, .product-title a, "
             "h2 a, h3 a, h4 a, .name a, a[title], a[href]"
         )
         price_node = card.css_first(
-            "[data-price-amount], span.price-wrapper[data-price-amount], "
+            ".ps-product__price, [data-price-amount], span.price-wrapper[data-price-amount], "
             ".special-price .price, .price-final_price .price, "
             ".product-price, .price ins .amount, .price .amount, span.price, .price"
         )
@@ -197,16 +196,17 @@ def parse_html_cards(html: str, store_name: str, base_url: str, fallback_url: st
 
         sku = card.attributes.get("data-product-sku", "") or ""
         if not sku:
-            sku_el = card.css_first("[data-product-sku]")
-            if sku_el:
-                sku = sku_el.attributes.get("data-product-sku", "")
-        if not sku:
             m_sku = re.search(r"data-product-sku=[\"']([^\"']+)[\"']", card.html or "")
             if m_sku:
                 sku = m_sku.group(1)
 
-        p_val = price_node.attributes.get("data-price-amount") or price_node.text(strip=True)
-        price = extract_price_float(p_val)
+        # En Botble (.ps-product__price) puede haber precio oferta + precio tachado (<del>)
+        del_node = price_node.css_first("del")
+        raw_price_txt = price_node.attributes.get("data-price-amount") or price_node.text(strip=True)
+        if del_node and not price_node.attributes.get("data-price-amount"):
+            raw_price_txt = raw_price_txt.replace(del_node.text(strip=True), "")
+
+        price = extract_price_float(raw_price_txt)
         dedup = sku or f"{href}|{title}"
         if price and title and dedup not in seen_keys:
             seen_keys.add(dedup)
@@ -222,7 +222,6 @@ def parse_html_cards(html: str, store_name: str, base_url: str, fallback_url: st
     return found
 
 def scrape_magento_graphql(client: httpx.Client, store_name: str, base_url: str, search_terms: list, seen_keys: set):
-    """Consulta el endpoint nativo /graphql de Magento 2 (funciona cuando el frontend es SPA/Hyva/LiveSearch)."""
     items = []
     gql_url = f"{base_url.rstrip('/')}/graphql"
     query = """
@@ -306,8 +305,8 @@ def scrape_panafoto(client: httpx.Client, brands: list, extra_queries: list):
             except Exception:
                 break
 
-    # Complementar con GraphQL de Magento 2 (clave para aires acondicionados y catálogos dinámicos)
-    items.extend(scrape_magento_graphql(client, "Panafoto", base_url, list(brands) + extra_queries[:25], seen_keys))
+    gql_terms = sorted(set(list(brands) + ["KITCHENAID"] + extra_queries[:25]))
+    items.extend(scrape_magento_graphql(client, "Panafoto", base_url, gql_terms, seen_keys))
     return items
 
 def scrape_novey(client: httpx.Client, brands: list, extra_queries: list):
@@ -321,7 +320,7 @@ def scrape_novey(client: httpx.Client, brands: list, extra_queries: list):
         "https://www.novey.com.pa/catalogsearch/result/?q=ACROS",
     ]
     for s_url in search_urls:
-        for page in range(1, 5):
+        for page in range(1, 4):
             url = f"{s_url}&p={page}&product_list_limit=60"
             try:
                 r = client.get(url, timeout=22)
@@ -334,32 +333,70 @@ def scrape_novey(client: httpx.Client, brands: list, extra_queries: list):
             except Exception:
                 break
 
-    # Complementar con GraphQL de Magento 2
-    items.extend(scrape_magento_graphql(client, "Novey", base_url, list(brands) + extra_queries[:20], seen_keys))
+    items.extend(scrape_magento_graphql(client, "Novey", base_url, list(brands) + extra_queries[:15], seen_keys))
+
+    # Intento VTEX por si Novey enruta catalogo por API REST
+    if not items:
+        items.extend(scrape_vtex_multi_brand(client, "Novey", base_url, brands, extra_queries[:10]))
+
+    if not items:
+        try:
+            r_dbg = client.get("https://www.novey.com.pa/catalogsearch/result/?q=HISENSE", timeout=15)
+            tree = HTMLParser(r_dbg.text)
+            scripts = [s.text()[:120].replace("\n", " ") for s in tree.css("script") if "Hisense" in s.text() or "product" in s.text()][:2]
+            print(f"[Novey DEBUG] HTTP {r_dbg.status_code} | Len {len(r_dbg.text)} | Scripts: {scripts}")
+        except Exception as e:
+            print(f"[Novey DEBUG] Err: {e}")
     return items
 
-def scrape_doitcenter(client: httpx.Client):
+def scrape_doitcenter(client: httpx.Client, brands: list, extra_queries: list):
     items = []
     seen_keys = set()
     base_url = "https://www.doitcenter.com.pa"
+
+    # 1. API VTEX directa (Do It Center usa VTEX en backend)
+    items.extend(scrape_vtex_multi_brand(client, "Do It Center", base_url, brands, extra_queries[:15]))
+
+    # 2. URLs de marca exactas + extraccion de __STATE__ / JSON embebido
     brand_urls = [
         "https://www.doitcenter.com.pa/categorias/marcas/hisense",
         "https://www.doitcenter.com.pa/categorias/marcas/whirlpool",
         "https://www.doitcenter.com.pa/categorias/marcas/acros",
     ]
     for b_url in brand_urls:
-        for page in range(1, 6):
-            url = f"{b_url}?page={page}"
-            try:
-                r = client.get(url, timeout=22)
-                if r.status_code != 200:
-                    break
-                batch = parse_html_cards(r.text, "Do It Center", base_url, url, seen_keys)
-                items.extend(batch)
-                if not batch:
-                    break
-            except Exception:
-                break
+        try:
+            r = client.get(b_url, timeout=22)
+            if r.status_code != 200:
+                continue
+            items.extend(parse_html_cards(r.text, "Do It Center", base_url, b_url, seen_keys))
+            # Buscar JSON VTEX __STATE__ incrustado en HTML
+            for m in re.finditer(r'"productName"\s*:\s*"([^"]+)"[^}]*?"linkText"\s*:\s*"([^"]+)"', r.text):
+                title, slug = m.group(1), m.group(2)
+                # Buscar precio cercano en el bloque
+                window_txt = r.text[m.end():m.end()+1500]
+                pm = re.search(r'"Price"\s*:\s*([0-9.]+)', window_txt)
+                if pm:
+                    price = extract_price_float(pm.group(1))
+                    u = f"{base_url}/{slug}/p"
+                    if price and u not in seen_keys:
+                        seen_keys.add(u)
+                        items.append({
+                            "tienda": "Do It Center",
+                            "sku": "",
+                            "barcode": "",
+                            "titulo": title,
+                            "precio": price,
+                            "url": u,
+                        })
+        except Exception:
+            pass
+
+    if not items:
+        try:
+            r_dbg = client.get("https://www.doitcenter.com.pa/categorias/marcas/hisense", timeout=15)
+            print(f"[Do It Center DEBUG] HTTP {r_dbg.status_code} | Len {len(r_dbg.text)}")
+        except Exception as e:
+            print(f"[Do It Center DEBUG] Err: {e}")
     return items
 
 def scrape_evision(client: httpx.Client):
@@ -385,6 +422,15 @@ def scrape_evision(client: httpx.Client):
                     break
             except Exception:
                 break
+
+    if not items:
+        try:
+            r_dbg = client.get("https://www.evisionstore.com/products?brand=hisense&num=60", timeout=15)
+            tree = HTMLParser(r_dbg.text)
+            classes = [n.attributes.get("class", "") for n in tree.css("div[class*='prod'], article[class*='prod']")[:4]]
+            print(f"[EVision DEBUG] HTTP {r_dbg.status_code} | Classes: {classes}")
+        except Exception as e:
+            print(f"[EVision DEBUG] Err: {e}")
     return items
 
 def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
@@ -455,7 +501,7 @@ def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: 
 def scrape_vtex_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
     items = []
     seen_skus = set()
-    for term in list(brands) + extra_queries[:20]:
+    for term in list(brands) + extra_queries[:15]:
         max_offset = 150 if term in brands else 50
         for start in range(0, max_offset, 50):
             url = f"{base_url}/api/catalog_system/pub/products/search/{term.lower()}?_from={start}&_to={start+49}"
@@ -495,7 +541,7 @@ def scrape_vtex_multi_brand(client: httpx.Client, store_name: str, base_url: str
 def scrape_woocommerce_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
     items = []
     seen_ids = set()
-    for term in list(brands) + extra_queries[:20]:
+    for term in list(brands) + extra_queries[:15]:
         url = f"{base_url}/wp-json/wc/store/products?search={term}&per_page=100"
         try:
             r = client.get(url, timeout=18)
@@ -542,7 +588,7 @@ def scrape_generic_store(client: httpx.Client, store_name: str, base_url: str, b
         for p in range(1, 5):
             u = f"{base_url}/catalogsearch/result/index/?p={p}&q={term}"
             try:
-                r = client.get(u, timeout=18)
+                r = client.get(u, timeout=22)
                 if r.status_code != 200:
                     break
                 batch = parse_html_cards(r.text, store_name, base_url, u, seen)
@@ -627,7 +673,7 @@ def main():
             elif name == "Novey":
                 res = scrape_novey(client, brands, extra_queries)
             elif name == "Do It Center":
-                res = scrape_doitcenter(client)
+                res = scrape_doitcenter(client, brands, extra_queries)
             elif name == "EVision":
                 res = scrape_evision(client)
             else:
