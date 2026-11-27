@@ -8,8 +8,8 @@ import pandas as pd
 from selectolax.lexbor import LexborHTMLParser as HTMLParser
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-    "Accept": "application/json, text/html, */*",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/json,*/*;q=0.8",
     "Accept-Language": "es-PA,es;q=0.9,en;q=0.8",
 }
 
@@ -105,7 +105,7 @@ def load_all_catalogs():
                 "disponibilidad": str(row.get("Disponibilidad", "")).strip(),
             })
 
-    brands = sorted({c["marca"] for c in catalog if c["marca"]})
+    brands = sorted({c["marca"] for c in catalog if c["marca"]} | {"HISENSE", "WHIRLPOOL", "KITCHENAID"})
     print(f"Catalogo consolidado: {len(catalog)} SKUs unicos | Marcas: {brands}")
     return catalog, brands
 
@@ -122,90 +122,272 @@ def extract_price_float(raw_str):
         return None
 
 def get_ac_and_priority_queries(catalog):
-    """Obtiene codigos de Aires Acondicionados y categorias criticas para busqueda directa."""
     queries = []
     for item in catalog:
         if "AIRE" in item["categoria"] or "BUILT" in item["categoria"] or "EXTRAC" in item["categoria"]:
             queries.append(item["codigo"])
     return list(dict.fromkeys(queries))
 
-def scrape_panafoto(client: httpx.Client, brands: list, extra_queries: list):
-    """Extrae catalogo completo de Panafoto via Algolia (paginado + marcas + codigos de aires)."""
-    items = []
-    seen_skus = set()
-    seed_urls = [
-        "https://www.panafoto.com/catalogsearch/result/?q=Hisense",
-        "https://www.panafoto.com/categorias/tv-y-video/tv.html",
-        "https://www.panafoto.com/categorias/linea-blanca/aires-acondicionados.html",
-    ]
-    app_id, api_key, index_name = None, None, "panafoto_mcprod_cloud_b2c_products"
+def parse_html_cards(html: str, store_name: str, base_url: str, fallback_url: str, seen_keys: set):
+    """Extractor universal de tarjetas HTML, JSON-LD y scripts embebidos."""
+    found = []
+    tree = HTMLParser(html)
 
-    for s_url in seed_urls:
+    # 1. JSON-LD ItemList / Product
+    for script in tree.css('script[type="application/ld+json"]'):
         try:
-            r = client.get(s_url, timeout=22)
-            html = r.text
-            m_id = re.search(r"""['"]applicationId['"]\s*:\s*['"]([A-Z0-9]{10})['"]""", html)
-            m_key = re.search(r"""['"]apiKey['"]\s*:\s*['"]([a-f0-9]{32})['"]""", html)
-            m_idx = re.search(r"""['"]indexName['"]\s*:\s*['"]([a-zA-Z0-9_]+products)['"]""", html)
-            if m_id and m_key:
-                app_id = m_id.group(1)
-                api_key = m_key.group(1)
-                if m_idx:
-                    index_name = m_idx.group(1)
-                break
+            ld = json.loads(script.text())
+            objs = ld if isinstance(ld, list) else [ld]
+            for obj in objs:
+                if not isinstance(obj, dict):
+                    continue
+                if obj.get("@type") == "ItemList":
+                    for el in obj.get("itemListElement", []):
+                        prod = el.get("item", {}) if isinstance(el, dict) else {}
+                        offers = prod.get("offers", {})
+                        if isinstance(offers, list) and offers:
+                            offers = offers[0]
+                        price = extract_price_float(offers.get("price") if isinstance(offers, dict) else None)
+                        u = str(prod.get("url") or fallback_url)
+                        sku = str(prod.get("sku") or "")
+                        dedup = sku or u
+                        if price and dedup not in seen_keys:
+                            seen_keys.add(dedup)
+                            found.append({
+                                "tienda": store_name,
+                                "sku": sku,
+                                "barcode": clean_barcode(prod.get("gtin13") or prod.get("gtin") or ""),
+                                "titulo": str(prod.get("name") or ""),
+                                "precio": price,
+                                "url": u,
+                            })
         except Exception:
             pass
 
-    if app_id and api_key:
-        algolia_url = f"https://{app_id}-dsn.algolia.net/1/indexes/{index_name}/query"
-        headers = {
-            "X-Algolia-Application-Id": app_id,
-            "X-Algolia-API-Key": api_key,
-            "Content-Type": "application/json",
-        }
-        # Consultar por marca (paginado) y por codigos especificos de aires acondicionados
-        search_terms = list(brands) + ["AIRE ACONDICIONADO", "SPLIT", "INVERTER"] + extra_queries[:25]
-        for term in search_terms:
-            max_pages = 4 if term in brands else 1
-            for page in range(max_pages):
-                try:
-                    res = client.post(
-                        algolia_url,
-                        headers=headers,
-                        json={"params": f"query={term}&hitsPerPage=250&page={page}"},
-                        timeout=20,
-                    )
-                    hits = res.json().get("hits", [])
-                    if not hits:
-                        break
-                    for hit in hits:
-                        sku = str(hit.get("sku") or hit.get("objectID") or "")
-                        if sku in seen_skus:
-                            continue
-                        price_obj = hit.get("price", {}).get("USD", {})
-                        price = price_obj.get("default")
-                        if isinstance(price, dict):
-                            price = price.get("default")
-                        price = extract_price_float(price)
-                        if price:
-                            seen_skus.add(sku)
-                            items.append({
-                                "tienda": "Panafoto",
-                                "sku": sku,
-                                "barcode": clean_barcode(hit.get("ean") or hit.get("barcode") or ""),
-                                "titulo": str(hit.get("name", "")),
-                                "precio": price,
-                                "url": str(hit.get("url", "https://www.panafoto.com")),
-                            })
-                except Exception:
-                    break
-        if items:
-            return items
+    # 2. Tarjetas de producto HTML (Magento, Hyva, Botble/Laravel, VTEX SSR, Custom)
+    card_selectors = (
+        "li.product-item, div.product-item-info, .products-grid .product-item, "
+        ".product-item, .product-card, .product-wrapper, .product, .type-product, "
+        "[data-product-id], [data-product-sku]"
+    )
+    for card in tree.css(card_selectors):
+        link_node = card.css_first(
+            "a.product-item-link, .product-item-name a, .product-title a, "
+            "h2 a, h3 a, h4 a, .name a, a[title], a[href]"
+        )
+        price_node = card.css_first(
+            "[data-price-amount], span.price-wrapper[data-price-amount], "
+            ".special-price .price, .price-final_price .price, "
+            ".product-price, .price ins .amount, .price .amount, span.price, .price"
+        )
+        if not (link_node and price_node):
+            continue
 
-    return scrape_magento_html_multi_brand(client, "Panafoto", "https://www.panafoto.com", brands + extra_queries[:15])
+        href = link_node.attributes.get("href", "")
+        if href and not href.startswith("http"):
+            href = base_url.rstrip("/") + "/" + href.lstrip("/")
+        if not href or href.endswith("#") or "javascript:" in href:
+            href = fallback_url
+
+        title = link_node.text(strip=True) or link_node.attributes.get("title", "")
+        if not title:
+            img = card.css_first("img[alt]")
+            if img:
+                title = img.attributes.get("alt", "")
+
+        sku = card.attributes.get("data-product-sku", "") or ""
+        if not sku:
+            sku_el = card.css_first("[data-product-sku]")
+            if sku_el:
+                sku = sku_el.attributes.get("data-product-sku", "")
+        if not sku:
+            m_sku = re.search(r"data-product-sku=[\"']([^\"']+)[\"']", card.html or "")
+            if m_sku:
+                sku = m_sku.group(1)
+
+        p_val = price_node.attributes.get("data-price-amount") or price_node.text(strip=True)
+        price = extract_price_float(p_val)
+        dedup = sku or f"{href}|{title}"
+        if price and title and dedup not in seen_keys:
+            seen_keys.add(dedup)
+            found.append({
+                "tienda": store_name,
+                "sku": sku,
+                "barcode": "",
+                "titulo": title,
+                "precio": price,
+                "url": href,
+            })
+
+    return found
+
+def scrape_magento_graphql(client: httpx.Client, store_name: str, base_url: str, search_terms: list, seen_keys: set):
+    """Consulta el endpoint nativo /graphql de Magento 2 (funciona cuando el frontend es SPA/Hyva/LiveSearch)."""
+    items = []
+    gql_url = f"{base_url.rstrip('/')}/graphql"
+    query = """
+    query SearchProducts($search: String!, $pageSize: Int!) {
+      products(search: $search, pageSize: $pageSize) {
+        items {
+          sku
+          name
+          url_key
+          url_suffix
+          price_range {
+            minimum_price {
+              final_price { value }
+            }
+          }
+        }
+      }
+    }
+    """
+    for term in search_terms:
+        try:
+            r = client.post(
+                gql_url,
+                json={"query": query, "variables": {"search": term, "pageSize": 100}},
+                headers={**HEADERS, "Content-Type": "application/json"},
+                timeout=20,
+            )
+            if r.status_code != 200:
+                continue
+            data = r.json()
+            prods = data.get("data", {}).get("products", {}).get("items", [])
+            for p in prods:
+                sku = str(p.get("sku") or "")
+                if not sku or sku in seen_keys:
+                    continue
+                price = (
+                    p.get("price_range", {})
+                    .get("minimum_price", {})
+                    .get("final_price", {})
+                    .get("value")
+                )
+                price = extract_price_float(price)
+                if price:
+                    seen_keys.add(sku)
+                    ukey = p.get("url_key", "")
+                    usuf = p.get("url_suffix") or ".html"
+                    url = f"{base_url.rstrip('/')}/{ukey}{usuf}" if ukey else base_url
+                    items.append({
+                        "tienda": store_name,
+                        "sku": sku,
+                        "barcode": "",
+                        "titulo": str(p.get("name") or ""),
+                        "precio": price,
+                        "url": url,
+                    })
+        except Exception:
+            pass
+    return items
+
+def scrape_panafoto(client: httpx.Client, brands: list, extra_queries: list):
+    items = []
+    seen_keys = set()
+    base_url = "https://www.panafoto.com"
+    brand_urls = [
+        "https://www.panafoto.com/categorias/marcas/hisense.html?manufacturer=HISENSE",
+        "https://www.panafoto.com/categorias/marcas/whirlpool.html?manufacturer=WHIRLPOOL",
+        "https://www.panafoto.com/categorias/marcas/kitchen-aid.html?manufacturer=KitchenAid",
+    ]
+    for b_url in brand_urls:
+        for page in range(1, 6):
+            sep = "&" if "?" in b_url else "?"
+            url = f"{b_url}{sep}p={page}&product_list_limit=60"
+            try:
+                r = client.get(url, timeout=22)
+                if r.status_code != 200:
+                    break
+                batch = parse_html_cards(r.text, "Panafoto", base_url, url, seen_keys)
+                items.extend(batch)
+                if not batch:
+                    break
+            except Exception:
+                break
+
+    # Complementar con GraphQL de Magento 2 (clave para aires acondicionados y catálogos dinámicos)
+    items.extend(scrape_magento_graphql(client, "Panafoto", base_url, list(brands) + extra_queries[:25], seen_keys))
+    return items
+
+def scrape_novey(client: httpx.Client, brands: list, extra_queries: list):
+    items = []
+    seen_keys = set()
+    base_url = "https://www.novey.com.pa"
+    search_urls = [
+        "https://www.novey.com.pa/catalogsearch/result/?q=HISENSE",
+        "https://www.novey.com.pa/catalogsearch/result/?q=WHIRLPOOL",
+        "https://www.novey.com.pa/catalogsearch/result/?q=KITCHEN%20AID",
+        "https://www.novey.com.pa/catalogsearch/result/?q=ACROS",
+    ]
+    for s_url in search_urls:
+        for page in range(1, 5):
+            url = f"{s_url}&p={page}&product_list_limit=60"
+            try:
+                r = client.get(url, timeout=22)
+                if r.status_code != 200:
+                    break
+                batch = parse_html_cards(r.text, "Novey", base_url, url, seen_keys)
+                items.extend(batch)
+                if not batch:
+                    break
+            except Exception:
+                break
+
+    # Complementar con GraphQL de Magento 2
+    items.extend(scrape_magento_graphql(client, "Novey", base_url, list(brands) + extra_queries[:20], seen_keys))
+    return items
+
+def scrape_doitcenter(client: httpx.Client):
+    items = []
+    seen_keys = set()
+    base_url = "https://www.doitcenter.com.pa"
+    brand_urls = [
+        "https://www.doitcenter.com.pa/categorias/marcas/hisense",
+        "https://www.doitcenter.com.pa/categorias/marcas/whirlpool",
+        "https://www.doitcenter.com.pa/categorias/marcas/acros",
+    ]
+    for b_url in brand_urls:
+        for page in range(1, 6):
+            url = f"{b_url}?page={page}"
+            try:
+                r = client.get(url, timeout=22)
+                if r.status_code != 200:
+                    break
+                batch = parse_html_cards(r.text, "Do It Center", base_url, url, seen_keys)
+                items.extend(batch)
+                if not batch:
+                    break
+            except Exception:
+                break
+    return items
+
+def scrape_evision(client: httpx.Client):
+    items = []
+    seen_keys = set()
+    base_url = "https://www.evisionstore.com"
+    urls = [
+        "https://www.evisionstore.com/products?brand=hisense&num=60",
+        "https://www.evisionstore.com/products?brand=kitchenaid&num=60",
+        "https://www.evisionstore.com/products?layout=product-full-width&num=60&q=whirlpool&view=list",
+        "https://www.evisionstore.com/products?num=60&q=acros",
+    ]
+    for u in urls:
+        for page in range(1, 5):
+            page_url = f"{u}&page={page}"
+            try:
+                r = client.get(page_url, timeout=22)
+                if r.status_code != 200:
+                    break
+                batch = parse_html_cards(r.text, "EVision", base_url, page_url, seen_keys)
+                items.extend(batch)
+                if not batch:
+                    break
+            except Exception:
+                break
+    return items
 
 def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
-    """Extrae variantes de Shopify paginando colecciones, catalogo general y predictive search."""
     items = []
     seen_ids = set()
     brand_tokens = [b.lower() for b in brands]
@@ -246,7 +428,6 @@ def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: 
             except Exception:
                 break
 
-    # Predictive search para codigos de aires/linea blanca sin marca en el titulo
     for q in extra_queries[:20]:
         try:
             r = client.get(f"{base_url}/search/suggest.json?q={q}&resources[type]=product", timeout=12)
@@ -345,76 +526,6 @@ def scrape_woocommerce_multi_brand(client: httpx.Client, store_name: str, base_u
             pass
     return items
 
-def scrape_magento_html_multi_brand(client: httpx.Client, store_name: str, base_url: str, search_terms: list):
-    items = []
-    seen_urls = set()
-    for term in search_terms:
-        max_pages = 5 if len(term) <= 10 and term.isalpha() else 1
-        for page in range(1, max_pages + 1):
-            urls_to_try = [
-                f"{base_url}/catalogsearch/result/index/?p={page}&q={term}",
-                f"{base_url}/search?q={term}&page={page}",
-            ]
-            found_in_page = False
-            for s_url in urls_to_try:
-                try:
-                    r = client.get(s_url, timeout=20)
-                    if r.status_code != 200:
-                        continue
-                    tree = HTMLParser(r.text)
-                    for script in tree.css('script[type="application/ld+json"]'):
-                        try:
-                            ld = json.loads(script.text())
-                            if isinstance(ld, dict) and ld.get("@type") == "ItemList":
-                                for el in ld.get("itemListElement", []):
-                                    prod = el.get("item", {})
-                                    offers = prod.get("offers", {})
-                                    price = extract_price_float(offers.get("price") if isinstance(offers, dict) else None)
-                                    u = str(prod.get("url", s_url))
-                                    if price and u not in seen_urls:
-                                        seen_urls.add(u)
-                                        found_in_page = True
-                                        items.append({
-                                            "tienda": store_name,
-                                            "sku": str(prod.get("sku", "")),
-                                            "barcode": clean_barcode(prod.get("gtin13") or prod.get("gtin") or ""),
-                                            "titulo": str(prod.get("name", "")),
-                                            "precio": price,
-                                            "url": u,
-                                        })
-                        except Exception:
-                            pass
-
-                    for card in tree.css("li.product-item, div.product-item-info, .product-card, .product, .type-product"):
-                        link_node = card.css_first("a.product-item-link, .product-title a, h2 a, a[href]")
-                        price_node = card.css_first("[data-price-amount], .price ins .amount, .price .amount, span.price")
-                        if link_node and price_node:
-                            href = link_node.attributes.get("href", "")
-                            if href and not href.startswith("http"):
-                                href = base_url.rstrip("/") + "/" + href.lstrip("/")
-                            if not href or href in seen_urls:
-                                continue
-                            p_val = price_node.attributes.get("data-price-amount") or price_node.text(strip=True)
-                            price = extract_price_float(p_val)
-                            if price:
-                                seen_urls.add(href)
-                                found_in_page = True
-                                items.append({
-                                    "tienda": store_name,
-                                    "sku": card.attributes.get("data-product-sku", ""),
-                                    "barcode": "",
-                                    "titulo": link_node.text(strip=True) or link_node.attributes.get("title", ""),
-                                    "precio": price,
-                                    "url": href,
-                                })
-                    if found_in_page:
-                        break
-                except Exception:
-                    pass
-            if not found_in_page:
-                break
-    return items
-
 def scrape_generic_store(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
     items = scrape_shopify_multi_brand(client, store_name, base_url, brands, extra_queries)
     if items:
@@ -425,7 +536,22 @@ def scrape_generic_store(client: httpx.Client, store_name: str, base_url: str, b
     items = scrape_woocommerce_multi_brand(client, store_name, base_url, brands, extra_queries)
     if items:
         return items
-    return scrape_magento_html_multi_brand(client, store_name, base_url, list(brands) + extra_queries[:15])
+    seen = set()
+    out = []
+    for term in list(brands) + extra_queries[:15]:
+        for p in range(1, 5):
+            u = f"{base_url}/catalogsearch/result/index/?p={p}&q={term}"
+            try:
+                r = client.get(u, timeout=18)
+                if r.status_code != 200:
+                    break
+                batch = parse_html_cards(r.text, store_name, base_url, u, seen)
+                out.extend(batch)
+                if not batch:
+                    break
+            except Exception:
+                break
+    return out
 
 def match_products(catalog, scraped_items):
     results = []
@@ -457,7 +583,7 @@ def match_products(catalog, scraped_items):
 
             if not matched:
                 for item in store_items:
-                    haystack = clean_code(item["sku"] + " " + item["titulo"])
+                    haystack = clean_code(item["sku"] + " " + item["titulo"] + " " + item["url"])
                     if any(c in haystack for c in sku_row["codes_norm"] if len(c) >= 4):
                         matched = item
                         break
@@ -498,6 +624,12 @@ def main():
         for name, url in stores_config:
             if name == "Panafoto":
                 res = scrape_panafoto(client, brands, extra_queries)
+            elif name == "Novey":
+                res = scrape_novey(client, brands, extra_queries)
+            elif name == "Do It Center":
+                res = scrape_doitcenter(client)
+            elif name == "EVision":
+                res = scrape_evision(client)
             else:
                 res = scrape_generic_store(client, name, url, brands, extra_queries)
             print(f"[{name}] Extraidos {len(res)} items.")
