@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27 11:36:50",
+  "actualizado": "2026-11-27 12:30:56",
   "tiendas_orden": [
     "Multimax",
     "Novey",
@@ -77,7 +77,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 599.0,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-atr122ka-11-000btu-split-inverter-seer-17.html",
+          "titulo_tienda": ".product-image-container-5089 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-5089 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-5089 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -181,7 +185,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 949.95,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-evap-atr362gu-split-inverter-36-000-btu-r32.html",
+          "titulo_tienda": ".product-image-container-9221 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-9221 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-9221 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -221,7 +229,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 279.95,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-atr122cj-12-000btu-seer-18-inverter-wifi.html",
+          "titulo_tienda": ".product-image-container-99362 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-99362 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-99362 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -301,7 +313,11 @@
         "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 379.95,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-atr182cj-17-000btu-seer-18-inverter-wifi.html",
+          "titulo_tienda": ".product-image-container-108341 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-108341 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-108341 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -341,7 +357,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 619.95,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-atr182hb-split-inverter-18-000-btu-r32.html",
+          "titulo_tienda": ".product-image-container-17711 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-17711 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-17711 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -477,7 +497,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 1399.95,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-auv-36tr5re3-36-000btu-seer-18-piso-techo.html",
+          "titulo_tienda": ".product-image-container-114145 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-114145 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-114145 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -509,7 +533,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 1999.95,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-auv-60tr5rf3-52-000btu-seer-18-piso-techo.html",
+          "titulo_tienda": ".product-image-container-114146 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-114146 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-114146 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -545,7 +573,11 @@
           "url": "https://unicapanama.com/products/aire-acondicionado-portatil-hisense-de-12-000-btu-color-blanco-enfriamiento-rapido-y-silencioso",
           "titulo_tienda": "Aire Acondicionado Portátil Hisense de 12,000 BTU | Color Blanco | Enfriamiento Rápido y Silencioso Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 279.95,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-portatil-ap-12cw1rnxs20-12-000-btu-wifi.html",
+          "titulo_tienda": ".product-image-container-9114 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-9114 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-9114 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -610,7 +642,7 @@
         "Do It Center": null,
         "Titan": {
           "precio": 349.99,
-          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=b718e2378&_ss=e",
+          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=194d08580&_ss=e",
           "titulo_tienda": "Aire Acondicionado Hisense / Split / 12,000 BTU / Inverter"
         },
         "Spiegel": null,
@@ -657,7 +689,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 549.95,
+          "url": "https://www.raenco.com/aire-acondicionado-hisense-atr182ha-18-000-btu-seer-20-split-inverter.html",
+          "titulo_tienda": ".product-image-container-57143 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-57143 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-57143 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -877,7 +913,11 @@
         "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 69.0,
+          "url": "https://www.raenco.com/sound-bar-hisense-hs1000-2-0ch-120w-bluetooth-5-3-hdmi-arc-aux-usb.html",
+          "titulo_tienda": ".product-image-container-99418 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-99418 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-99418 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -1017,7 +1057,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 179.0,
+          "url": "https://www.raenco.com/televisor-hisense-43-43q4sv-smart-tv-hi-qled-fhd-vidaa-tdt.html",
+          "titulo_tienda": ".product-image-container-103599 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-103599 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-103599 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -1053,7 +1097,11 @@
         "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 239.0,
+          "url": "https://www.raenco.com/televisor-hisense-50-50q4sv-smart-tv-hi-qled-fhd-vidaa-tdt.html",
+          "titulo_tienda": ".product-image-container-103600 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-103600 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-103600 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -1197,7 +1245,11 @@
           "url": "https://unicapanama.com/products/televisor-hisense-55q6qv-qled-smart-55-4k-uhd-vidaa-con-dolby-vision-atmos-unica-panama",
           "titulo_tienda": "Televisor Hisense 55Q6QV QLED Smart 55” 4K UHD VIDAA con Dolby Vision Atmos | ÚNICA Panamá Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 369.0,
+          "url": "https://www.raenco.com/televisor-hisense-55-55q6qv-qled-4k-vidaa-dolby-atmos-vision.html",
+          "titulo_tienda": ".product-image-container-49626 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-49626 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-49626 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -1233,7 +1285,11 @@
           "url": "https://unicapanama.com/products/televisor-hisense-65q6qv-qled-smart-65-4k-uhd-vidaa-unica-panama",
           "titulo_tienda": "Televisor Hisense 65Q6QV QLED Smart 65” 4K UHD VIDAA | ÚNICA Panamá Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 699.0,
+          "url": "https://www.raenco.com/televisor-hisense-65-65q6qv-qled-4k-vidaa-dolby-atmos-vision.html",
+          "titulo_tienda": ".product-image-container-23372 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-23372 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-23372 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -1329,7 +1385,11 @@
           "url": "https://unicapanama.com/products/televisor-hisense-98q6qg-qled-smart-98-4k-google-tv-unica-panama",
           "titulo_tienda": "Televisor Hisense 98Q6QG QLED Smart 98” 4K Google TV | ÚNICA Panamá Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 1299.0,
+          "url": "https://www.raenco.com/televisor-hisense-98-98q6qg-qled-4k-google-dolby-atmos-vision.html",
+          "titulo_tienda": ".product-image-container-114937 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-114937 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-114937 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -1377,7 +1437,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 579.0,
+          "url": "https://www.raenco.com/televisor-hisense-75-75q6qv-qled-4k-vidaa-dolby-atmos-vision.html",
+          "titulo_tienda": ".product-image-container-59188 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-59188 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-59188 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -1421,7 +1485,11 @@
           "url": "https://unicapanama.com/products/televisor-hisense-85q6qv-qled-smart-85-4k-ai-unica-panama",
           "titulo_tienda": "Televisor Hisense 85Q6QV QLED Smart 85” 4K AI | ÚNICA Panamá Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 959.0,
+          "url": "https://www.raenco.com/televisor-hisense-85-85q6qv-qled-4k-vidaa-dolby-atmos-vision.html",
+          "titulo_tienda": ".product-image-container-49620 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-49620 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-49620 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -1845,7 +1913,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 209.95,
+          "url": "https://www.raenco.com/lavadora-hisense-14kg-wt5k1423dt-inverter-ibubble-gris.html",
+          "titulo_tienda": ".product-image-container-101424 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-101424 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-101424 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -1881,7 +1953,11 @@
           "url": "https://unicapanama.com/products/lavadora-hisense-top-load-de-16kg-eficiencia-y-potencia-para-un-lavado-impecable",
           "titulo_tienda": "Lavadora Hisense Top Load de 16KG – Eficiencia y Potencia para un Lavado Impecable Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 239.95,
+          "url": "https://www.raenco.com/lavadora-hisense-16kg-wt5k1623dt-inverter-ibubble-gris.html",
+          "titulo_tienda": ".product-image-container-101425 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-101425 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-101425 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -2041,7 +2117,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 219.0,
+          "url": "https://www.raenco.com/congelador-hisense-5pc-ft145n1swr-blanco.html",
+          "titulo_tienda": ".product-image-container-104107 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-104107 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-104107 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -2193,7 +2273,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 814.95,
+          "url": "https://www.raenco.com/refrigeradora-hisense-22pc-rf220si5a-front-door-acero.html",
+          "titulo_tienda": ".product-image-container-8104 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8104 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8104 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -2229,7 +2313,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 399.0,
+          "url": "https://www.raenco.com/refrigeradora-hisense-rt1n250nmd-8-8pc-con-dispensador-inverter-acero.html",
+          "titulo_tienda": ".product-image-container-95920 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-95920 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-95920 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -2297,7 +2385,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 659.0,
+          "url": "https://www.raenco.com/refrigerador-hisense-rs3p428neda1-15-6pc-sxs-sin-dispensador-silver.html",
+          "titulo_tienda": ".product-image-container-8115 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8115 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8115 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -2373,7 +2465,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 774.95,
+          "url": "https://www.raenco.com/refrigeradora-hisense-18-7pc-rs190p5esr-sxs-con-dispensador-silver.html",
+          "titulo_tienda": ".product-image-container-104105 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-104105 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-104105 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -2409,7 +2505,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 559.95,
+          "url": "https://www.raenco.com/refrigeradora-hisense-19-1pc-rs3p558nmcb-sxs-con-dispensador-inverter-acero.html",
+          "titulo_tienda": ".product-image-container-95924 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-95924 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-95924 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -2586,7 +2686,11 @@
       "map_usd": 169.99,
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
-        "Multimax": null,
+        "Multimax": {
+          "precio": 169.97,
+          "url": "https://www.multimax.net/products/hisense-rt55d6aae-5-5-cu-ft-rt55d6aae-top-mount-refrigeradora",
+          "titulo_tienda": "Refrigeradora Hisense RT55D6AAE | 5.5 pies cúbicos | Top Mount Default Title"
+        },
         "Novey": null,
         "Rodelag": {
           "precio": 169.98,
@@ -2705,7 +2809,11 @@
           "url": "https://unicapanama.com/products/refrigeradora-hisense-rq171bv5a-inverter-de-17-pies-cubicos-de-acero-inoxidable",
           "titulo_tienda": "Refrigeradora Hisense RQ171BV5A Inverter de 17 pies cúbicos de Acero Inoxidable Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 829.95,
+          "url": "https://www.raenco.com/refrigeradora-hisense-17-1pc-rq171bv5a-cd-ice-maker-silver.html",
+          "titulo_tienda": ".product-image-container-8095 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8095 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8095 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -2733,7 +2841,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 929.95,
+          "url": "https://www.raenco.com/refrigeradora-hisense-26-6pc-hrf266n6cse-front-door-acero.html",
+          "titulo_tienda": ".product-image-container-7904 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-7904 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-7904 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -2973,7 +3085,11 @@
         "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 1124.95,
+          "url": "https://www.raenco.com/refrigeradora-hisense-22-9pc-rq226p5gbr-sxs-inverter-silver.html",
+          "titulo_tienda": ".product-image-container-108750 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-108750 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-108750 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -3113,7 +3229,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 364.95,
+          "url": "https://www.raenco.com/refrigeradora-hisense-8-8pc-rt1n250nmb-inverter-250lts-con-dispensador-black.html",
+          "titulo_tienda": ".product-image-container-120879 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-120879 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-120879 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -3215,8 +3335,8 @@
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
         "Multimax": {
-          "precio": 279.97,
-          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=d355fbde9&_ss=e",
+          "precio": 229.97,
+          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=c64eeb3ee&_ss=e",
           "titulo_tienda": "Estufa a Gas Whirlpool WP3550S | 36\" | 5 Quemadores | Empotrable | Acero Inoxidable"
         },
         "Novey": null,
@@ -3245,7 +3365,11 @@
           "url": "https://unicapanama.com/products/estufa-empotrable-a-gas-36-acero-inoxidable-marca-whirlpoolwhi-wp3550s",
           "titulo_tienda": "Estufa Empotrable a Gas 36” Acero Inoxidable Marca Whirlpool Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 269.0,
+          "url": "https://www.raenco.com/estufa-empotrable-a-gas-36-whirlpool-wp3550s.html",
+          "titulo_tienda": ".product-image-container-7850 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-7850 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-7850 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -3303,7 +3427,7 @@
       "disponibilidad": "Espera recibo",
       "tiendas": {
         "Multimax": {
-          "precio": 359.97,
+          "precio": 329.97,
           "url": "https://www.multimax.net/products/whirlpool-lwfr3400b-estufa-gas-30-negra-lwfr3400b",
           "titulo_tienda": "Estufa Whirlpool LWFR3400B | Gas | 30\" Default Title"
         },
@@ -3325,7 +3449,11 @@
         "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 369.0,
+          "url": "https://www.raenco.com/estufa-a-gas-whirlpool-30-lwfr3400b-6q-pta-negra.html",
+          "titulo_tienda": ".product-image-container-58623 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-58623 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-58623 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -3363,7 +3491,7 @@
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
         "Multimax": {
-          "precio": 1129.97,
+          "precio": 999.97,
           "url": "https://www.multimax.net/products/whirlpool-7mwgt4027hw-lav-20kg-sec-10kg-7mwgt4027hw-centro-de-lavado-gas",
           "titulo_tienda": "Centro de Lavado Whirlpool 7MWGT4027HW | Gas | Lavadora 20Kg | Secadora 10Kg Default Title"
         },
@@ -3381,7 +3509,11 @@
         "Selecto": null,
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 1129.0,
+          "url": "https://www.raenco.com/centro-de-lavado-whirlpool-a-gas-7mwgt4027hw-20kls.html",
+          "titulo_tienda": ".product-image-container-5861 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-5861 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-5861 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -3395,7 +3527,7 @@
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
         "Multimax": {
-          "precio": 249.97,
+          "precio": 224.97,
           "url": "https://www.multimax.net/products/lavadora-whirpool-wwi14awhls-14-kg-carga-superior-color-blanco",
           "titulo_tienda": "Lavadora Whirlpool WWI14AWHLS | 14Kg | Carga Superior Default Title"
         },
@@ -3435,7 +3567,7 @@
       "disponibilidad": "Despacho inmediato",
       "tiendas": {
         "Multimax": {
-          "precio": 399.97,
+          "precio": 359.97,
           "url": "https://www.multimax.net/products/lavadora-carga-superior-whirlpool-8mwtw1813mjm-18kg",
           "titulo_tienda": "Lavadora Whirlpool 8MWTW1813MJM | 18kg | Carga Superior Default Title"
         },
@@ -3457,7 +3589,11 @@
           "url": "https://unicapanama.com/products/lavadora-18kg-acero-inoxidable-marca-whirlpool",
           "titulo_tienda": "Lavadora 18kg Acero Inoxidable Marca Whirlpool Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 399.0,
+          "url": "https://www.raenco.com/lavadora-whirlpool-8mwtw1813mjm-18kg-blanca.html",
+          "titulo_tienda": ".product-image-container-8410 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8410 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8410 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -3489,7 +3625,11 @@
           "url": "https://unicapanama.com/products/microondas-plato-giratorio-28lts-9-menus-automaticos-gris",
           "titulo_tienda": "Microondas plato giratorio 28Lts 9 menús automáticos gris Default Title"
         },
-        "Raenco": null
+        "Raenco": {
+          "precio": 89.95,
+          "url": "https://www.raenco.com/microonda-whirlpool-1-1-cu-ft-gris-wm1211d.html",
+          "titulo_tienda": ".product-image-container-3284 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-3284 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-3284 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     },
     {
@@ -3521,7 +3661,11 @@
         },
         "Creditos Mundiales": null,
         "Unica Panama": null,
-        "Raenco": null
+        "Raenco": {
+          "precio": 289.95,
+          "url": "https://www.raenco.com/refrigeradora-whirlpool-9pc-wt32409d-xpert-inverter-silver-c-disp.html",
+          "titulo_tienda": ".product-image-container-8083 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8083 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8083 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
+        }
       }
     }
   ]
