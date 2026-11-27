@@ -3,50 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monitor de Precios Hisense - Comparativa Clientes</title>
+  <title>REPIDEALES | Monitor de Precios & Cumplimiento MAP</title>
+  <!-- Favicon Vectorial Oficial REPIDEALES (Icon) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 175'%3E%3Cpath fill='%23DC1E35' d='M65 10 C125 10 190 55 190 100 C190 140 115 168 75 168 C40 168 10 115 10 68 C10 28 35 10 65 10 Z'/%3E%3Cpath fill='%23FFFFFF' d='M48 138 V75 C48 48 66 34 94 34 H102 V56 H94 C78 56 71 64 71 78 V138 H48 Z'/%3E%3Ccircle cx='126' cy='46' r='13' fill='%23FFFFFF'/%3E%3Crect x='114' y='66' width='24' height='72' fill='%23FFFFFF'/%3E%3C/svg%3E">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #fff !important; font-size: 10px; }
+      .print-shadow-none { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans">
-  <div class="max-w-7xl mx-auto px-4 py-8">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
-      <div>
-        <h1 class="text-2xl font-bold text-slate-900">Monitor de Precios — Hisense Panamá</h1>
-        <p class="text-sm text-slate-500">Comparativa: Nuestro Precio Regular / MAP vs. Clientes Retail</p>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased">
+  <div class="max-w-[1600px] mx-auto px-4 py-6">
+    
+    <!-- Encabezado Corporativo REPIDEALES -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 mb-5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 print-shadow-none">
+      <div class="flex items-center gap-4">
+        <!-- Logo Vectorial Oficial REPIDEALES -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 215" class="h-14 w-auto shrink-0" aria-label="REPIDEALES">
+          <path fill="#DC1E35" d="M72 8 C138 8 205 55 205 102 C205 144 126 172 82 172 C44 172 12 118 12 68 C12 26 40 8 72 8 Z"/>
+          <path fill="#FFFFFF" d="M54 140 V74 C54 46 73 32 102 32 H110 V55 H102 C85 55 78 63 78 78 V140 H54 Z"/>
+          <circle cx="136" cy="44" r="14" fill="#FFFFFF"/>
+          <rect x="123" y="65" width="26" height="75" fill="#FFFFFF"/>
+          <text x="110" y="204" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="27" letter-spacing="1.5" fill="#0F172A">REPIDEALES</text>
+        </svg>
+        <div class="border-l border-slate-200 pl-4">
+          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-[#DC1E35] bg-red-50 px-2 py-0.5 rounded mb-1">Inteligencia Comercial & Retail</span>
+          <h1 class="text-xl md:text-2xl font-extrabold text-slate-900 tracking-tight">Monitor de Precios & Cumplimiento MAP</h1>
+          <p class="text-xs text-slate-500">Comparativa de Catálogo Oficial vs. 12 Cadenas Retail en Panamá</p>
+        </div>
       </div>
-      <div class="bg-white px-4 py-2 rounded-lg shadow-sm border border-slate-200 text-sm">
-        <span class="text-slate-500">Última actualización:</span>
-        <strong id="last-updated" class="text-slate-800">Cargando...</strong>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="bg-slate-50 px-3.5 py-2 rounded-lg border border-slate-200 text-xs">
+          <span class="text-slate-500 block">Última actualización</span>
+          <strong id="last-updated" class="text-slate-900 font-semibold">Cargando...</strong>
+        </div>
+        <!-- Botones de Exportacion -->
+        <div class="flex items-center gap-2 no-print">
+          <button onclick="exportCSV()" class="px-3 py-2 bg-slate-800 hover:bg-slate-900 text-white text-xs font-semibold rounded-lg transition shadow-sm">
+            Exportar CSV
+          </button>
+          <button onclick="exportExcel()" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg transition shadow-sm">
+            Exportar Excel
+          </button>
+          <button onclick="window.print()" class="px-3 py-2 bg-[#DC1E35] hover:bg-red-700 text-white text-xs font-semibold rounded-lg transition shadow-sm">
+            Exportar PDF
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 mb-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <input type="text" id="search-input" placeholder="Buscar por Código (ej. 65S7N), BarCode o Producto..." 
-             class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
-      <select id="category-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+    <!-- Tarjetas KPI Estilo Ejecutivo -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm print-shadow-none">
+        <div class="text-[11px] font-bold uppercase text-slate-400">SKUs Monitoreados</div>
+        <div id="kpi-skus" class="text-2xl font-black text-slate-900 mt-1">0</div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm print-shadow-none">
+        <div class="text-[11px] font-bold uppercase text-slate-400">Registros Detectados</div>
+        <div id="kpi-records" class="text-2xl font-black text-slate-900 mt-1">0</div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm print-shadow-none">
+        <div class="text-[11px] font-bold uppercase text-emerald-600">Cumple MAP (&ge;)</div>
+        <div id="kpi-ok" class="text-2xl font-black text-emerald-600 mt-1">0</div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm print-shadow-none">
+        <div class="text-[11px] font-bold uppercase text-[#DC1E35]">Debajo de MAP (&lt;)</div>
+        <div id="kpi-below" class="text-2xl font-black text-[#DC1E35] mt-1">0</div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm col-span-2 md:col-span-1 print-shadow-none">
+        <div class="text-[11px] font-bold uppercase text-slate-400">% Cumplimiento</div>
+        <div id="kpi-rate" class="text-2xl font-black text-slate-900 mt-1">0%</div>
+      </div>
+    </div>
+
+    <!-- Barra de Filtros -->
+    <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 mb-5 grid grid-cols-1 md:grid-cols-5 gap-3 no-print">
+      <input type="text" id="search-input" placeholder="Buscar Código, BarCode o Producto..."
+             class="border border-slate-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#DC1E35]">
+      <select id="brand-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#DC1E35]">
+        <option value="">Todas las Marcas</option>
+      </select>
+      <select id="category-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#DC1E35]">
         <option value="">Todas las Categorías</option>
       </select>
-      <select id="match-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+      <select id="store-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#DC1E35]">
+        <option value="ALL">Todos los Clientes (12)</option>
+      </select>
+      <select id="match-filter" class="border border-slate-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#DC1E35]">
         <option value="all">Todos los SKUs</option>
-        <option value="found">Solo con presencia en tiendas</option>
-        <option value="below_map">Con precio por debajo de MAP</option>
+        <option value="found">Con presencia en tiendas</option>
+        <option value="below_map">Con precio debajo de MAP</option>
       </select>
     </div>
 
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-x-auto">
-      <table class="w-full text-left border-collapse text-sm">
-        <thead>
-          <tr class="bg-slate-100 border-b border-slate-200 text-slate-600 uppercase text-xs">
-            <th class="py-3 px-4">Código</th>
-            <th class="py-3 px-4">Producto</th>
-            <th class="py-3 px-4 text-right bg-slate-200/60">Regular</th>
-            <th class="py-3 px-4 text-right bg-teal-50 text-teal-900">MAP BF</th>
-            <th class="py-3 px-4 text-right">Panafoto</th>
-            <th class="py-3 px-4 text-right">Novey</th>
-            <th class="py-3 px-4 text-right">Rodelag</th>
-            <th class="py-3 px-4 text-right">Multimax</th>
-            <th class="py-3 px-4 text-right">EVision</th>
-          </tr>
-        </thead>
+    <!-- Tabla Comparativa -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-x-auto print-shadow-none">
+      <table id="main-table" class="w-full text-left border-collapse text-xs">
+        <thead id="table-head"></thead>
         <tbody id="table-body" class="divide-y divide-slate-100"></tbody>
       </table>
     </div>
@@ -54,53 +112,142 @@
 
   <script>
     let allProducts = [];
-    const stores = ["Panafoto", "Novey", "Rodelag", "Multimax", "EVision"];
+    let storeOrder = [
+      "Multimax", "Novey", "Rodelag", "Panafoto", "EVision",
+      "Do It Center", "Titan", "Spiegel", "Selecto",
+      "Creditos Mundiales", "Unica Panama", "Raenco"
+    ];
+    let currentFiltered = [];
+
+    function getActiveStores() {
+      const selected = document.getElementById("store-filter").value;
+      return selected === "ALL" ? storeOrder : [selected];
+    }
 
     function formatPrice(cellData, mapPrice) {
       if (!cellData || !cellData.precio) {
         return `<span class="text-slate-300">—</span>`;
       }
       const p = cellData.precio;
-      const isBelowMap = mapPrice && p < mapPrice;
-      const colorClass = isBelowMap ? "text-red-600 font-bold bg-red-50 px-2 py-0.5 rounded" : "text-slate-800 font-medium";
-      return `<a href="${cellData.url}" target="_blank" title="${cellData.titulo_tienda}" class="${colorClass} hover:underline">$${p.toFixed(2)}</a>`;
+      const isBelow = mapPrice && p < mapPrice;
+      const badge = isBelow
+        ? "text-[#DC1E35] font-bold bg-red-50 border border-red-200 px-1.5 py-0.5 rounded"
+        : "text-emerald-700 font-semibold bg-emerald-50/70 px-1.5 py-0.5 rounded";
+      return `<a href="${cellData.url}" target="_blank" title="${cellData.titulo_tienda}" class="${badge} hover:underline">$${p.toFixed(2)}</a>`;
+    }
+
+    function updateKPIs(products, activeStores) {
+      let records = 0, ok = 0, below = 0;
+      products.forEach(p => {
+        activeStores.forEach(s => {
+          const cell = p.tiendas[s];
+          if (cell && cell.precio) {
+            records++;
+            if (p.map_usd && cell.precio < p.map_usd) below++;
+            else ok++;
+          }
+        });
+      });
+      document.getElementById("kpi-skus").textContent = products.length;
+      document.getElementById("kpi-records").textContent = records;
+      document.getElementById("kpi-ok").textContent = ok;
+      document.getElementById("kpi-below").textContent = below;
+      document.getElementById("kpi-rate").textContent = records > 0 ? ((ok / records) * 100).toFixed(1) + "%" : "0%";
     }
 
     function renderTable() {
       const query = document.getElementById("search-input").value.toLowerCase();
+      const brand = document.getElementById("brand-filter").value;
       const cat = document.getElementById("category-filter").value;
       const matchMode = document.getElementById("match-filter").value;
+      const activeStores = getActiveStores();
+
+      // Renderizar cabecera dinamica
+      const thead = document.getElementById("table-head");
+      thead.innerHTML = `
+        <tr class="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
+          <th class="py-3 px-3 sticky left-0 bg-slate-900 z-10">Código</th>
+          <th class="py-3 px-3">Marca</th>
+          <th class="py-3 px-3">Producto</th>
+          <th class="py-3 px-3 text-right bg-slate-800">Regular</th>
+          <th class="py-3 px-3 text-right bg-[#DC1E35]">MAP BF</th>
+          ${activeStores.map(s => `<th class="py-3 px-3 text-right whitespace-nowrap">${s}</th>`).join("")}
+        </tr>
+      `;
+
+      currentFiltered = allProducts.filter(p => {
+        const textMatch = p.codigo.toLowerCase().includes(query) ||
+                          p.descripcion.toLowerCase().includes(query) ||
+                          (p.barcode && p.barcode.includes(query));
+        const brandMatch = !brand || p.marca === brand;
+        const catMatch = !cat || p.categoria === cat;
+        const hasAny = activeStores.some(s => p.tiendas[s] !== null);
+        const hasBelow = activeStores.some(s => p.tiendas[s] && p.map_usd && p.tiendas[s].precio < p.map_usd);
+
+        if (matchMode === "found" && !hasAny) return false;
+        if (matchMode === "below_map" && !hasBelow) return false;
+        return textMatch && brandMatch && catMatch;
+      });
+
+      updateKPIs(currentFiltered, activeStores);
+
       const tbody = document.getElementById("table-body");
       tbody.innerHTML = "";
 
-      const filtered = allProducts.filter(p => {
-        const textMatch = p.codigo.toLowerCase().includes(query) || 
-                          p.descripcion.toLowerCase().includes(query) || 
-                          (p.barcode && p.barcode.includes(query));
-        const catMatch = !cat || p.categoria === cat;
-        const hasAnyStore = stores.some(s => p.tiendas[s] !== null);
-        const hasBelowMap = stores.some(s => p.tiendas[s] && p.map_usd && p.tiendas[s].precio < p.map_usd);
-
-        if (matchMode === "found" && !hasAnyStore) return false;
-        if (matchMode === "below_map" && !hasBelowMap) return false;
-        return textMatch && catMatch;
-      });
-
-      filtered.forEach(p => {
+      currentFiltered.forEach(p => {
         const tr = document.createElement("tr");
         tr.className = "hover:bg-slate-50 transition-colors";
         tr.innerHTML = `
-          <td class="py-3 px-4 font-mono font-semibold text-slate-900 whitespace-nowrap">${p.codigo}</td>
-          <td class="py-3 px-4 max-w-xs truncate" title="${p.descripcion}">
+          <td class="py-2.5 px-3 font-mono font-bold text-slate-900 whitespace-nowrap sticky left-0 bg-white">${p.codigo}</td>
+          <td class="py-2.5 px-3 whitespace-nowrap"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700">${p.marca || "—"}</span></td>
+          <td class="py-2.5 px-3 max-w-[260px] truncate" title="${p.descripcion}">
             <div class="font-medium text-slate-800 truncate">${p.descripcion}</div>
-            <div class="text-xs text-slate-400">${p.categoria}</div>
+            <div class="text-[10px] text-slate-400">${p.categoria}</div>
           </td>
-          <td class="py-3 px-4 text-right font-medium text-slate-600 bg-slate-50">$${p.precio_regular ? p.precio_regular.toFixed(2) : "—"}</td>
-          <td class="py-3 px-4 text-right font-bold text-teal-800 bg-teal-50/50">$${p.map_usd ? p.map_usd.toFixed(2) : "—"}</td>
-          ${stores.map(s => `<td class="py-3 px-4 text-right whitespace-nowrap">${formatPrice(p.tiendas[s], p.map_usd)}</td>`).join("")}
+          <td class="py-2.5 px-3 text-right font-medium text-slate-500 bg-slate-50/70">$${p.precio_regular ? p.precio_regular.toFixed(2) : "—"}</td>
+          <td class="py-2.5 px-3 text-right font-bold text-slate-900 bg-red-50/40">$${p.map_usd ? p.map_usd.toFixed(2) : "—"}</td>
+          ${activeStores.map(s => `<td class="py-2.5 px-3 text-right whitespace-nowrap">${formatPrice(p.tiendas[s], p.map_usd)}</td>`).join("")}
         `;
         tbody.appendChild(tr);
       });
+    }
+
+    function buildExportRows() {
+      const activeStores = getActiveStores();
+      return currentFiltered.map(p => {
+        const row = {
+          Marca: p.marca,
+          Categoria: p.categoria,
+          Codigo: p.codigo,
+          BarCode: p.barcode,
+          Producto: p.descripcion,
+          Precio_Regular: p.precio_regular ?? "",
+          MAP_USD: p.map_usd ?? "",
+        };
+        activeStores.forEach(s => {
+          row[s] = p.tiendas[s] ? p.tiendas[s].precio : "";
+        });
+        return row;
+      });
+    }
+
+    function exportExcel() {
+      const rows = buildExportRows();
+      const ws = XLSX.utils.json_to_sheet(rows);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Comparativa_Precios");
+      XLSX.writeFile(wb, "Reporte_Precios_Repideales.xlsx");
+    }
+
+    function exportCSV() {
+      const rows = buildExportRows();
+      const ws = XLSX.utils.json_to_sheet(rows);
+      const csv = XLSX.utils.sheet_to_csv(ws);
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "Reporte_Precios_Repideales.csv";
+      link.click();
     }
 
     async function init() {
@@ -108,7 +255,27 @@
         const res = await fetch("data/precios_dashboard.json?t=" + Date.now());
         const data = await res.json();
         document.getElementById("last-updated").textContent = data.actualizado;
+        if (data.tiendas_orden && data.tiendas_orden.length) {
+          storeOrder = data.tiendas_orden;
+        }
         allProducts = data.productos || [];
+
+        const storeSelect = document.getElementById("store-filter");
+        storeOrder.forEach((s, idx) => {
+          const opt = document.createElement("option");
+          opt.value = s;
+          opt.textContent = `#${idx + 1} ${s}`;
+          storeSelect.appendChild(opt);
+        });
+
+        const brands = [...new Set(allProducts.map(p => p.marca).filter(Boolean))].sort();
+        const brandSelect = document.getElementById("brand-filter");
+        brands.forEach(b => {
+          const opt = document.createElement("option");
+          opt.value = b;
+          opt.textContent = b;
+          brandSelect.appendChild(opt);
+        });
 
         const cats = [...new Set(allProducts.map(p => p.categoria).filter(Boolean))].sort();
         const catSelect = document.getElementById("category-filter");
@@ -125,9 +292,10 @@
       }
     }
 
-    document.getElementById("search-input").addEventListener("input", renderTable);
-    document.getElementById("category-filter").addEventListener("change", renderTable);
-    document.getElementById("match-filter").addEventListener("change", renderTable);
+    ["search-input", "brand-filter", "category-filter", "store-filter", "match-filter"].forEach(id => {
+      document.getElementById(id).addEventListener("input", renderTable);
+      document.getElementById(id).addEventListener("change", renderTable);
+    });
     init();
   </script>
 </body>
