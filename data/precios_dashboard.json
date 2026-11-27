@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27 10:49:57",
+  "actualizado": "2026-11-27 11:36:50",
   "tiendas_orden": [
     "Multimax",
     "Novey",
@@ -210,8 +210,8 @@
         "Do It Center": null,
         "Titan": {
           "precio": 279.99,
-          "url": "https://titan.com.pa/products/hisense-atr122cj-iduodu?_pos=1&_psq=ATR122CJ&_psid=f4e911b81&_ss=e",
-          "titulo_tienda": "Aire Acondicionado Hisense 12000 BTU"
+          "url": "https://titan.com.pa/products/hisense-atr122cj-iduodu",
+          "titulo_tienda": "Aire Acondicionado Hisense 12000 BTU Default Title"
         },
         "Spiegel": null,
         "Selecto": {
@@ -248,7 +248,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 369.99,
+          "url": "https://titan.com.pa/products/hisense-atr122hb-iduodu",
+          "titulo_tienda": "Aire Acondicionado Hisense Mini Split 12000BTU Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 369.95,
@@ -281,10 +285,18 @@
           "url": "https://rodelag.com/products/aire-acondicionado-split-inverter-18-000-btu-atr182cj-hisense-control-wi-fi",
           "titulo_tienda": "Aire acondicionado Split inverter 18,000 BTU, ATR182CJ Hisense, control Wi-fi Default Title"
         },
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 379.95,
+          "url": "https://www.panafoto.com/aire-acondicionado-split-hisense-18000-btu-inverter-18-seer-wifi-atr182cj-159139.html",
+          "titulo_tienda": "Aire Acondicionado Split Hisense | 18,000 Btu | Inverter | 18 Seer | Wi-Fi | Blanco"
+        },
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 379.99,
+          "url": "https://titan.com.pa/products/hisense-atr182cj-iduodu",
+          "titulo_tienda": "Aire Acondicionado Hisense 18,000 BTU Default Title"
+        },
         "Spiegel": null,
         "Selecto": null,
         "Creditos Mundiales": null,
@@ -318,8 +330,8 @@
         "Do It Center": null,
         "Titan": {
           "precio": 499.99,
-          "url": "https://titan.com.pa/products/hisense-atr182hb-iduodu?_pos=1&_psq=ATR182HB&_psid=592ac2a3b&_ss=e",
-          "titulo_tienda": "Aire Acondicionado Hisense Mini Split 18000 BTU Inverter Negro"
+          "url": "https://titan.com.pa/products/hisense-atr182hb-iduodu",
+          "titulo_tienda": "Aire Acondicionado Hisense Mini Split 18000 BTU Inverter Negro Default Title"
         },
         "Spiegel": null,
         "Selecto": {
@@ -352,7 +364,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 589.99,
+          "url": "https://titan.com.pa/products/hisense-atr242hb-iduodu",
+          "titulo_tienda": "Aire Acondicionado Hisense Mini Split 24000 BTU Inverter Series Premium Negro Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 589.95,
@@ -385,7 +401,11 @@
           "url": "https://rodelag.com/products/hisense-aire-acondicionado-split-inverter-24-000-btu-atr242cj",
           "titulo_tienda": "Aire acondicionado Split inverter 24,000 BTU, ATR242CJ Hisense, control Wi-fi Default Title"
         },
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 479.95,
+          "url": "https://www.panafoto.com/aire-acondicionado-split-hisense-24000-btu-inverter-19-seer-wifi-atr242cj-159271.html",
+          "titulo_tienda": "Aire Acondicionado Split Hisense | 24,000 Btu | Inverter | 19 Seer | Wi-Fi | Blanco"
+        },
         "EVision": null,
         "Do It Center": null,
         "Titan": null,
@@ -590,7 +610,7 @@
         "Do It Center": null,
         "Titan": {
           "precio": 349.99,
-          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=f1dc59e9c&_ss=e",
+          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=b718e2378&_ss=e",
           "titulo_tienda": "Aire Acondicionado Hisense / Split / 12,000 BTU / Inverter"
         },
         "Spiegel": null,
@@ -781,7 +801,11 @@
           "url": "https://rodelag.com/products/barra-de-sonido-hs2100-2-1ch-240w-hisense",
           "titulo_tienda": "Barra de sonido HS2100, 2.1CH, 240W Hisense Default Title"
         },
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 89.95,
+          "url": "https://www.panafoto.com/barra-de-sonidos-2-1-6-modos-de-sonido-bluetooth-hisense-156706.html",
+          "titulo_tienda": "Barra de sonido Hisense HS2100 | 2.1 canales | 240W | Subwoofer inalámbrico | Negro"
+        },
         "EVision": null,
         "Do It Center": null,
         "Titan": null,
@@ -841,7 +865,11 @@
         "Multimax": null,
         "Novey": null,
         "Rodelag": null,
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 59.95,
+          "url": "https://www.panafoto.com/barra-de-sonido-hisense-hs1000-120w-2-0-canales-dolby-159125.html",
+          "titulo_tienda": "Barra de sonido Hisense HS1000 | 2.0 Canales | 120W | Bluetooth | Dolby audio | 1 Año de garantía "
+        },
         "EVision": null,
         "Do It Center": null,
         "Titan": null,
@@ -872,7 +900,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 339.99,
+          "url": "https://titan.com.pa/products/hisense-58q6qv",
+          "titulo_tienda": "Televisor Hisense QLED 58\" / 4K / Ultra HD Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 359.95,
@@ -932,7 +964,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 149.99,
+          "url": "https://titan.com.pa/products/hisense-40q4sv",
+          "titulo_tienda": "Televisor Hisense 40\" Pulgadas 2K QLED 60Hz Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 159.95,
@@ -968,7 +1004,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 179.99,
+          "url": "https://titan.com.pa/products/hisense-43q4sv",
+          "titulo_tienda": "Televisor Hisense 43\" Pulgadas 2K QLED 60Hz Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 189.95,
@@ -1004,14 +1044,14 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 239.99,
+          "url": "https://titan.com.pa/products/hisense-50q4sv",
+          "titulo_tienda": "Televisor Hisense 50\" Pulgadas 2K QLED Default Title"
+        },
         "Spiegel": null,
         "Selecto": null,
-        "Creditos Mundiales": {
-          "precio": 269.0,
-          "url": "https://creditosmundiales.com/producto/televisor-hisense/",
-          "titulo_tienda": "Televisor Hisense 50&#8243;"
-        },
+        "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
       }
@@ -1036,7 +1076,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 199.99,
+          "url": "https://titan.com.pa/products/hisense-43qd5sv",
+          "titulo_tienda": "Televisor Hisense 43\" Pulgadas QD5 4K Ultra HD Hi-QLED Smart TV VIDAA Default Title"
+        },
         "Spiegel": null,
         "Selecto": null,
         "Creditos Mundiales": null,
@@ -1060,7 +1104,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 269.99,
+          "url": "https://titan.com.pa/products/hisense-50qd5sv",
+          "titulo_tienda": "Televisor Hisense 50\" Pulgadas 4K QLED Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 279.95,
@@ -1092,18 +1140,18 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 389.99,
+          "url": "https://titan.com.pa/products/hisense-65qd5sv",
+          "titulo_tienda": "Televisor Hisense 65\" Pulgadas 4K QLED Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 399.95,
           "url": "https://selectopa.com/products/televisor-65-led-smart-tv-qled-serie-qd5-4k-ultra-hd-hisense-65qd5sv",
           "titulo_tienda": "Televisor 65\" LED Smart TV QLED Serie QD5SV 4K Ultra HD Hisense 65QD5SV Televisión. Default Title"
         },
-        "Creditos Mundiales": {
-          "precio": 399.99,
-          "url": "https://creditosmundiales.com/producto/televisor-hisense-2/",
-          "titulo_tienda": "Televisor Hisense 65&#8243;"
-        },
+        "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": null
       }
@@ -1129,7 +1177,11 @@
           "url": "https://rodelag.com/products/hisense-55q6qv-televisores-qled-smart-55-4k-vidaa",
           "titulo_tienda": "Televisor QLED Smart, 55”, 55Q6QV, Hisense, 4K UHD VIDAA con Dolby Vision Atmos Default Title"
         },
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 299.95,
+          "url": "https://www.panafoto.com/hisense-hi-qled-4k-43-dolby-vision-ai-smooth-motion-2-anos-de-garantia-156081.html",
+          "titulo_tienda": "Televisor QLED Hisense 55\" Q6Q | VIDAA  | Quantum Dot | HDR10 | Dolby Vision Atmos | 2 Años de Garantía"
+        },
         "EVision": null,
         "Do It Center": null,
         "Titan": {
@@ -1165,7 +1217,11 @@
           "url": "https://rodelag.com/products/hisense-65q6qv-televisores-qled-smart-65-vidaa",
           "titulo_tienda": "Televisor QLED Smart 65\" 65Q6QV Hisense VIDAA Default Title"
         },
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 389.95,
+          "url": "https://www.panafoto.com/televisor-hisense-qled-65-q6q-2-anos-garantia-156082.html",
+          "titulo_tienda": "Televisor QLED Hisense 65\" Q6Q | VIDAA | Quantum Dot | HDR10 | Dolby Vision Atmos | 2 Años de Garantía"
+        },
         "EVision": null,
         "Do It Center": null,
         "Titan": null,
@@ -1297,7 +1353,11 @@
           "url": "https://rodelag.com/products/televisor-qled-smart-75-75q6qv-hisense-vidaa",
           "titulo_tienda": "Televisor QLED Smart 75\" 75Q6QV Hisense VIDAA Default Title"
         },
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 579.95,
+          "url": "https://www.panafoto.com/televisor-hisense-qled-75-q6q-2-anos-garantia-156086.html",
+          "titulo_tienda": "Televisor QLED Hisense 75\" Q6Q | VIDAA | Quantum Dot | HDR10 | Dolby Vision Atmos | 2 Años de Garantía"
+        },
         "EVision": null,
         "Do It Center": null,
         "Titan": {
@@ -1384,7 +1444,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 269.99,
+          "url": "https://titan.com.pa/products/televisor-hisense-50-uhd-smart-50a6nv-panama",
+          "titulo_tienda": "Televisor Hisense 50\" UHD Smart Default Title"
+        },
         "Spiegel": {
           "precio": 269.99,
           "url": "https://spiegel.com.pa/producto/14-20-0034/",
@@ -1484,7 +1548,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 699.99,
+          "url": "https://titan.com.pa/products/hisense-75u6esv",
+          "titulo_tienda": "Televisor Hisense 75\" Pulgadas ULED Mini LED Default Title"
+        },
         "Spiegel": null,
         "Selecto": null,
         "Creditos Mundiales": null,
@@ -1636,7 +1704,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 379.99,
+          "url": "https://titan.com.pa/products/hisense-wt5i2323uba",
+          "titulo_tienda": "Lavadora Hisense 23 kg Carga Superior Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 379.95,
@@ -1872,7 +1944,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 409.99,
+          "url": "https://titan.com.pa/products/hisense-wd3s1543bt",
+          "titulo_tienda": "Lavasecadora Hisense 15 kg/10 kg WiFi Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 409.95,
@@ -2040,7 +2116,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 189.99,
+          "url": "https://titan.com.pa/products/hisense-fc70d6bwxe",
+          "titulo_tienda": "Congelador Hisense 7P3 Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 189.95,
@@ -2068,7 +2148,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 499.99,
+          "url": "https://titan.com.pa/products/hisense-rq3p431nmda",
+          "titulo_tienda": "Refrigerador Hisense 14 Pies Cross Door Inverter Inox Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 499.95,
@@ -2268,11 +2352,19 @@
           "titulo_tienda": "Refrigeradora Hisense RS190P5ESR | 18.6 pies cúbicos | Side By Side | Inverter | Dispensador de Agua | Acero Inoxidable Default Title"
         },
         "Novey": null,
-        "Rodelag": null,
+        "Rodelag": {
+          "precio": 759.98,
+          "url": "https://rodelag.com/products/hisense-refrigerador-side-by-side-18-6-cuft-rs19p5esr-inverter-auto-ice-water-dispenser-rs190p5esr",
+          "titulo_tienda": "Refrigeradora 18.6pc Side by Side, modelo RS19P5ESR, inverter,  dispensador de tres opciones: agua fría, hielo en cubos y hielo triturado. Default Title"
+        },
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 759.99,
+          "url": "https://titan.com.pa/products/hisense-rs190p5esr",
+          "titulo_tienda": "Nevera Hisense 18.6 Pies Cúbicos Side By Side Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 759.95,
@@ -2304,7 +2396,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 499.99,
+          "url": "https://titan.com.pa/products/hisense-rs3p558nmcb",
+          "titulo_tienda": "Nevera Hisense 19.1 Pies Cúbicos con Dispensador Agua Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 499.95,
@@ -2336,7 +2432,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 589.99,
+          "url": "https://titan.com.pa/products/hisense-rs3p558nm1b",
+          "titulo_tienda": "Nevera Hisense 19.1 Pies Cúbicos Side By Side Negro Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 589.95,
@@ -2400,7 +2500,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 319.99,
+          "url": "https://titan.com.pa/products/hisense-rt3n320naca",
+          "titulo_tienda": "Nevera Hisense 11.48 Pies Cúbicos Top Mount Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 319.95,
@@ -2829,7 +2933,11 @@
         "Multimax": null,
         "Novey": null,
         "Rodelag": null,
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 799.95,
+          "url": "https://www.panafoto.com/canon-eos-r50v-aps-c-24mp-lente-stm-pz-kit-vlogging-streaming-158210.html",
+          "titulo_tienda": "Cámara Canon EOS R50 V APS-C 24.2 MP Con Lente STM PZ F4-6.3 | Zoom Ultra Ancho | Enfoque Automático Rápido | Kit Para Vlogging Y Streaming En Vivo"
+        },
         "EVision": null,
         "Do It Center": null,
         "Titan": null,
@@ -2924,7 +3032,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 369.99,
+          "url": "https://titan.com.pa/products/hisense-rt3n375naca",
+          "titulo_tienda": "Refrigerador Hisense 13.5 Pies Cúbicos Top Mount - Inverter Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 369.95,
@@ -2952,7 +3064,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 399.99,
+          "url": "https://titan.com.pa/products/hisense-rt3n461naca",
+          "titulo_tienda": "Nevera Hisense 16.5 Pies Cúbicos con Dispensador Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 399.95,
@@ -2984,7 +3100,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 299.99,
+          "url": "https://titan.com.pa/products/hisense-rt1n250nmb",
+          "titulo_tienda": "Refrigeradora Hisense 8.8 Pies Cúbicos Top Mount Inverter Acero Inoxidable Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 299.95,
@@ -3096,7 +3216,7 @@
       "tiendas": {
         "Multimax": {
           "precio": 279.97,
-          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=29b67a173&_ss=e",
+          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=d355fbde9&_ss=e",
           "titulo_tienda": "Estufa a Gas Whirlpool WP3550S | 36\" | 5 Quemadores | Empotrable | Acero Inoxidable"
         },
         "Novey": null,
@@ -3105,7 +3225,11 @@
           "url": "https://rodelag.com/products/estufa-empotrable-a-gas-36-whirlpool",
           "titulo_tienda": "Estufa Empotrable a Gas, 36”, WP3550S, Whirlpool, Acero inoxidable Default Title"
         },
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 229.99,
+          "url": "https://www.panafoto.com/estufa-empotrada-a-gas-36-5-quemadores-acero-inoxidable-86cmx7cmx51cm-152419-9239.html",
+          "titulo_tienda": "Estufa empotrable a Gas Whirlpool | 36\" | 5 quemadores | Acero Inoxidable | WP3550S"
+        },
         "EVision": null,
         "Do It Center": null,
         "Titan": null,
@@ -3145,10 +3269,18 @@
           "url": "https://rodelag.com/products/estufa-a-gas-30-lwfr5050s-whirlpool-horn-con-airfryer",
           "titulo_tienda": "Estufa a gas 30\" LWFR5050S Whirlpool, Horn con AirFryer Default Title"
         },
-        "Panafoto": null,
+        "Panafoto": {
+          "precio": 429.99,
+          "url": "https://www.panafoto.com/estufa-gas-whirlpool-30p-6-quemadores-air-fry-lwfr5050s-157628.html",
+          "titulo_tienda": "Estufa de Gas Whirlpool 30\" de 6 Quemadores | Air Fry | Encendido eléctrico en el horno | Acero Inoxidable "
+        },
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 429.99,
+          "url": "https://titan.com.pa/products/whirlpool-lwfr5050s",
+          "titulo_tienda": "Estufa Whirlpool 30\" a Gas 6 Quemadores Acero Inoxidable Default Title"
+        },
         "Spiegel": null,
         "Selecto": {
           "precio": 429.95,
@@ -3184,7 +3316,11 @@
         "Panafoto": null,
         "EVision": null,
         "Do It Center": null,
-        "Titan": null,
+        "Titan": {
+          "precio": 329.99,
+          "url": "https://titan.com.pa/products/whirlpool-lwfr3400b",
+          "titulo_tienda": "Estufa Whirlpool 30\" Pulgadas a Gas 6 Quemadores Negra Default Title"
+        },
         "Spiegel": null,
         "Selecto": null,
         "Creditos Mundiales": null,
