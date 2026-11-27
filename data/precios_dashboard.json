@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27 12:30:56",
+  "actualizado": "2026-11-27 14:46:43",
   "tiendas_orden": [
     "Multimax",
     "Novey",
@@ -642,7 +642,7 @@
         "Do It Center": null,
         "Titan": {
           "precio": 349.99,
-          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=194d08580&_ss=e",
+          "url": "https://titan.com.pa/products/aire-acondicionado-hisense-split-12-000-btu-inverter?_pos=1&_psq=ATR122HA&_psid=90e760336&_ss=e",
           "titulo_tienda": "Aire Acondicionado Hisense / Split / 12,000 BTU / Inverter"
         },
         "Spiegel": null,
@@ -2810,7 +2810,7 @@
           "titulo_tienda": "Refrigeradora Hisense RQ171BV5A Inverter de 17 pies cúbicos de Acero Inoxidable Default Title"
         },
         "Raenco": {
-          "precio": 829.95,
+          "precio": 659.95,
           "url": "https://www.raenco.com/refrigeradora-hisense-17-1pc-rq171bv5a-cd-ice-maker-silver.html",
           "titulo_tienda": ".product-image-container-8095 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-8095 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-8095 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
         }
@@ -3230,7 +3230,7 @@
         "Creditos Mundiales": null,
         "Unica Panama": null,
         "Raenco": {
-          "precio": 364.95,
+          "precio": 304.95,
           "url": "https://www.raenco.com/refrigeradora-hisense-8-8pc-rt1n250nmb-inverter-250lts-con-dispensador-black.html",
           "titulo_tienda": ".product-image-container-120879 {\n    width: 240px;\n    height: auto;\n    aspect-ratio: 240 / 300;\n}\n.product-image-container-120879 span.product-image-wrapper {\n    height: 100%;\n    width: 100%;\n}\n@supports not (aspect-ratio: auto) { \n    .product-image-container-120879 span.product-image-wrapper {\n        padding-bottom: 125%;\n    }\n}"
         }
@@ -3336,7 +3336,7 @@
       "tiendas": {
         "Multimax": {
           "precio": 229.97,
-          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=c64eeb3ee&_ss=e",
+          "url": "https://www.multimax.net/products/whirlpool-wp3550s-estufa-gas-36-empotrable-acero-inoxidable-wp3550s?_pos=1&_psq=WP3550S&_psid=ab492c1b6&_ss=e",
           "titulo_tienda": "Estufa a Gas Whirlpool WP3550S | 36\" | 5 Quemadores | Empotrable | Acero Inoxidable"
         },
         "Novey": null,
