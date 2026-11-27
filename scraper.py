@@ -9,8 +9,15 @@ from selectolax.lexbor import LexborHTMLParser as HTMLParser
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/json,*/*;q=0.8",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
     "Accept-Language": "es-PA,es;q=0.9,en;q=0.8",
+    "Sec-Ch-Ua": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": '"Windows"',
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "same-origin",
+    "Upgrade-Insecure-Requests": "1",
 }
 
 STORE_ORDER = [
@@ -132,7 +139,6 @@ def parse_html_cards(html: str, store_name: str, base_url: str, fallback_url: st
     found = []
     tree = HTMLParser(html)
 
-    # 1. JSON-LD
     for script in tree.css('script[type="application/ld+json"]'):
         try:
             ld = json.loads(script.text())
@@ -163,7 +169,6 @@ def parse_html_cards(html: str, store_name: str, base_url: str, fallback_url: st
         except Exception:
             pass
 
-    # 2. Tarjetas HTML (incluye Botble .ps-product, Magento, WooCommerce)
     card_selectors = (
         "li.product-item, div.product-item-info, .products-grid .product-item, "
         ".ps-product, .product-item, .product-card, .product-wrapper, .product, .type-product, "
@@ -200,7 +205,6 @@ def parse_html_cards(html: str, store_name: str, base_url: str, fallback_url: st
             if m_sku:
                 sku = m_sku.group(1)
 
-        # En Botble (.ps-product__price) puede haber precio oferta + precio tachado (<del>)
         del_node = price_node.css_first("del")
         raw_price_txt = price_node.attributes.get("data-price-amount") or price_node.text(strip=True)
         if del_node and not price_node.attributes.get("data-price-amount"):
@@ -246,7 +250,7 @@ def scrape_magento_graphql(client: httpx.Client, store_name: str, base_url: str,
             r = client.post(
                 gql_url,
                 json={"query": query, "variables": {"search": term, "pageSize": 100}},
-                headers={**HEADERS, "Content-Type": "application/json"},
+                headers={**HEADERS, "Content-Type": "application/json", "Accept": "application/json"},
                 timeout=20,
             )
             if r.status_code != 200:
@@ -313,88 +317,121 @@ def scrape_novey(client: httpx.Client, brands: list, extra_queries: list):
     items = []
     seen_keys = set()
     base_url = "https://www.novey.com.pa"
-    search_urls = [
-        "https://www.novey.com.pa/catalogsearch/result/?q=HISENSE",
-        "https://www.novey.com.pa/catalogsearch/result/?q=WHIRLPOOL",
-        "https://www.novey.com.pa/catalogsearch/result/?q=KITCHEN%20AID",
-        "https://www.novey.com.pa/catalogsearch/result/?q=ACROS",
-    ]
-    for s_url in search_urls:
-        for page in range(1, 4):
-            url = f"{s_url}&p={page}&product_list_limit=60"
-            try:
-                r = client.get(url, timeout=22)
-                if r.status_code != 200:
-                    break
-                batch = parse_html_cards(r.text, "Novey", base_url, url, seen_keys)
-                items.extend(batch)
-                if not batch:
-                    break
-            except Exception:
-                break
 
+    # 1. Magento GraphQL
     items.extend(scrape_magento_graphql(client, "Novey", base_url, list(brands) + extra_queries[:15], seen_keys))
 
-    # Intento VTEX por si Novey enruta catalogo por API REST
+    # 2. Magento REST API publica (/rest/V1/products)
+    for b in brands:
+        rest_url = (
+            f"{base_url}/rest/V1/products"
+            f"?searchCriteria[filter_groups][0][filters][0][field]=name"
+            f"&searchCriteria[filter_groups][0][filters][0][value]=%25{b}%25"
+            f"&searchCriteria[filter_groups][0][filters][0][condition_type]=like"
+            f"&searchCriteria[pageSize]=100"
+        )
+        try:
+            r = client.get(rest_url, headers={**HEADERS, "Accept": "application/json"}, timeout=20)
+            if r.status_code == 200 and r.headers.get("content-type", "").startswith("application/json"):
+                for p in r.json().get("items", []):
+                    sku = str(p.get("sku") or "")
+                    price = extract_price_float(p.get("price"))
+                    if sku and price and sku not in seen_keys:
+                        seen_keys.add(sku)
+                        items.append({
+                            "tienda": "Novey",
+                            "sku": sku,
+                            "barcode": "",
+                            "titulo": str(p.get("name") or ""),
+                            "precio": price,
+                            "url": f"{base_url}/catalogsearch/result/?q={sku}",
+                        })
+        except Exception:
+            pass
+
+    # 3. HTML Search
     if not items:
-        items.extend(scrape_vtex_multi_brand(client, "Novey", base_url, brands, extra_queries[:10]))
+        for s_url in [
+            "https://www.novey.com.pa/catalogsearch/result/?q=HISENSE",
+            "https://www.novey.com.pa/catalogsearch/result/?q=WHIRLPOOL",
+            "https://www.novey.com.pa/catalogsearch/result/?q=ACROS",
+        ]:
+            try:
+                r = client.get(s_url, timeout=22)
+                if r.status_code == 200:
+                    items.extend(parse_html_cards(r.text, "Novey", base_url, s_url, seen_keys))
+            except Exception:
+                pass
 
     if not items:
         try:
             r_dbg = client.get("https://www.novey.com.pa/catalogsearch/result/?q=HISENSE", timeout=15)
-            tree = HTMLParser(r_dbg.text)
-            scripts = [s.text()[:120].replace("\n", " ") for s in tree.css("script") if "Hisense" in s.text() or "product" in s.text()][:2]
-            print(f"[Novey DEBUG] HTTP {r_dbg.status_code} | Len {len(r_dbg.text)} | Scripts: {scripts}")
+            m_api = re.findall(r"https?://[^\"'\s]+(?:algolia|graphql|search|products)[^\"'\s]*", r_dbg.text)[:3]
+            print(f"[Novey DEBUG] HTTP {r_dbg.status_code} | Len {len(r_dbg.text)} | Endpoints: {m_api}")
         except Exception as e:
             print(f"[Novey DEBUG] Err: {e}")
     return items
 
 def scrape_doitcenter(client: httpx.Client, brands: list, extra_queries: list):
+    """Extrae catalogo VTEX IO de Do It Center desde sus paginas de marca (444KB JSON embebido) + API."""
     items = []
     seen_keys = set()
     base_url = "https://www.doitcenter.com.pa"
 
-    # 1. API VTEX directa (Do It Center usa VTEX en backend)
-    items.extend(scrape_vtex_multi_brand(client, "Do It Center", base_url, brands, extra_queries[:15]))
-
-    # 2. URLs de marca exactas + extraccion de __STATE__ / JSON embebido
     brand_urls = [
         "https://www.doitcenter.com.pa/categorias/marcas/hisense",
         "https://www.doitcenter.com.pa/categorias/marcas/whirlpool",
         "https://www.doitcenter.com.pa/categorias/marcas/acros",
     ]
     for b_url in brand_urls:
-        try:
-            r = client.get(b_url, timeout=22)
-            if r.status_code != 200:
-                continue
-            items.extend(parse_html_cards(r.text, "Do It Center", base_url, b_url, seen_keys))
-            # Buscar JSON VTEX __STATE__ incrustado en HTML
-            for m in re.finditer(r'"productName"\s*:\s*"([^"]+)"[^}]*?"linkText"\s*:\s*"([^"]+)"', r.text):
-                title, slug = m.group(1), m.group(2)
-                # Buscar precio cercano en el bloque
-                window_txt = r.text[m.end():m.end()+1500]
-                pm = re.search(r'"Price"\s*:\s*([0-9.]+)', window_txt)
-                if pm:
-                    price = extract_price_float(pm.group(1))
-                    u = f"{base_url}/{slug}/p"
-                    if price and u not in seen_keys:
-                        seen_keys.add(u)
-                        items.append({
-                            "tienda": "Do It Center",
-                            "sku": "",
-                            "barcode": "",
-                            "titulo": title,
-                            "precio": price,
-                            "url": u,
-                        })
-        except Exception:
-            pass
+        for page in range(1, 5):
+            url = f"{b_url}?page={page}"
+            try:
+                r = client.get(url, timeout=25)
+                if r.status_code != 200:
+                    break
+                html = r.text
+                before = len(items)
+                items.extend(parse_html_cards(html, "Do It Center", base_url, url, seen_keys))
+
+                # Extraer del estado VTEX Apollo / __STATE__ embebido en los 444KB de HTML
+                # Patron 1: bloques JSON con productName, productReference y SellingPrice/Price
+                for m in re.finditer(r'"productName"\s*:\s*"([^"]+)"', html):
+                    title = m.group(1)
+                    chunk = html[max(0, m.start() - 600):min(len(html), m.end() + 2500)]
+                    ref_m = re.search(r'"productReference"\s*:\s*"([^"]+)"', chunk)
+                    slug_m = re.search(r'"linkText"\s*:\s*"([^"]+)"', chunk)
+                    price_m = re.search(r'"(?:SellingPrice|Price|spotPrice|lowPrice)"\s*:\s*([0-9]+(?:\.[0-9]+)?)', chunk)
+                    if price_m:
+                        price = extract_price_float(price_m.group(1))
+                        sku = ref_m.group(1) if ref_m else ""
+                        slug = slug_m.group(1) if slug_m else ""
+                        u = f"{base_url}/{slug}/p" if slug else url
+                        dedup = sku or f"{title}|{price}"
+                        if price and dedup not in seen_keys:
+                            seen_keys.add(dedup)
+                            items.append({
+                                "tienda": "Do It Center",
+                                "sku": sku,
+                                "barcode": "",
+                                "titulo": title,
+                                "precio": price,
+                                "url": u,
+                            })
+                if len(items) == before:
+                    break
+            except Exception:
+                break
+
+    # Respaldo API VTEX directa
+    if not items:
+        items.extend(scrape_vtex_multi_brand(client, "Do It Center", base_url, brands, extra_queries[:10]))
 
     if not items:
         try:
             r_dbg = client.get("https://www.doitcenter.com.pa/categorias/marcas/hisense", timeout=15)
-            print(f"[Do It Center DEBUG] HTTP {r_dbg.status_code} | Len {len(r_dbg.text)}")
+            sample = re.findall(r'"[a-zA-Z0-9_]*[Pp]rice[a-zA-Z0-9_]*"\s*:\s*[0-9.]+', r_dbg.text)[:4]
+            print(f"[Do It Center DEBUG] Price keys sample: {sample}")
         except Exception as e:
             print(f"[Do It Center DEBUG] Err: {e}")
     return items
@@ -403,34 +440,39 @@ def scrape_evision(client: httpx.Client):
     items = []
     seen_keys = set()
     base_url = "https://www.evisionstore.com"
-    urls = [
-        "https://www.evisionstore.com/products?brand=hisense&num=60",
-        "https://www.evisionstore.com/products?brand=kitchenaid&num=60",
-        "https://www.evisionstore.com/products?layout=product-full-width&num=60&q=whirlpool&view=list",
-        "https://www.evisionstore.com/products?num=60&q=acros",
-    ]
-    for u in urls:
-        for page in range(1, 5):
-            page_url = f"{u}&page={page}"
-            try:
-                r = client.get(page_url, timeout=22)
-                if r.status_code != 200:
-                    break
-                batch = parse_html_cards(r.text, "EVision", base_url, page_url, seen_keys)
-                items.extend(batch)
-                if not batch:
-                    break
-            except Exception:
-                break
+    ev_headers = {**HEADERS, "Referer": "https://www.evisionstore.com/"}
 
+    # 1. Intentar Sitemap XML (evita bloqueo WAF en rutas de busqueda)
+    try:
+        r_sm = client.get(f"{base_url}/sitemap.xml", headers=ev_headers, timeout=15)
+        if r_sm.status_code == 200:
+            sub_sitemaps = re.findall(r"<loc>(https://www\.evisionstore\.com/[^<]+product[^<]*\.xml)</loc>", r_sm.text)
+            for sm in sub_sitemaps[:2]:
+                r_p = client.get(sm, headers=ev_headers, timeout=15)
+                if r_p.status_code == 200:
+                    prod_urls = re.findall(r"<loc>(https://www\.evisionstore\.com/products/[^<]+)</loc>", r_p.text)
+                    for pu in prod_urls:
+                        if any(k in pu.lower() for k in ["hisense", "whirlpool", "acros", "kitchenaid"]):
+                            rp = client.get(pu, headers=ev_headers, timeout=12)
+                            if rp.status_code == 200:
+                                items.extend(parse_html_cards(rp.text, "EVision", base_url, pu, seen_keys))
+    except Exception:
+        pass
+
+    # 2. Intentar URLs de filtro
     if not items:
-        try:
-            r_dbg = client.get("https://www.evisionstore.com/products?brand=hisense&num=60", timeout=15)
-            tree = HTMLParser(r_dbg.text)
-            classes = [n.attributes.get("class", "") for n in tree.css("div[class*='prod'], article[class*='prod']")[:4]]
-            print(f"[EVision DEBUG] HTTP {r_dbg.status_code} | Classes: {classes}")
-        except Exception as e:
-            print(f"[EVision DEBUG] Err: {e}")
+        urls = [
+            "https://www.evisionstore.com/products?brand=hisense&num=60",
+            "https://www.evisionstore.com/products?brand=kitchenaid&num=60",
+            "https://www.evisionstore.com/products?layout=product-full-width&num=60&q=whirlpool&view=list",
+        ]
+        for u in urls:
+            try:
+                r = client.get(u, headers=ev_headers, timeout=20)
+                if r.status_code == 200:
+                    items.extend(parse_html_cards(r.text, "EVision", base_url, u, seen_keys))
+            except Exception:
+                pass
     return items
 
 def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
@@ -446,7 +488,7 @@ def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: 
         for page in range(1, 8):
             ep = tmpl.format(page=page)
             try:
-                r = client.get(ep, timeout=18)
+                r = client.get(ep, headers={**HEADERS, "Accept": "application/json"}, timeout=18)
                 if r.status_code != 200:
                     break
                 products = r.json().get("products", [])
@@ -476,7 +518,7 @@ def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: 
 
     for q in extra_queries[:20]:
         try:
-            r = client.get(f"{base_url}/search/suggest.json?q={q}&resources[type]=product", timeout=12)
+            r = client.get(f"{base_url}/search/suggest.json?q={q}&resources[type]=product", headers={**HEADERS, "Accept": "application/json"}, timeout=12)
             if r.status_code == 200:
                 prods = r.json().get("resources", {}).get("results", {}).get("products", [])
                 for p in prods:
@@ -506,7 +548,7 @@ def scrape_vtex_multi_brand(client: httpx.Client, store_name: str, base_url: str
         for start in range(0, max_offset, 50):
             url = f"{base_url}/api/catalog_system/pub/products/search/{term.lower()}?_from={start}&_to={start+49}"
             try:
-                r = client.get(url, timeout=18)
+                r = client.get(url, headers={**HEADERS, "Accept": "application/json"}, timeout=18)
                 if r.status_code not in (200, 206):
                     break
                 if not r.headers.get("content-type", "").startswith("application/json"):
@@ -538,13 +580,13 @@ def scrape_vtex_multi_brand(client: httpx.Client, store_name: str, base_url: str
                 break
     return items
 
-def scrape_woocommerce_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
+def scrape_woocommerce_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list):
     items = []
     seen_ids = set()
-    for term in list(brands) + extra_queries[:15]:
+    for term in brands:
         url = f"{base_url}/wp-json/wc/store/products?search={term}&per_page=100"
         try:
-            r = client.get(url, timeout=18)
+            r = client.get(url, headers={**HEADERS, "Accept": "application/json"}, timeout=22)
             if r.status_code != 200:
                 continue
             data = r.json()
@@ -579,7 +621,7 @@ def scrape_generic_store(client: httpx.Client, store_name: str, base_url: str, b
     items = scrape_vtex_multi_brand(client, store_name, base_url, brands, extra_queries)
     if items:
         return items
-    items = scrape_woocommerce_multi_brand(client, store_name, base_url, brands, extra_queries)
+    items = scrape_woocommerce_multi_brand(client, store_name, base_url, brands)
     if items:
         return items
     seen = set()
