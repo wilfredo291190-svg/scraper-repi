@@ -8,12 +8,11 @@ import pandas as pd
 from selectolax.lexbor import LexborHTMLParser as HTMLParser
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
     "Accept": "application/json, text/html, */*",
     "Accept-Language": "es-PA,es;q=0.9,en;q=0.8",
 }
 
-# Ranking oficial de clientes en orden de importancia
 STORE_ORDER = [
     "Multimax",
     "Novey",
@@ -47,7 +46,6 @@ def clean_barcode(val):
     return re.sub(r"[^0-9]", "", s)
 
 def load_all_catalogs():
-    """Lee todos los archivos .xlsx dentro de data/ y consolida los SKUs."""
     excel_files = sorted(glob.glob("data/*.xlsx"))
     if not excel_files:
         excel_files = sorted(glob.glob("*.xlsx"))
@@ -123,8 +121,91 @@ def extract_price_float(raw_str):
     except Exception:
         return None
 
-def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list):
-    """Extrae variantes de Shopify paginando colecciones por marca y catalogo general."""
+def get_ac_and_priority_queries(catalog):
+    """Obtiene codigos de Aires Acondicionados y categorias criticas para busqueda directa."""
+    queries = []
+    for item in catalog:
+        if "AIRE" in item["categoria"] or "BUILT" in item["categoria"] or "EXTRAC" in item["categoria"]:
+            queries.append(item["codigo"])
+    return list(dict.fromkeys(queries))
+
+def scrape_panafoto(client: httpx.Client, brands: list, extra_queries: list):
+    """Extrae catalogo completo de Panafoto via Algolia (paginado + marcas + codigos de aires)."""
+    items = []
+    seen_skus = set()
+    seed_urls = [
+        "https://www.panafoto.com/catalogsearch/result/?q=Hisense",
+        "https://www.panafoto.com/categorias/tv-y-video/tv.html",
+        "https://www.panafoto.com/categorias/linea-blanca/aires-acondicionados.html",
+    ]
+    app_id, api_key, index_name = None, None, "panafoto_mcprod_cloud_b2c_products"
+
+    for s_url in seed_urls:
+        try:
+            r = client.get(s_url, timeout=22)
+            html = r.text
+            m_id = re.search(r"""['"]applicationId['"]\s*:\s*['"]([A-Z0-9]{10})['"]""", html)
+            m_key = re.search(r"""['"]apiKey['"]\s*:\s*['"]([a-f0-9]{32})['"]""", html)
+            m_idx = re.search(r"""['"]indexName['"]\s*:\s*['"]([a-zA-Z0-9_]+products)['"]""", html)
+            if m_id and m_key:
+                app_id = m_id.group(1)
+                api_key = m_key.group(1)
+                if m_idx:
+                    index_name = m_idx.group(1)
+                break
+        except Exception:
+            pass
+
+    if app_id and api_key:
+        algolia_url = f"https://{app_id}-dsn.algolia.net/1/indexes/{index_name}/query"
+        headers = {
+            "X-Algolia-Application-Id": app_id,
+            "X-Algolia-API-Key": api_key,
+            "Content-Type": "application/json",
+        }
+        # Consultar por marca (paginado) y por codigos especificos de aires acondicionados
+        search_terms = list(brands) + ["AIRE ACONDICIONADO", "SPLIT", "INVERTER"] + extra_queries[:25]
+        for term in search_terms:
+            max_pages = 4 if term in brands else 1
+            for page in range(max_pages):
+                try:
+                    res = client.post(
+                        algolia_url,
+                        headers=headers,
+                        json={"params": f"query={term}&hitsPerPage=250&page={page}"},
+                        timeout=20,
+                    )
+                    hits = res.json().get("hits", [])
+                    if not hits:
+                        break
+                    for hit in hits:
+                        sku = str(hit.get("sku") or hit.get("objectID") or "")
+                        if sku in seen_skus:
+                            continue
+                        price_obj = hit.get("price", {}).get("USD", {})
+                        price = price_obj.get("default")
+                        if isinstance(price, dict):
+                            price = price.get("default")
+                        price = extract_price_float(price)
+                        if price:
+                            seen_skus.add(sku)
+                            items.append({
+                                "tienda": "Panafoto",
+                                "sku": sku,
+                                "barcode": clean_barcode(hit.get("ean") or hit.get("barcode") or ""),
+                                "titulo": str(hit.get("name", "")),
+                                "precio": price,
+                                "url": str(hit.get("url", "https://www.panafoto.com")),
+                            })
+                except Exception:
+                    break
+        if items:
+            return items
+
+    return scrape_magento_html_multi_brand(client, "Panafoto", "https://www.panafoto.com", brands + extra_queries[:15])
+
+def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
+    """Extrae variantes de Shopify paginando colecciones, catalogo general y predictive search."""
     items = []
     seen_ids = set()
     brand_tokens = [b.lower() for b in brands]
@@ -134,18 +215,17 @@ def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: 
         endpoints_templates.insert(0, f"{base_url}/collections/{b}/products.json?limit=250&page={{page}}")
 
     for tmpl in endpoints_templates:
-        for page in range(1, 6):
+        for page in range(1, 8):
             ep = tmpl.format(page=page)
             try:
                 r = client.get(ep, timeout=18)
                 if r.status_code != 200:
                     break
-                data = r.json()
-                products = data.get("products", [])
+                products = r.json().get("products", [])
                 if not products:
                     break
                 for p in products:
-                    vendor_title = f"{p.get('vendor', '')} {p.get('title', '')}".lower()
+                    vendor_title = f"{p.get('vendor', '')} {p.get('title', '')} {p.get('tags', '')}".lower()
                     if not any(b in vendor_title for b in brand_tokens):
                         continue
                     for v in p.get("variants", []):
@@ -165,15 +245,39 @@ def scrape_shopify_multi_brand(client: httpx.Client, store_name: str, base_url: 
                             })
             except Exception:
                 break
+
+    # Predictive search para codigos de aires/linea blanca sin marca en el titulo
+    for q in extra_queries[:20]:
+        try:
+            r = client.get(f"{base_url}/search/suggest.json?q={q}&resources[type]=product", timeout=12)
+            if r.status_code == 200:
+                prods = r.json().get("resources", {}).get("results", {}).get("products", [])
+                for p in prods:
+                    pid = p.get("id")
+                    if pid in seen_ids:
+                        continue
+                    price = extract_price_float(p.get("price"))
+                    if price:
+                        seen_ids.add(pid)
+                        items.append({
+                            "tienda": store_name,
+                            "sku": q,
+                            "barcode": "",
+                            "titulo": str(p.get("title", "")),
+                            "precio": price,
+                            "url": f"{base_url}{p.get('url', '')}",
+                        })
+        except Exception:
+            pass
     return items
 
-def scrape_vtex_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list):
-    """Consulta API REST de catalogo VTEX por marca."""
+def scrape_vtex_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
     items = []
     seen_skus = set()
-    for b in brands:
-        for start in range(0, 150, 50):
-            url = f"{base_url}/api/catalog_system/pub/products/search/{b.lower()}?_from={start}&_to={start+49}"
+    for term in list(brands) + extra_queries[:20]:
+        max_offset = 150 if term in brands else 50
+        for start in range(0, max_offset, 50):
+            url = f"{base_url}/api/catalog_system/pub/products/search/{term.lower()}?_from={start}&_to={start+49}"
             try:
                 r = client.get(url, timeout=18)
                 if r.status_code not in (200, 206):
@@ -207,12 +311,11 @@ def scrape_vtex_multi_brand(client: httpx.Client, store_name: str, base_url: str
                 break
     return items
 
-def scrape_woocommerce_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list):
-    """Consulta API publica de WooCommerce Store API por marca."""
+def scrape_woocommerce_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
     items = []
     seen_ids = set()
-    for b in brands:
-        url = f"{base_url}/wp-json/wc/store/products?search={b}&per_page=100"
+    for term in list(brands) + extra_queries[:20]:
+        url = f"{base_url}/wp-json/wc/store/products?search={term}&per_page=100"
         try:
             r = client.get(url, timeout=18)
             if r.status_code != 200:
@@ -242,15 +345,15 @@ def scrape_woocommerce_multi_brand(client: httpx.Client, store_name: str, base_u
             pass
     return items
 
-def scrape_magento_html_multi_brand(client: httpx.Client, store_name: str, base_url: str, brands: list):
-    """Consulta paginas de busqueda Magento 2 / HTML estructurado por marca."""
+def scrape_magento_html_multi_brand(client: httpx.Client, store_name: str, base_url: str, search_terms: list):
     items = []
     seen_urls = set()
-    for b in brands:
-        for page in range(1, 5):
+    for term in search_terms:
+        max_pages = 5 if len(term) <= 10 and term.isalpha() else 1
+        for page in range(1, max_pages + 1):
             urls_to_try = [
-                f"{base_url}/catalogsearch/result/index/?p={page}&q={b}",
-                f"{base_url}/search?q={b}&page={page}",
+                f"{base_url}/catalogsearch/result/index/?p={page}&q={term}",
+                f"{base_url}/search?q={term}&page={page}",
             ]
             found_in_page = False
             for s_url in urls_to_try:
@@ -259,7 +362,6 @@ def scrape_magento_html_multi_brand(client: httpx.Client, store_name: str, base_
                     if r.status_code != 200:
                         continue
                     tree = HTMLParser(r.text)
-                    # 1. JSON-LD ItemList
                     for script in tree.css('script[type="application/ld+json"]'):
                         try:
                             ld = json.loads(script.text())
@@ -282,7 +384,7 @@ def scrape_magento_html_multi_brand(client: httpx.Client, store_name: str, base_
                                         })
                         except Exception:
                             pass
-                    # 2. Tarjetas HTML estandar
+
                     for card in tree.css("li.product-item, div.product-item-info, .product-card, .product, .type-product"):
                         link_node = card.css_first("a.product-item-link, .product-title a, h2 a, a[href]")
                         price_node = card.css_first("[data-price-amount], .price ins .amount, .price .amount, span.price")
@@ -313,66 +415,21 @@ def scrape_magento_html_multi_brand(client: httpx.Client, store_name: str, base_
                 break
     return items
 
-def scrape_panafoto(client: httpx.Client, brands: list):
-    """Consulta Algolia en Panafoto (con comillas simples/dobles) o fallback HTML."""
-    items = []
-    try:
-        r = client.get("https://www.panafoto.com/categorias/tv-y-video/tv.html?manufacturer=HISENSE", timeout=22)
-        html = r.text
-        app_id_m = re.search(r"""['"]applicationId['"]\s*:\s*['"]([A-Z0-9]{10})['"]""", html)
-        api_key_m = re.search(r"""['"]apiKey['"]\s*:\s*['"]([a-f0-9]{32})['"]""", html)
-        index_m = re.search(r"""['"]indexName['"]\s*:\s*['"]([a-zA-Z0-9_]+products)['"]""", html)
-
-        if app_id_m and api_key_m:
-            app_id = app_id_m.group(1)
-            api_key = api_key_m.group(1)
-            index_name = index_m.group(1) if index_m else "panafoto_mcprod_cloud_b2c_products"
-            algolia_url = f"https://{app_id}-dsn.algolia.net/1/indexes/{index_name}/query"
-            headers = {
-                "X-Algolia-Application-Id": app_id,
-                "X-Algolia-API-Key": api_key,
-                "Content-Type": "application/json",
-            }
-            for b in brands:
-                res = client.post(algolia_url, headers=headers, json={"params": f"query={b}&hitsPerPage=250"}, timeout=20)
-                for hit in res.json().get("hits", []):
-                    price_obj = hit.get("price", {}).get("USD", {})
-                    price = price_obj.get("default")
-                    if isinstance(price, dict):
-                        price = price.get("default")
-                    price = extract_price_float(price)
-                    if price:
-                        items.append({
-                            "tienda": "Panafoto",
-                            "sku": str(hit.get("sku", "")),
-                            "barcode": clean_barcode(hit.get("ean") or hit.get("barcode") or ""),
-                            "titulo": str(hit.get("name", "")),
-                            "precio": price,
-                            "url": str(hit.get("url", "https://www.panafoto.com")),
-                        })
-            if items:
-                return items
-    except Exception:
-        pass
-    return scrape_magento_html_multi_brand(client, "Panafoto", "https://www.panafoto.com", brands)
-
-def scrape_generic_store(client: httpx.Client, store_name: str, base_url: str, brands: list):
-    """Detector adaptativo en cascada: Shopify -> VTEX -> WooCommerce -> Magento/HTML."""
-    items = scrape_shopify_multi_brand(client, store_name, base_url, brands)
+def scrape_generic_store(client: httpx.Client, store_name: str, base_url: str, brands: list, extra_queries: list):
+    items = scrape_shopify_multi_brand(client, store_name, base_url, brands, extra_queries)
     if items:
         return items
-    items = scrape_vtex_multi_brand(client, store_name, base_url, brands)
+    items = scrape_vtex_multi_brand(client, store_name, base_url, brands, extra_queries)
     if items:
         return items
-    items = scrape_woocommerce_multi_brand(client, store_name, base_url, brands)
+    items = scrape_woocommerce_multi_brand(client, store_name, base_url, brands, extra_queries)
     if items:
         return items
-    return scrape_magento_html_multi_brand(client, store_name, base_url, brands)
+    return scrape_magento_html_multi_brand(client, store_name, base_url, list(brands) + extra_queries[:15])
 
 def match_products(catalog, scraped_items):
     results = []
     total_matches = 0
-
     by_store = {s: [i for i in scraped_items if i["tienda"] == s and i["precio"]] for s in STORE_ORDER}
 
     for sku_row in catalog:
@@ -420,6 +477,7 @@ def match_products(catalog, scraped_items):
 
 def main():
     catalog, brands = load_all_catalogs()
+    extra_queries = get_ac_and_priority_queries(catalog)
     stores_config = [
         ("Multimax", "https://www.multimax.net"),
         ("Novey", "https://www.novey.com.pa"),
@@ -439,9 +497,9 @@ def main():
     with httpx.Client(headers=HEADERS, follow_redirects=True) as client:
         for name, url in stores_config:
             if name == "Panafoto":
-                res = scrape_panafoto(client, brands)
+                res = scrape_panafoto(client, brands, extra_queries)
             else:
-                res = scrape_generic_store(client, name, url, brands)
+                res = scrape_generic_store(client, name, url, brands, extra_queries)
             print(f"[{name}] Extraidos {len(res)} items.")
             all_scraped.extend(res)
 
